@@ -2,7 +2,7 @@
 
 namespace Domain.Models.CreateSavingsAccount.In;
 
-public class CustomerCreateInModel
+public class CustomerInModel
 {
     public DatosGeneralesInModel? DatosGenerales { get; set; }
     public DatosUbicacionInModel? DatosUbicacion { get; set; }

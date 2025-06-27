@@ -15,7 +15,7 @@ public class CreateCustomerMappingsProfile : Profile
     {
         // Map In
         CreateMap<CustomerInDto, CustomerInModel>();
-        CreateMap<CustomerCreateInModel, CustomerCreateInDto>();
+        CreateMap<Domain.Models.CreateSavingsAccount.In.CustomerInModel, CustomerCreateInDto>();
         CreateMap<DatosGeneralesInModel, DatosGeneralesInDto>();
         CreateMap<DatosUbicacionInModel, DatosUbicacionInDto>();
         CreateMap<FechaInModel, FechaInDto>();

@@ -1,24 +1,16 @@
-using Domain.Dtos;
-using Domain.Interfaces.AwsKafka.Agents;
 using Domain.Interfaces.Repositories;
 using Domain.Interfaces.Services;
-using Microsoft.Extensions.Logging;
-using static Application.Services.CreateCustomerService;
 
 namespace Application.Services;
 
-public class CreateCustomerService : ICreateCustomerService, ICreateCustomerService
+public class CreateCustomerService(
+    IAwsDynamoRepository awsDynamoRepository,
+#pragma warning disable CS0436 // El tipo entra en conflicto con un tipo importado
+    ILogger<CreateCustomerService> logger) : ICreateCustomerService, ICreateCustomerService
+#pragma warning restore CS0436 // El tipo entra en conflicto con un tipo importado
 {
-    private readonly IAwsDynamoRepository awsDynamoRepository;
-    private readonly ILogger<CreateCustomerService> logger;
-
-    public CreateCustomerService(
-        IAwsDynamoRepository awsDynamoRepository,
-        ILogger<CreateCustomerService> logger)
-    {
-        this.awsDynamoRepository = awsDynamoRepository;
-        this.logger = logger;
-    }
+    private readonly IAwsDynamoRepository awsDynamoRepository = awsDynamoRepository;
+    private readonly ILogger<CreateCustomerService> logger = logger;
 
     public CreateCustomerService()
     {
@@ -39,11 +31,9 @@ public class CreateCustomerService : ICreateCustomerService, ICreateCustomerServ
             return;
         }
 
-        if (string.IsNullOrWhiteSpace(value: customerDto.NumeroIdentificacion)
-return;
-        if (!string.IsNullOrWhiteSpace
-return;
-        return;
+        if (string.IsNullOrWhiteSpace(customerDto.NumeroIdentificacion) ||
+string.IsNullOrWhiteSpace
+return; return;
     }
 
     internal interface ILogger<T>

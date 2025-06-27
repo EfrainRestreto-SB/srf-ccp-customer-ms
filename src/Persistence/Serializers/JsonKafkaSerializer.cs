@@ -1,4 +1,3 @@
-using Confluent.Kafka;
 using System.Text;
 using System.Text.Json;
 

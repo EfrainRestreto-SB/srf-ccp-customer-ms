@@ -1,9 +1,10 @@
-﻿using Domain.Interfaces.Repositories;
+﻿using Domain.Dtos.Customer.In;
+using Domain.Dtos.Customer.Out;
 
-namespace Application.Services
+namespace Domain.Interfaces.Services;
+
+public interface ICreateCustomerService
 {
-    public interface ICreateCustomerService
-    {
-        Task NotifyToClient(string clientId, CustomerOutDto customerDto);
-    }
+    Task<CustomerOutDto> CreateCustomerAsync(CreateCustomerInDto customerInDto);
+    Task<CustomerOutDto?> GetCustomerById(int id);
 }

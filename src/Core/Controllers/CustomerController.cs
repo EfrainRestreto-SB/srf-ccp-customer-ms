@@ -1,36 +1,47 @@
-using Application.Services;
-using AutoMapper;
-using Domain.Dtos;
 using Domain.Interfaces.Services;
 using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core.Controllers;
 
-[Route("api/v1/ms/[controller]")]
 [ApiController]
+[Route("api/Customer")]
 public class CustomerController(ICreateCustomerService createCustomerService, IMapper mapper) : ControllerBase
 {
-    private readonly ICreateCustomerService createCustomerService = createCustomerService;
-    private readonly IMapper mapper = mapper;
-
-    [HttpGet]
-    [Route("clientes/{numeroIdentificacion}")]
-    public async Task<ActionResult> GetCustomerById(string numeroIdentificacion)
+    // GET /api/Customer/{id}
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<CustomerOutModel>> GetById(int id)
     {
-        CustomerOutDto? customer = await createCustomerService.GetCustomerById(numeroIdentificacion);
+        var customer = await createCustomerService.GetCustomerById(id.ToString());
+        if (customer == null)
+            return NotFound();
 
-        if (customer is null)
-        {
-            return StatusCode(StatusCodes.Status404NotFound, new
-            {
-                numeroIdentificacion,
-                mensaje = "El cliente aún no ha sido creado.",
-                estado = "Pendiente"
-            });
-        }
+        return Ok(mapper.Map<CustomerOutModel>(customer));
+    }
 
-        CustomerOutModel response = mapper.Map<CustomerOutModel>(customer);
-        return StatusCode(StatusCodes.Status200OK, response);
+    // GET /api/Customer/by-ident/{numeroIdentificacion}
+    [HttpGet("by-ident/{numeroIdentificacion}")]
+    public async Task<ActionResult<CustomerOutModel>> GetByIdentificacion(string numeroIdentificacion)
+    {
+        var customer = await createCustomerService.GetCustomerById(numeroIdentificacion);
+        if (customer == null)
+            return NotFound();
+
+        return Ok(mapper.Map<CustomerOutModel>(customer));
+    }
+
+    // POST /api/Customer
+    [HttpPost]
+    public async Task<ActionResult<CustomerOutModel>> CreateCustomer([FromBody] CustomerInModel customerInModel)
+    {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+        var dto = mapper.Map<CustomerInDto>(customerInModel);
+        var created = await createCustomerService.CreateCustomerAsync(dto);
+        var response = mapper.Map<CustomerOutModel>(created);
+
+        return CreatedAtAction(nameof(GetByIdentificacion), new { numeroIdentificacion = response.NumeroIdentificacion }, response);
     }
 }
+

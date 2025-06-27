@@ -14,7 +14,7 @@ public class CreateCustomerMappingsProfile : Profile
     private void CreateMapping()
     {
         // Map In
-        CreateMap<CustomerCreateInModel, CustomerCreateInDto>();
+        CreateMap<CustomerInModel, CustomerCreateInDto>();
         CreateMap<DatosGeneralesInModel, DatosGeneralesInDto>();
         CreateMap<DatosUbicacionInModel, DatosUbicacionInDto>();
         CreateMap<FechaInModel, FechaInDto>();
