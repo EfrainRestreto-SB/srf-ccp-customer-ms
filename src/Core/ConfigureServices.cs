@@ -10,7 +10,7 @@ namespace SrfCcpCustomerMs.Core
         public static void AddProjectServices(this IServiceCollection services)
         {
             services.AddScoped<CustomerService>();
-            services.AddScoped<ICustomerRepository, FakeCustomerRepository>();
+            services.AddScoped<ICustomerRepository, AwsDynamoCustomerRepository>();
         }
     }
 }

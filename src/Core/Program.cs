@@ -1,26 +1,64 @@
-using SrfCcpCustomerMs.Core;
-using Microsoft.OpenApi.Models;
+﻿using Application;
+using Core;
+using Microsoft.AspNetCore.Http.Connections;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using Persistence;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+ConfigurationManager configuration = builder.Configuration;
 
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
+// Cargar configuración según el entorno
+configuration
+    .SetBasePath(builder.Environment.ContentRootPath)
+    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+    .AddEnvironmentVariables();
+
+// Configuración Kestrel (opcional para alta concurrencia)
+builder.WebHost.ConfigureKestrel(opts =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Customer API", Version = "v1" });
+    opts.Limits.MaxConcurrentConnections = 100_000;
+    opts.Limits.MaxConcurrentUpgradedConnections = 100_000;
+    opts.Limits.MaxRequestBodySize = 100_000_000; // 100 MB
 });
 
-builder.Services.AddProjectServices();
+// Registrar capas
+builder.Services.AddControllers(); // ⚠️ NECESARIO
+builder.Services.AddPersistence();
+builder.Services.AddApplication(builder.Environment.EnvironmentName);
+builder.Services.AddCore(configuration);
 
-var app = builder.Build();
-
-// Siempre habilita Swagger (HTTP o HTTPS)
-app.UseSwagger();
-app.UseSwaggerUI(c =>
+builder.Services.AddCors(options =>
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Customer API V1");
+    options.AddPolicy("AllowAllOrigins",
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        });
 });
 
+// Construcción de la Aplicación
+WebApplication app = builder.Build();
+
+// Swagger solo en desarrollo
+if (!app.Environment.IsProduction())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+else
+{
+    app.UseHsts();
+}
+
+app.UseCors("AllowAllOrigins");
+app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapControllers();
-app.Run();
+
+await app.RunAsync();
+

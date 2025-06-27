@@ -1,28 +1,36 @@
+using Application.Services;
+using AutoMapper;
+using Domain.Dtos;
+using Domain.Interfaces.Services;
+using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
-using SrfCcpCustomerMs.Application.Services;
-using SrfCcpCustomerMs.Domain.Entities;
 
-namespace SrfCcpCustomerMs.Core.Controllers
+namespace Core.Controllers;
+
+[Route("api/v1/ms/[controller]")]
+[ApiController]
+public class CustomerController(ICreateCustomerService createCustomerService, IMapper mapper) : ControllerBase
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class CustomerController : ControllerBase
+    private readonly ICreateCustomerService createCustomerService = createCustomerService;
+    private readonly IMapper mapper = mapper;
+
+    [HttpGet]
+    [Route("clientes/{numeroIdentificacion}")]
+    public async Task<ActionResult> GetCustomerById(string numeroIdentificacion)
     {
-        private readonly CustomerService _service;
+        CustomerOutDto? customer = await createCustomerService.GetCustomerById(numeroIdentificacion);
 
-        public CustomerController(CustomerService service)
+        if (customer is null)
         {
-            _service = service;
+            return StatusCode(StatusCodes.Status404NotFound, new
+            {
+                numeroIdentificacion,
+                mensaje = "El cliente aún no ha sido creado.",
+                estado = "Pendiente"
+            });
         }
 
-        [HttpGet("{id}")]
-        public ActionResult<Customer> GetCustomerById(int id)
-        {
-            var customer = _service.GetCustomerById(id);
-            if (customer == null)
-                return NotFound();
-
-            return Ok(customer);
-        }
+        CustomerOutModel response = mapper.Map<CustomerOutModel>(customer);
+        return StatusCode(StatusCodes.Status200OK, response);
     }
 }

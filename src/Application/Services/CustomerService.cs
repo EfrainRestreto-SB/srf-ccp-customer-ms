@@ -1,20 +1,53 @@
-using SrfCcpCustomerMs.Domain.Entities;
-using SrfCcpCustomerMs.Domain.Interfaces;
+using Domain.Dtos;
+using Domain.Interfaces.AwsKafka.Agents;
+using Domain.Interfaces.Repositories;
+using Domain.Interfaces.Services;
+using Microsoft.Extensions.Logging;
+using static Application.Services.CreateCustomerService;
 
-namespace SrfCcpCustomerMs.Application.Services
+namespace Application.Services;
+
+public class CreateCustomerService : ICreateCustomerService, ICreateCustomerService
 {
-    public class CustomerService
+    private readonly IAwsDynamoRepository awsDynamoRepository;
+    private readonly ILogger<CreateCustomerService> logger;
+
+    public CreateCustomerService(
+        IAwsDynamoRepository awsDynamoRepository,
+        ILogger<CreateCustomerService> logger)
     {
-        private readonly ICustomerRepository _repository;
+        this.awsDynamoRepository = awsDynamoRepository;
+        this.logger = logger;
+    }
 
-        public CustomerService(ICustomerRepository repository)
+    public CreateCustomerService()
+    {
+    }
+
+    // Endpoint POST - Inserta cliente en DynamoDB
+    public async Task NotifyToClient(string clientId, CustomerOutDto customerDto)
+    {
+        if (string.IsNullOrWhiteSpace(clientId))
         {
-            _repository = repository;
+            logger.LogWarning("El clientId es nulo o vacío.");
+            return;
         }
 
-        public Customer? GetCustomerById(int id)
+        if (customerDto == null)
         {
-            return _repository.GetById(id);
+            logger.LogWarning("El DTO customerDto es nulo.");
+            return;
         }
+
+        if (string.IsNullOrWhiteSpace(value: customerDto.NumeroIdentificacion)
+return;
+        if (!string.IsNullOrWhiteSpace
+return;
+        return;
+    }
+
+    internal interface ILogger<T>
+    {
+        void LogWarning(string v);
     }
 }

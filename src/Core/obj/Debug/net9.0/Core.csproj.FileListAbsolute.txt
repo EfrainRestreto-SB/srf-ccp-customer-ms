@@ -36,3 +36,6 @@ C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Core
 C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Core\obj\Debug\net9.0\Core.genruntimeconfig.cache
 C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Core\obj\Debug\net9.0\ref\Core.dll
 C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Core\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Core\obj\Debug\net9.0\Core.dll
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Core\obj\Debug\net9.0\refint\Core.dll
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Core\obj\Debug\net9.0\Core.pdb
