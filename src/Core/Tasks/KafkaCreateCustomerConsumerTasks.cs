@@ -2,6 +2,7 @@
 using Core.Config.SettingFile.AwsKafka;
 using Domain.Dtos;
 using Domain.Interfaces.AwsKafka.Agents;
+using Domain.Interfaces.Repositories;
 using Domain.Interfaces.Services;
 using Microsoft.Extensions.Options;
 
@@ -55,7 +56,7 @@ public class KafkaCreateCustomerConsumerTasks : IHostedService
                 {
                     using IServiceScope scope = serviceProvider.CreateScope();
 
-                    Application.Services.ICreateCustomerService createCustomerService = scope.ServiceProvider.GetRequiredService<ICreateCustomerService>();
+                    Application.Services.ICreateCustomerService createCustomerService = (Application.Services.ICreateCustomerService)scope.ServiceProvider.GetRequiredService<ICreateCustomerService>();
 
                     kafkaConsumerAgent.ConsumeMessages((ushort)number, createCustomerService.NotifyToClient, cancellationToken);
                 }
@@ -79,5 +80,16 @@ public class KafkaCreateCustomerConsumerTasks : IHostedService
     public override int GetHashCode()
     {
         throw new NotImplementedException();
+    }
+}
+
+namespace Application.Services
+{
+    class ICreateCustomerService
+    {
+        internal async Task NotifyToClient(string arg1, CustomerOutDto dto)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

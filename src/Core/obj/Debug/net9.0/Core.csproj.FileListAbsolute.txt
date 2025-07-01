@@ -39,3 +39,12 @@ C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Core
 C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Core\obj\Debug\net9.0\Core.dll
 C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Core\obj\Debug\net9.0\refint\Core.dll
 C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Core\obj\Debug\net9.0\Core.pdb
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Core\obj\Debug\net9.0\Core.csproj.AssemblyReference.cache
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Core\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Core\obj\Debug\net9.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Core\obj\Debug\net9.0\Core.AssemblyInfoInputs.cache
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Core\obj\Debug\net9.0\Core.AssemblyInfo.cs
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Core\obj\Debug\net9.0\Core.csproj.CoreCompileInputs.cache
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Core\obj\Debug\net9.0\Core.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Core\obj\Debug\net9.0\Core.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Core\obj\Debug\net9.0\Core.sourcelink.json

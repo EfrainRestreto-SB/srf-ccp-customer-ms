@@ -1,6 +1,5 @@
 ﻿using Application.Hubs;
-using Domain.Dtos.CreateCustomer.In;
-using Domain.Dtos.CreateCustomer.Out;
+using Domain.Dtos;
 using Domain.Dtos.CreateSavingsAccount.Out;
 using Domain.Interfaces.AwsKafka.Agents;
 using Domain.Interfaces.Repositories;

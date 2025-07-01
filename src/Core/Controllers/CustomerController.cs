@@ -1,11 +1,6 @@
-using AutoMapper;
-using Domain.Dtos.CreateCustomer.In;
-using Domain.Dtos.CreateCustomer.Out;
-using Domain.Dtos.CreateSavingsAccount.Out;
+using Domain.Dtos;
 using Domain.Interfaces.Services;
-using Domain.Models.CreateCustomer.In;
 using Domain.Models.CreateCustomer.Out;
-using Domain.Models.CreateSavingsAccount.Out;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core.Controllers;
@@ -17,13 +12,11 @@ public class CustomerController(ICreateCustomerService createCustomerService, IM
     private readonly ICreateCustomerService createCustomerService = createCustomerService;
     private readonly IMapper mapper = mapper;
 
-    [HttpPost]
-    [Route("CreateCustomer")]
-    public async Task<ActionResult> CreateCustomer(CustomerCreateInModel createCustomerIn)
+    [HttpPost("CreateCustomer")]
+    public async Task<ActionResult> CreateCustomer(CustomerCreateInModel customerModel)
     {
-        CustomerCreateInDto createCustomerInDto = mapper.Map<CustomerCreateInDto>(createCustomerIn);
-
-        string? id = await createCustomerService.SendCreateCustomerToIbm(createCustomerInDto);
+        var customerDto = mapper.Map<CustomerCreateInDto>(customerModel);
+        string? id = await createCustomerService.SendCreateCustomerToIbm(customerDto);
 
         return StatusCode(StatusCodes.Status202Accepted, new
         {
@@ -33,25 +26,21 @@ public class CustomerController(ICreateCustomerService createCustomerService, IM
         });
     }
 
-    [HttpGet]
-    [Route("CreatedCustomerList")]
+    [HttpGet("CreatedCustomerList")]
     public async Task<ActionResult> GetCustomerList()
     {
-        List<CustomerCreateOutDto> customers = await createCustomerService.GetCustomerList();
-        List<CustomerCreateOutModel> response = mapper.Map<List<CustomerCreateOutModel>>(customers);
-
-        return StatusCode(StatusCodes.Status200OK, response);
+        var response = mapper.Map<List<CustomerCreateOutModel>>(await createCustomerService.GetCustomerList());
+        return Ok(response);
     }
 
-    [HttpGet]
-    [Route("CreatedCustomerById/{id}")]
+    [HttpGet("CreatedCustomerById/{id}")]
     public async Task<ActionResult> GetCustomerById(string id)
     {
-        CustomerCreateOutDto? customer = await createCustomerService.GetCustomerById(id);
+        var customer = await createCustomerService.GetCustomerById(id);
 
         if (customer is null)
         {
-            return StatusCode(StatusCodes.Status404NotFound, new
+            return NotFound(new
             {
                 id,
                 mensaje = "Creación del cliente está en proceso",
@@ -59,7 +48,11 @@ public class CustomerController(ICreateCustomerService createCustomerService, IM
             });
         }
 
-        CustomerCreateOutModel response = mapper.Map<CustomerCreateOutModel>(customer);
-        return StatusCode(StatusCodes.Status200OK, response);
+        var response = mapper.Map<CustomerCreateOutModel>(customer);
+        return Ok(response);
+    }
+
+    private class CustomerCreateOutModel
+    {
     }
 }

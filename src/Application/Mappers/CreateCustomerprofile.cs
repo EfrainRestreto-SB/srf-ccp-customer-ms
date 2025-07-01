@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
-using Domain.Dtos.CreateSavingsAccount.In;
-using Domain.Dtos.CreateSavingsAccount.Out;
-using Domain.Models.CreateSavingsAccount.Out;
+using Domain.Dtos.CreateCustomer.In;
+using Domain.Models.CreateCustomer.Out;
 
 namespace Application.Mappers;
 
@@ -26,7 +25,7 @@ public class CreateCustomerMappingsProfile : Profile
         CreateMap<DescriptionDto, DescriptionModel>();
 
         // Create OUT 
-        CreateMap<CustomerCreateOutDto, CustomerCreateOutModel>();
+        CreateMap<CustomerCreateOutDto, Domain.Models.CreateCustomer.Out.CustomerCreateInModel>();
         CreateMap<BasicInformationOutDto, BasicInformationOutModel>();
         CreateMap<IdentificationOutDto, IdentificationOutModel>();
         CreateMap<BirthOutDto, BirthOutModel>();

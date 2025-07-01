@@ -9,5 +9,7 @@ namespace Domain.Interfaces.Services
 
         // Consulta por número de identificación del cliente
         Task<CustomerOutDto?> GetCustomerById(string? numeroIdentificacion);
+        Task<string?> SendCreateCustomerToIbm(object customerDto);
+        Task GetCustomerList();
     }
 }

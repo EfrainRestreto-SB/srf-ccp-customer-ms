@@ -1,8 +1,4 @@
-﻿using AutoMapper;
-using Core.Mappers;
-using Domain.Dtos.CreateSavingsAccount.In;
-using Domain.Dtos.CreateSavingsAccount.Out;
-using Domain.Models.CreateSavingsAccount.Out;
+﻿using Domain.Dtos;
 
 namespace Core.Mappers;
 
@@ -27,7 +23,7 @@ public class CreateCustomerMappingsProfile : Profile
         CreateMap<DescriptionDto, DescriptionModel>();
 
         // Create OUT 
-        CreateMap<CustomerCreateOutDto, CustomerCreateOutModel>();
+        CreateMap<CustomerCreateOutDto, Domain.Models.CreateCustomer.Out.CustomerCreateInModel>();
         CreateMap<BasicInformationOutDto, BasicInformationOutModel>();
         CreateMap<IdentificationOutDto, IdentificationOutModel>();
         CreateMap<BirthOutDto, BirthOutModel>();
@@ -229,4 +225,8 @@ public class CreateCustomerMappingsProfile : Profile
     private class DescriptionOutModel
     {
     }
+}
+
+public class Profile
+{
 }

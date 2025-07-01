@@ -1,21 +1,24 @@
 ﻿using Application;
+using Application.Hubs;
 using Core;
 using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Persistence;
 
-WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
 
 // Cargar configuración según el entorno
 configuration
     .SetBasePath(builder.Environment.ContentRootPath)
-    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
-    .AddEnvironmentVariables();
+    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+configuration
+    .SetBasePath(builder.Environment.ContentRootPath)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true);
+configuration.AddEnvironmentVariables();
+// =======================
 
-// Configuración Kestrel (opcional para alta concurrencia)
 builder.WebHost.ConfigureKestrel(opts =>
 {
     opts.Limits.MaxConcurrentConnections = 100_000;
@@ -23,27 +26,30 @@ builder.WebHost.ConfigureKestrel(opts =>
     opts.Limits.MaxRequestBodySize = 100_000_000; // 100 MB
 });
 
-// Registrar capas
-builder.Services.AddControllers(); // ⚠️ NECESARIO
+// Agregar capas a la aplicación
 builder.Services.AddPersistence();
 builder.Services.AddApplication(builder.Environment.EnvironmentName);
 builder.Services.AddCore(configuration);
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAllOrigins",
-        policy =>
+        builder =>
         {
-            policy.AllowAnyOrigin()
-                  .AllowAnyMethod()
-                  .AllowAnyHeader();
+            builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
         });
 });
 
+// ==================================
 // Construcción de la Aplicación
+// ==================================
 WebApplication app = builder.Build();
 
-// Swagger solo en desarrollo
+app.MapHub<SimulationHub>("/api/v1/simulation", o => { o.Transports = HttpTransportType.WebSockets; });
+app.MapHub<CdtHub>("/api/v1/createcdt", o => { o.Transports = HttpTransportType.WebSockets; });
+
+// Swagger
 if (!app.Environment.IsProduction())
 {
     app.UseSwagger();
@@ -54,11 +60,9 @@ else
     app.UseHsts();
 }
 
-app.UseCors("AllowAllOrigins");
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
 await app.RunAsync();
-
