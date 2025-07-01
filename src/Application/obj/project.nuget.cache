@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "37UGilocJiw=",
+  "dgSpecHash": "MBRUMlhcarA=",
   "success": true,
   "projectFilePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Application\\Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Admininfra\\.nuget\\packages\\sonaranalyzer.csharp\\10.12.0.118525\\sonaranalyzer.csharp.10.12.0.118525.nupkg.sha512"
+  ],
   "logs": []
 }

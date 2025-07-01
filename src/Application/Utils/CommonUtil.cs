@@ -1,30 +1,50 @@
-﻿namespace Application.Utils;
+﻿using Amazon;
+using Amazon.DynamoDBv2;
+using Amazon.Extensions.NETCore.Setup;
+using Amazon.Runtime;
+using Amazon.Runtime.CredentialManagement;
+using Application.Services;
+using Domain.Interfaces.Services;
+using Microsoft.Extensions.DependencyInjection;
 
-public static class CommonUtil
+namespace Application;
+
+public static class ConfigureServices
 {
-    public static string GenerateNewClientId()
+    private static AWSCredentials? GetCredentialsFromProfile(string profileName)
     {
-        DateTime now = DateTime.Now;
-        Random random = new();
-        return now.ToString("yyMMddHHmmss") + random.Next(1111, 9999);
+        CredentialProfileStoreChain credentialProfileStoreChain = new();
+
+        if (credentialProfileStoreChain.TryGetAWSCredentials(profileName, out AWSCredentials credentials))
+            return credentials;
+
+        return null;
     }
 
-    public static bool ValidateClientIdFormat(string clientId)
+    private static AWSCredentials? GetCredentialsByEnvironment(string environment)
     {
-        if (clientId.Length != 16 || !clientId.All(char.IsDigit))
-            return false;
+        AWSCredentials? aWSCredentials;
+        if (environment == "Local")
+            aWSCredentials = GetCredentialsFromProfile("awsserfinanza");
+        else
+            aWSCredentials = FallbackCredentialsFactory.GetCredentials();
 
-        // Extraer la parte de fecha (primeros 12 dígitos)
-        string datePart = clientId.Substring(0, 12);
+        if (aWSCredentials is null)
+            throw new ArgumentNullException(nameof(environment), "Unable to obtain AWS Credentials.");
 
-        try
-        {
-            DateTime.ParseExact(datePart, "yyMMddHHmmss", System.Globalization.CultureInfo.InvariantCulture);
-            return true;
-        }
-        catch
-        {
-            return false;
-        }
+        return aWSCredentials;
+    }
+
+    public static IServiceCollection AddApplication(this IServiceCollection services, string environment)
+    {
+        AWSOptions awsOptions = new() { Credentials = GetCredentialsByEnvironment(environment), Region = RegionEndpoint.USEast1 };
+        services.AddSingleton(awsOptions);
+        services.AddAWSService<IAmazonDynamoDB>(awsOptions);
+
+        services.AddScoped<ICreateCdtService, CreateCdtService>();
+
+        services.AddScoped<ICdtSimulatorService, CdtSimulatorService>();
+
+        return services;
     }
 }

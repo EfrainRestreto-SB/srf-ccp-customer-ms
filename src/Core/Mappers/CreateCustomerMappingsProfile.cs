@@ -1,8 +1,7 @@
-﻿using Core.Tasks;
+﻿using AutoMapper;
+using Core.Mappers;
 using Domain.Dtos.CreateSavingsAccount.In;
 using Domain.Dtos.CreateSavingsAccount.Out;
-using Domain.Models;
-using Domain.Models.CreateSavingsAccount.In;
 using Domain.Models.CreateSavingsAccount.Out;
 
 namespace Core.Mappers;
@@ -13,25 +12,221 @@ public class CreateCustomerMappingsProfile : Profile
 
     private void CreateMapping()
     {
-        // Map In
-        CreateMap<CustomerInModel, CustomerCreateInDto>();
-        CreateMap<DatosGeneralesInModel, DatosGeneralesInDto>();
-        CreateMap<DatosUbicacionInModel, DatosUbicacionInDto>();
-        CreateMap<FechaInModel, FechaInDto>();
-        CreateMap<InformacionExpedicionIdentificacionInModel, InformacionExpedicionIdentificacionInDto>();
+        // Create IN
+        CreateMap<CustomerCreateInDto, CustomerCreateInModel>();
+        CreateMap<BasicInformationDto, BasicInformationModel>();
+        CreateMap<IdentificationDto, IdentificationModel>();
+        CreateMap<BirthDto, BirthModel>();
+        CreateMap<ContactDto, ContactModel>();
+        CreateMap<AddressDto, AddressModel>();
+        CreateMap<FinancialDto, FinancialModel>();
+        CreateMap<EmploymentDto, EmploymentModel>();
+        CreateMap<BakingInfoDto, BakingModel>();
+        CreateMap<InterviewDto, InterviewModel>();
+        CreateMap<ReferenceDto, ReferenceModel>();
+        CreateMap<DescriptionDto, DescriptionModel>();
 
-        // Map Out
+        // Create OUT 
         CreateMap<CustomerCreateOutDto, CustomerCreateOutModel>();
-        CreateMap<DatosGeneralesOutDto, DatosGeneralesOutModel>();
-        CreateMap<DatosUbicacionOutDto, DatosUbicacionOutModel>();
-        CreateMap<FechaOutDto, FechaOutModel>();
-        CreateMap<InformacionExpedicionIdentificacionOutDto, InformacionExpedicionIdentificacionOutModel>();
-
-        CreateMap<CustomerOutDto, CustomerOutModel>();
+        CreateMap<BasicInformationOutDto, BasicInformationOutModel>();
+        CreateMap<IdentificationOutDto, IdentificationOutModel>();
+        CreateMap<BirthOutDto, BirthOutModel>();
+        CreateMap<ContactOutDto, ContactOutModel>();
+        CreateMap<AddressOutDto, AddressOutModel>();
+        CreateMap<FinancialOutDto, FinancialOutModel>();
+        CreateMap<EmploymentOutDto, EmploymentOutModel>();
+        CreateMap<FulfillmentOutDto, FulfillmentOutModel>();
+        CreateMap<InterviewOutDto, InterviewOutModel>();
+        CreateMap<ReferenceOutDto, ReferenceOutModel>();
+        CreateMap<DescriptionOutDto, DescriptionOutModel>();
     }
 
     private void CreateMap<T1, T2>()
     {
         throw new NotImplementedException();
+    }
+
+    private class BasicInformationDto
+    {
+    }
+
+    private class IdentificationDto
+    {
+    }
+
+    private class BirthDto
+    {
+    }
+
+    private class AddressDto
+    {
+    }
+
+    private class ContactDto
+    {
+    }
+
+    private class FinancialDto
+    {
+    }
+
+    private class EmploymentDto
+    {
+    }
+
+    private class FulfillmentDto
+    {
+    }
+
+    private class CustomerCreateInModel
+    {
+    }
+
+    private class BasicInformationModel
+    {
+    }
+
+    private class IdentificationModel
+    {
+    }
+
+    private class BirthModel
+    {
+    }
+
+    private class ContactModel
+    {
+    }
+
+    private class AddressModel
+    {
+    }
+
+    private class FinancialModel
+    {
+    }
+
+    private class EmploymentModel
+    {
+    }
+
+    private class BakingInfoDto
+    {
+    }
+
+    private class BakingModel
+    {
+    }
+
+    private class InterviewDto
+    {
+    }
+
+    private class ReferenceDto
+    {
+    }
+
+    private class ReferenceModel
+    {
+    }
+
+    private class InterviewModel
+    {
+    }
+
+    private class DescriptionDto
+    {
+    }
+
+    private class DescriptionModel
+    {
+    }
+
+    private class BasicInformationOutDto
+    {
+    }
+
+    private class IdentificationOutDto
+    {
+    }
+
+    private class BirthOutModel
+    {
+    }
+
+    private class BirthOutDto
+    {
+    }
+
+    private class BasicInformationOutModel
+    {
+    }
+
+    private class IdentificationOutModel
+    {
+    }
+
+    private class ContactOutModel
+    {
+    }
+
+    private class ContactOutDto
+    {
+    }
+
+    private class AddressOutDto
+    {
+    }
+
+    private class FinancialOutDto
+    {
+    }
+
+    private class EmploymentOutDto
+    {
+    }
+
+    private class AddressOutModel
+    {
+    }
+
+    private class FinancialOutModel
+    {
+    }
+
+    private class EmploymentOutModel
+    {
+    }
+
+    private class InterviewOutDto
+    {
+    }
+
+    private class FulfillmentOutDto
+    {
+    }
+
+    private class FulfillmentOutModel
+    {
+    }
+
+    private class InterviewOutModel
+    {
+    }
+
+    private class ReferenceOutDto
+    {
+    }
+
+    private class ReferenceOutModel
+    {
+    }
+
+    private class DescriptionOutDto
+    {
+    }
+
+    private class DescriptionOutModel
+    {
     }
 }
