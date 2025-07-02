@@ -1,10 +1,8 @@
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
-using Domain.Dtos;
-using Domain.Dtos.Customer.Out;
 using Domain.Interfaces.Dynamo.Config;
-using Domain.Interfaces.Repositories;
 using Microsoft.Extensions.Logging;
+using AttributeValue = Amazon.DynamoDBv2.Model.AttributeValue;
 
 namespace Persistence.Repositories;
 
@@ -59,7 +57,10 @@ public class AwsDynamoCustomerRepository(
                 KeyConditionExpression = "numeroIdentificacion = :numeroIdentificacion",
                 ExpressionAttributeValues = new Dictionary<string, AttributeValue>
                 {
-                    { ":numeroIdentificacion", new AttributeValue { S = numeroIdentificacion } }
+                {
+                        ":numeroIdentificacion",
+                        new AttributeValue { S = numeroIdentificacion }
+                }
                 }
             };
 
@@ -108,4 +109,15 @@ public class AwsDynamoCustomerRepository(
             ex.Data["Logged"] = true;
         }
     }
+}
+
+internal class CreateCustomerOutDto
+{
+    public string? TipoIdentificacion { get; internal set; }
+    public string? NumeroIdentificacion { get; internal set; }
+    public string? Id { get; internal set; }
+    public string? NombreCompleto { get; internal set; }
+    public string? Telefono { get; internal set; }
+    public string? Correo { get; internal set; }
+    public string? FechaRegistro { get; internal set; }
 }

@@ -4,11 +4,11 @@ using FluentValidation;
 
 namespace Core.Validators.CreateCustomer;
 
-public class ForeignCurrencyInfoInDtoValidator : AbstractValidator<ForeignCurrencyInfoInModel>
+public class BankingInfoInDtoValidator : AbstractValidator<BankingInfoInModel>
 {
-    public ForeignCurrencyInfoInDtoValidator()
+    public BankingInfoInDtoValidator()
     {
-        RuleFor(x => x.CurrencyType)
+        RuleFor(x => x.BankName)
             .NotEmpty().WithMessage(MessageValidateConst.EmptyMessage);
     }
 }

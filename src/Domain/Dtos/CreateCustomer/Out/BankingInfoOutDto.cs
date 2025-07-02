@@ -1,76 +1,67 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
-namespace Domain.Dtos.CreateCustomer.Out
+public class BankingInfoOutDto
 {
-    public class BankingInfOutDto
-    {
-        [JsonPropertyName("affiliantionMonth")]
-        public string? affiliantionMonth { get; set; }
+    [JsonPropertyName("affiliationMonth")]
+    public int? AffiliationMonth { get; set; }
 
-        [JsonPropertyName("affiliantionDay")]
-        public string? affiliantionDay { get; set; }
+    [JsonPropertyName("affiliationDay")]
+    public int? AffiliationDay { get; set; }
 
-        [JsonPropertyName("affiliantionYears")]
-        public string? affiliantionYears { get; set; }
+    [JsonPropertyName("affiliationYears")]
+    public int? AffiliationYears { get; set; }
 
-        [JsonPropertyName("affiliantionOfficeCode")]
-        public string? affiliantionOfficeCode { get; set; }
+    [JsonPropertyName("affiliationOfficeCode")]
+    public string? AffiliationOfficeCode { get; set; }
 
-        [JsonPropertyName("affiliantionChannel")]
-        public string? affiliantionChannel { get; set; }
+    [JsonPropertyName("affiliationChannel")]
+    public string? AffiliationChannel { get; set; }
 
-        [JsonPropertyName("statementDelivery")]
-        public string? statementDelivery { get; set; }
+    [JsonPropertyName("statementDelivery")]
+    public string? StatementDelivery { get; set; }
 
-        [JsonPropertyName("electronicOperations")]
-        public string? electretonicOperations { get; set; }
+    [JsonPropertyName("electronicOperations")]
+    public string? ElectronicOperations { get; set; }
 
-        [JsonPropertyName("commercialOfficerCode")]
-        public string? commercialOfficerCode { get; set; }
+    [JsonPropertyName("commercialOfficerCode")]
+    public string? CommercialOfficerCode { get; set; }
 
-        [JsonPropertyName("secondaryOfficerCode")]
-        public string? secondaryOfficerCode { get; set; }
+    [JsonPropertyName("secondaryOfficerCode")]
+    public string? SecondaryOfficerCode { get; set; }
 
-        [JsonPropertyName("entitytoAffiliateCode")]
-        public string? entitytoAffiliateCode { get; set; }
+    [JsonPropertyName("entityToAffiliateCode")]
+    public string? EntityToAffiliateCode { get; set; }
 
-        [JsonPropertyName("superEntityType")]
-        public string? superEntityType { get; set; }
+    [JsonPropertyName("superEntityType")]
+    public string? SuperEntityType { get; set; }
 
-        [JsonPropertyName("legalNature")]
-        public string? LegalNature { get; set; }
+    [JsonPropertyName("legalNature")]
+    public string? LegalNature { get; set; }
 
-        [JsonPropertyName("businessType")]
-        public string? businessType { get; set; }
+    [JsonPropertyName("businessType")]
+    public string? BusinessType { get; set; }
 
-        [JsonPropertyName("segmentCode")]
-        public string? segmentCode { get; set; }
+    [JsonPropertyName("segmentCode")]
+    public string? SegmentCode { get; set; }
 
-        [JsonPropertyName("superEntityCode")]
-        public string? superEntityCode { get; set; }
+    [JsonPropertyName("superEntityCode")]
+    public string? SuperEntityCode { get; set; }
 
-        [JsonPropertyName("adressType")]
-        public string? adressType { get; set; }
+    [JsonPropertyName("addressType")]
+    public string? AddressType { get; set; }
 
-        [JsonPropertyName("underGraduateDegree")]
-        public string?underGraduateDegree { get; set; }
+    [JsonPropertyName("underGraduateDegree")]
+    public string? UnderGraduateDegree { get; set; }
 
-        [JsonPropertyName("interviewType")]
-        public string? interviewType { get; set; }
+    [JsonPropertyName("interviewType")]
+    public string? InterviewType { get; set; }
 
-        [JsonPropertyName("banckRelation")]
-        public string? banckRelation { get; set; }
+    [JsonPropertyName("bankRelation")]
+    public string? BankRelation { get; set; }
 
-        [JsonPropertyName("servicesType")]
-        public string? serviicesType { get; set; }
+    [JsonPropertyName("servicesType")]
+    public string? ServicesType { get; set; }
 
-        [JsonPropertyName("riskPercentage")]
-        public string? riskPercentage { get; set; }
-
-    }
+    [JsonPropertyName("riskPercentage")]
+    public string? RiskPercentage { get; set; }
 }

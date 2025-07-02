@@ -8,7 +8,10 @@ public class FinancialInfoInDtoValidator : AbstractValidator<FinancialInfoInMode
 {
     public FinancialInfoInDtoValidator()
     {
-        RuleFor(x => x.AnnualIncome)
-            .GreaterThan(0).WithMessage(MessageValidateConst.InvalidNumber);
+        RuleFor(x => x.Income)
+            .GreaterThan(0).WithMessage(MessageValidateConst.MustBeGreaterThanZero);
+
+        RuleFor(x => x.Expenses)
+            .GreaterThanOrEqualTo(0).WithMessage(MessageValidateConst.MustBeNonNegative);
     }
 }

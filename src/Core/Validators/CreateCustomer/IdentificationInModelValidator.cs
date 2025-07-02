@@ -8,6 +8,9 @@ public class IdentificationInDtoValidator : AbstractValidator<IdentificationInMo
 {
     public IdentificationInDtoValidator()
     {
+        RuleFor(x => x.DocumentType)
+            .NotEmpty().WithMessage(MessageValidateConst.EmptyMessage);
+
         RuleFor(x => x.DocumentNumber)
             .NotEmpty().WithMessage(MessageValidateConst.EmptyMessage);
     }

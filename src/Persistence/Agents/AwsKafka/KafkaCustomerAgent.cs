@@ -1,4 +1,6 @@
-﻿using Amazon.Extensions.NETCore.Setup;
+﻿using Amazon;
+using Amazon.Extensions.NETCore.Setup;
+using Amazon.Runtime;
 using Confluent.Kafka;
 using Domain.Interfaces.AwsKafka.Agents;
 using Domain.Interfaces.AwsKafka.Config;
@@ -38,7 +40,7 @@ public class KafkaCdtConsumerAgent<TKey, TValue>(IKafkaConsumerConfig kafkaConsu
 
         try
         {
-            using IConsumer<TKey, TValue> consumer = new ConsumerBuilder<TKey, TValue>(kafkaConsumerConfig.GetConsumerConfig())
+            using IConsumer<TKey, TValue> consumer = new ConsumerBuilder<TKey, TValue>((IEnumerable<KeyValuePair<string, string>>)kafkaConsumerConfig.GetConsumerConfig())
                 .SetValueDeserializer(new JsonKafkaDeserializer<TValue>())
                 .SetOAuthBearerTokenRefreshHandler(OauthCallback)
                 .Build();
@@ -115,5 +117,17 @@ public class KafkaCdtConsumerAgent<TKey, TValue>(IKafkaConsumerConfig kafkaConsu
                 await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
             }
         }
+    }
+}
+
+internal class AWSMSKAuthTokenGenerator
+{
+    public AWSMSKAuthTokenGenerator()
+    {
+    }
+
+    internal async Task<(string, long)> GenerateAuthTokenFromCredentialsProvider(Func<AWSCredentials> value, RegionEndpoint region, bool useAsync)
+    {
+        throw new NotImplementedException();
     }
 }

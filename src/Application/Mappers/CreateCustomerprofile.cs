@@ -1,12 +1,16 @@
 ﻿using AutoMapper;
-using Domain.Dtos.CreateCustomer.In;
+using Domain.Dtos;
+using Domain.Dtos.CreateCustomer.Out;
 using Domain.Models.CreateCustomer.Out;
 
 namespace Application.Mappers;
 
 public class CreateCustomerMappingsProfile : Profile
 {
-    public CreateCustomerMappingsProfile() => CreateMapping();
+    public CreateCustomerMappingsProfile()
+    {
+        CreateMapping();
+    }
 
     private void CreateMapping()
     {
@@ -25,7 +29,7 @@ public class CreateCustomerMappingsProfile : Profile
         CreateMap<DescriptionDto, DescriptionModel>();
 
         // Create OUT 
-        CreateMap<CustomerCreateOutDto, Domain.Models.CreateCustomer.Out.CustomerCreateInModel>();
+        CreateMap<CustomerCreateOutDto, CustomerCreateInModel>();
         CreateMap<BasicInformationOutDto, BasicInformationOutModel>();
         CreateMap<IdentificationOutDto, IdentificationOutModel>();
         CreateMap<BirthOutDto, BirthOutModel>();
@@ -43,192 +47,164 @@ public class CreateCustomerMappingsProfile : Profile
     {
         throw new NotImplementedException();
     }
+}
 
-    private class BasicInformationDto
-    {
-    }
+internal class DescriptionOutModel
+{
+}
 
-    private class IdentificationDto
-    {
-    }
+internal class DescriptionOutDto
+{
+}
 
-    private class BirthDto
-    {
-    }
+internal class ReferenceOutModel
+{
+}
 
-    private class AddressDto
-    {
-    }
+internal class ReferenceOutDto
+{
+}
 
-    private class ContactDto
-    {
-    }
+internal class FulfillmentOutModel
+{
+}
 
-    private class FinancialDto
-    {
-    }
+internal class InterviewOutModel
+{
+}
 
-    private class EmploymentDto
-    {
-    }
+internal class InterviewOutDto
+{
+}
 
-    private class FulfillmentDto
-    {
-    }
+internal class FulfillmentOutDto
+{
+}
 
-    private class CustomerCreateInModel
-    {
-    }
+internal class EmploymentOutModel
+{
+}
 
-    private class BasicInformationModel
-    {
-    }
+internal class EmploymentOutDto
+{
+}
 
-    private class IdentificationModel
-    {
-    }
+internal class FinancialOutModel
+{
+}
 
-    private class BirthModel
-    {
-    }
+internal class AddressOutModel
+{
+}
 
-    private class ContactModel
-    {
-    }
+internal class FinancialOutDto
+{
+}
 
-    private class AddressModel
-    {
-    }
+internal class AddressOutDto
+{
+}
 
-    private class FinancialModel
-    {
-    }
+internal class ContactOutModel
+{
+}
 
-    private class EmploymentModel
-    {
-    }
+internal class ContactOutDto
+{
+}
 
-    private class BakingInfoDto
-    {
-    }
+internal class BirthOutModel
+{
+}
 
-    private class BakingModel
-    {
-    }
+internal class IdentificationOutDto
+{
+}
 
-    private class InterviewDto
-    {
-    }
+internal class BirthOutDto
+{
+}
 
-    private class ReferenceDto
-    {
-    }
+internal class BasicInformationOutDto
+{
+}
 
-    private class ReferenceModel
-    {
-    }
+internal class BakingModel
+{
+}
 
-    private class InterviewModel
-    {
-    }
+internal class InterviewModel
+{
+}
 
-    private class DescriptionDto
-    {
-    }
+internal class ReferenceModel
+{
+}
 
-    private class DescriptionModel
-    {
-    }
+internal class DescriptionModel
+{
+}
 
-    private class BasicInformationOutDto
-    {
-    }
+internal class DescriptionDto
+{
+}
 
-    private class IdentificationOutDto
-    {
-    }
+internal class ReferenceDto
+{
+}
 
-    private class BirthOutModel
-    {
-    }
+internal class InterviewDto
+{
+}
 
-    private class BirthOutDto
-    {
-    }
+internal class BakingInfoDto
+{
+}
 
-    private class BasicInformationOutModel
-    {
-    }
+internal class EmploymentModel
+{
+}
 
-    private class IdentificationOutModel
-    {
-    }
+internal class EmploymentDto
+{
+}
 
-    private class ContactOutModel
-    {
-    }
+internal class FinancialModel
+{
+}
 
-    private class ContactOutDto
-    {
-    }
+internal class FinancialDto
+{
+}
 
-    private class AddressOutDto
-    {
-    }
+internal class AddressModel
+{
+}
 
-    private class FinancialOutDto
-    {
-    }
+internal class ContactModel
+{
+}
 
-    private class EmploymentOutDto
-    {
-    }
+internal class AddressDto
+{
+}
 
-    private class AddressOutModel
-    {
-    }
+internal class ContactDto
+{
+}
 
-    private class FinancialOutModel
-    {
-    }
+internal class BirthModel
+{
+}
 
-    private class EmploymentOutModel
-    {
-    }
+internal class BirthDto
+{
+}
 
-    private class InterviewOutDto
-    {
-    }
+internal class IdentificationModel
+{
+}
 
-    private class FulfillmentOutDto
-    {
-    }
-
-    private class FulfillmentOutModel
-    {
-    }
-
-    private class InterviewOutModel
-    {
-    }
-
-    private class ReferenceOutDto
-    {
-    }
-
-    private class ReferenceOutModel
-    {
-    }
-
-    private class DescriptionOutDto
-    {
-    }
-
-    private class DescriptionOutModel
-    {
-    }
-
-    private class CustomerCreateInDto
-    {
-    }
+internal class BasicInformationDto
+{
 }

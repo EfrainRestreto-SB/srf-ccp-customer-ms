@@ -1,5 +1,4 @@
-﻿using Domain.Interfaces.Repositories;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
 
 namespace Persistence.Repositories;
@@ -94,4 +93,8 @@ public class RedisRepository : IRedisRepository, IDisposable
     {
         Dispose(false);
     }
+}
+
+public interface IRedisRepository
+{
 }

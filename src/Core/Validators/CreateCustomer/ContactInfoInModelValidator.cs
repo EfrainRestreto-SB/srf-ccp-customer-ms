@@ -4,14 +4,15 @@ using FluentValidation;
 
 namespace Core.Validators.CreateCustomer;
 
-public class EmploymentInfoInDtoValidator : AbstractValidator<EmploymentInfoInModel>
+public class ContactInfoInDtoValidator : AbstractValidator<ContactInfoInModel>
 {
-    public EmploymentInfoInDtoValidator()
+    public ContactInfoInDtoValidator()
     {
-        RuleFor(x => x.CompanyName)
+        RuleFor(x => x.Email)
+            .EmailAddress().WithMessage(MessageValidateConst.InvalidEmail)
             .NotEmpty().WithMessage(MessageValidateConst.EmptyMessage);
 
-        RuleFor(x => x.Position)
+        RuleFor(x => x.Phone)
             .NotEmpty().WithMessage(MessageValidateConst.EmptyMessage);
     }
 }

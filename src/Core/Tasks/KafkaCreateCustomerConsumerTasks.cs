@@ -1,95 +1,44 @@
-﻿using Application.Services;
-using Core.Config.SettingFile.AwsKafka;
-using Domain.Dtos;
-using Domain.Interfaces.AwsKafka.Agents;
-using Domain.Interfaces.Repositories;
-using Domain.Interfaces.Services;
-using Microsoft.Extensions.Options;
+﻿using Domain.Dtos.CreateCustomer.In;
+using Domain.Interfaces.Services.Kafka;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace Core.Tasks;
-
-public class KafkaCreateCustomerConsumerTasks : IHostedService
+namespace Core.Tasks.Kafka
 {
-    private readonly IKafkaConsumerAgent<string, CustomerOutDto> kafkaConsumerAgent;
-    private readonly IServiceProvider serviceProvider;
-    private readonly ILogger<KafkaCreateCustomerConsumerTasks> logger;
-    private readonly int parallelKafkaConsumers;
-
-    public KafkaCreateCustomerConsumerTasks(
-        IKafkaConsumerAgent<string, CustomerOutDto> kafkaConsumerAgent,
-        IOptions<KafkaCreateCustomerEvtJson> kafkaCreateCustomerEvt,
-        IServiceProvider serviceProvider,
+    public class KafkaCreateCustomerConsumerTasks(
+        IKafkaCreateCustomerConsumerService consumerService,
         ILogger<KafkaCreateCustomerConsumerTasks> logger
-)
+    ) : BackgroundService
     {
-        this.kafkaConsumerAgent = kafkaConsumerAgent;
-        this.serviceProvider = serviceProvider;
-        this.logger = logger;
-        parallelKafkaConsumers = kafkaCreateCustomerEvt.Value.ParallelKafkaConsumers;
-    }
+        private readonly IKafkaCreateCustomerConsumerService _consumerService = consumerService;
+        private readonly ILogger<KafkaCreateCustomerConsumerTasks> _logger = logger;
 
-    public KafkaCreateCustomerConsumerTasks(IKafkaConsumerAgent<string, CustomerOutDto> kafkaConsumerAgent, IServiceProvider serviceProvider, ILogger<KafkaCreateCustomerConsumerTasks> logger, int parallelKafkaConsumers)
-    {
-        this.kafkaConsumerAgent = kafkaConsumerAgent;
-        this.serviceProvider = serviceProvider;
-        this.logger = logger;
-        this.parallelKafkaConsumers = parallelKafkaConsumers;
-    }
-
-    public override bool Equals(object? obj)
-    {
-        return obj is KafkaCreateCustomerConsumerTasks tasks &&
-               EqualityComparer<IKafkaConsumerAgent<string, CustomerOutDto>>.Default.Equals(kafkaConsumerAgent, tasks.kafkaConsumerAgent) &&
-               EqualityComparer<IServiceProvider>.Default.Equals(serviceProvider, tasks.serviceProvider) &&
-               EqualityComparer<ILogger<KafkaCreateCustomerConsumerTasks>>.Default.Equals(logger, tasks.logger) &&
-               parallelKafkaConsumers == tasks.parallelKafkaConsumers;
-    }
-
-    public Task StartAsync(CancellationToken cancellationToken)
-    {
-        for (ushort i = 0; i < parallelKafkaConsumers; i++)
+        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            int number = i + 1;
-            Task.Run(() =>
+            _logger.LogInformation("Kafka Customer Consumer Task iniciado.");
+
+            try
             {
-                try
+                await _consumerService.ConsumeAsync(async (key, value) =>
                 {
-                    using IServiceScope scope = serviceProvider.CreateScope();
-
-                    Application.Services.ICreateCustomerService createCustomerService = (Application.Services.ICreateCustomerService)scope.ServiceProvider.GetRequiredService<ICreateCustomerService>();
-
-                    kafkaConsumerAgent.ConsumeMessages((ushort)number, createCustomerService.NotifyToClient, cancellationToken);
-                }
-                catch (Exception ex)
-                {
-                    logger.LogError(ex, "Error al consumir mensajes en el consumidor #{Number}", number);
-                    throw;
-                }
-            }, cancellationToken);
+                    _logger.LogInformation("Mensaje recibido de Kafka - Key: {Key}", key);
+                    await _consumerService.ProcessMessageAsync(key, value);
+                }, stoppingToken);
+            }
+            catch (TaskCanceledException)
+            {
+                _logger.LogWarning("Kafka Customer Consumer Task cancelado.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error en Kafka Customer Consumer Task.");
+            }
         }
 
-        return Task.CompletedTask;
-    }
-
-    public Task StopAsync(CancellationToken cancellationToken)
-    {
-        logger.LogInformation("Deteniendo consumidores Kafka...");
-        return Task.CompletedTask;
-    }
-
-    public override int GetHashCode()
-    {
-        throw new NotImplementedException();
-    }
-}
-
-namespace Application.Services
-{
-    class ICreateCustomerService
-    {
-        internal async Task NotifyToClient(string arg1, CustomerOutDto dto)
+        private interface IKafkaCreateCustomerConsumerService
         {
-            throw new NotImplementedException();
         }
     }
 }

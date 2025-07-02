@@ -1,18 +1,9 @@
-﻿namespace Domain.Models.CreateCustomer.Out;
+﻿namespace Domain.Models.CreateCustomer.In;
 
 public class CustomerCreateInModel
 {
-    public string? Id { get; set; }
-
-    public BasicInformationOutModel? BasicInformation { get; set; }
-    public IdentificationOutModel? Identification { get; set; }
-    public BirthInfoOutModel? BirthInfo { get; set; }
-    public ContactInfoOutModel? ContactInfo { get; set; }
-    public FinancialInfoOutModel? FinancialInfo { get; set; }
-    public EmploymentInfoOutModel? EmploymentInfo { get; set; }
-    public ForeignCurrencyInfoOutModel? ForeignCurrencyInfo { get; set; }
-    public InterviewInfoOutModel? InterviewInfo { get; set; }
-    public ReferencesOutModel? References { get; set; }
-    public DescriptionsOutModel? Descriptions { get; set; }
-    public BankingInfoOutModel? BankingInfo { get; set; }
+    public string Id { get; set; } = string.Empty;
+    public string Nombre { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
+    public object BasicInformation { get; set; }
 }

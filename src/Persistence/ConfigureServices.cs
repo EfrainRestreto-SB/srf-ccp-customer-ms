@@ -59,3 +59,7 @@ public static class ConfigureServices
         return services;
     }
 }
+
+public class IServiceCollection
+{
+}

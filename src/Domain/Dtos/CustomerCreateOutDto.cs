@@ -1,5 +1,4 @@
-﻿using Domain.Dtos.Out;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace Domain.Dtos;
 
@@ -9,7 +8,7 @@ public class CustomerCreateOutDto
     public string? Id { get; set; }
 
     [JsonPropertyName("basicInformation")]
-    public string ?BasicInformationOutDto { get; set; }
+    public string? BasicInformationOutDto { get; set; }
 
     [JsonPropertyName("birthInfo")]
     public string? BirthInfo { get; set; }
@@ -46,4 +45,11 @@ public class CustomerCreateOutDto
 
     [JsonPropertyName("createdDate")]
     public DateTime? CreatedDate { get; set; }
+    public object PrimerNombre { get; set; }
+    public object PrimerApellido { get; set; }
+    public object SegundoApellido { get; set; }
+    public object SegundoNombre { get; set; }
+    public string? NumeroCliente { get; set; }
+    public string? TipoIdentificacion { get; set; }
+    public string? Identificacion { get; set; }
 }

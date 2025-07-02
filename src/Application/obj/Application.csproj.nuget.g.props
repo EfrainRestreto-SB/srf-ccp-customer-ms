@@ -15,5 +15,6 @@
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgSonarAnalyzer_CSharp Condition=" '$(PkgSonarAnalyzer_CSharp)' == '' ">C:\Users\Admininfra\.nuget\packages\sonaranalyzer.csharp\10.12.0.118525</PkgSonarAnalyzer_CSharp>
+    <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">C:\Users\Admininfra\.nuget\packages\awssdk.core\4.0.0.12</PkgAWSSDK_Core>
   </PropertyGroup>
 </Project>

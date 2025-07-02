@@ -4,11 +4,11 @@ using FluentValidation;
 
 namespace Core.Validators.CreateCustomer;
 
-public class BankingInfoInDtoValidator : AbstractValidator<BankingInfoInModel>
+public class InterviewInfoInDtoValidator : AbstractValidator<InterviewInfoInModel>
 {
-    public BankingInfoInDtoValidator()
+    public InterviewInfoInDtoValidator()
     {
-        RuleFor(x => x.BankName)
+        RuleFor(x => x.InterviewerName)
             .NotEmpty().WithMessage(MessageValidateConst.EmptyMessage);
     }
 }

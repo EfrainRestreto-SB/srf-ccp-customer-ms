@@ -1,4 +1,4 @@
-﻿namespace Core.Validators;
+﻿namespace Core;
 
 public static class CommonValidations
 {

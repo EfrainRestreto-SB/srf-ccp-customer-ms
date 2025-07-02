@@ -1,68 +1,61 @@
 ﻿using Application;
-using Application.Hubs;
 using Core;
-using Microsoft.AspNetCore.Http.Connections;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
 using Persistence;
 
-WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
 
 // Cargar configuración según el entorno
 configuration
     .SetBasePath(builder.Environment.ContentRootPath)
-    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-configuration
-    .SetBasePath(builder.Environment.ContentRootPath)
-    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true);
-configuration.AddEnvironmentVariables();
-// =======================
+    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+    .AddEnvironmentVariables();
 
-builder.WebHost.ConfigureKestrel(opts =>
+// Registrar capas
+builder.Services.AddControllers(); // Requerido para API
+builder.Services.AddPersistence(configuration); // Kafka, DynamoDB, Redis, etc.
+builder.Services.AddApplication(builder.Environment.EnvironmentName); // Lógica de negocio
+builder.Services.AddCore(configuration); // Servicios, Mappers, Validadores
+
+// Configurar Swagger (documentación de API)
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(opt =>
 {
-    opts.Limits.MaxConcurrentConnections = 100_000;
-    opts.Limits.MaxConcurrentUpgradedConnections = 100_000;
-    opts.Limits.MaxRequestBodySize = 100_000_000; // 100 MB
+    opt.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Customer API",
+        Version = "v1",
+        Description = "API para gestión de creación de clientes",
+    });
 });
 
-// Agregar capas a la aplicación
-builder.Services.AddPersistence();
-builder.Services.AddApplication(builder.Environment.EnvironmentName);
-builder.Services.AddCore(configuration);
+// Configurar CORS (permite todas las conexiones, puede ajustarse)
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAllOrigins",
-        builder =>
-        {
-            builder.AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader();
-        });
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+    });
 });
 
-// ==================================
-// Construcción de la Aplicación
-// ==================================
 WebApplication app = builder.Build();
 
-app.MapHub<SimulationHub>("/api/v1/simulation", o => { o.Transports = HttpTransportType.WebSockets; });
-app.MapHub<CdtHub>("/api/v1/createcdt", o => { o.Transports = HttpTransportType.WebSockets; });
-
-// Swagger
-if (!app.Environment.IsProduction())
+// Middleware
+if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
-}
-else
-{
-    app.UseHsts();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Customer API V1");
+    });
 }
 
+app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllers();
+app.MapControllers(); // Habilita rutas de controladores
 
 await app.RunAsync();
