@@ -54,9 +54,9 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "AWSSDK.Core": {
+            "AWSSDK": {
               "target": "Package",
-              "version": "[4.0.0.12, )"
+              "version": "[2.3.55.2, )"
             },
             "AWSSDK.Extensions.NETCore.Setup": {
               "target": "Package",

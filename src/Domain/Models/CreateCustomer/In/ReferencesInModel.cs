@@ -2,8 +2,12 @@
 
 public class ReferencesInModel
 {
-    public string? ReferenceName { get; set; }          // E01RNM
-    public string? ReferenceType { get; set; }          // E01RTP
-    public string? ReferencePhone { get; set; }         // E01RPH
-    public string? ReferenceRelationship { get; set; }  // E01RRL
+    public string? ReferenceName { get; set; }
+    public string? ReferenceType { get; set; }
+    public string? ReferencePhone { get; set; }
+    public string? ReferenceRelationship { get; set; }
+
+    // Add missing property to fix CS1061 error  
+    public string? Relacion { get; set; }
+    public object Nombre { get; set; }
 }

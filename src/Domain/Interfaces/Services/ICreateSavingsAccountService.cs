@@ -1,15 +1,12 @@
 ﻿using Domain.Dtos;
-using Domain.Interfaces.Repositories;
+using Domain.Dtos.CreateCustomer.In;
+using Domain.Dtos.CreateCustomer.Out;
 
-namespace Domain.Interfaces.Services
+namespace Domain.Interfaces.Services;
+
+public interface ICreateCustomerService
 {
-    public interface ICreateCustomerService
-    {
-        Task NotifyToClient(string clientId, CustomerOutDto customerOutDto);
-
-        // Consulta por número de identificación del cliente
-        Task<CustomerOutDto?> GetCustomerById(string? numeroIdentificacion);
-        Task<string?> SendCreateCustomerToIbm(object customerDto);
-        Task GetCustomerList();
-    }
+    Task<string> SendCreateCustomerToIbm(CustomerCreateInDto dto);
+    Task<List<CustomerCreateOutDto>> GetCustomerList();
+    Task<CustomerCreateOutDto?> GetCustomerById(string id);
 }

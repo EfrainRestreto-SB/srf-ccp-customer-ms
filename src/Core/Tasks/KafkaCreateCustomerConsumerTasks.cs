@@ -21,7 +21,7 @@ namespace Core.Tasks.Kafka
 
             try
             {
-                await _consumerService.ConsumeAsync(async (key, value) =>
+                await _consumerService.ConsumerAsync(async (key, value) =>
                 {
                     _logger.LogInformation("Mensaje recibido de Kafka - Key: {Key}", key);
                     await _consumerService.ProcessMessageAsync(key, value);
@@ -35,10 +35,6 @@ namespace Core.Tasks.Kafka
             {
                 _logger.LogError(ex, "Error en Kafka Customer Consumer Task.");
             }
-        }
-
-        private interface IKafkaCreateCustomerConsumerService
-        {
         }
     }
 }

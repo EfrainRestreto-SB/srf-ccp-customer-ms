@@ -18,7 +18,7 @@ public static class ConfigureServices
         services.AddScoped<ICreateCustomerService, CreateCustomerService>();
 
         // AutoMapper Profile
-        services.AddAutoMapper(typeof(CreateCustomerMappingsProfile));
+        IServiceCollection serviceCollection = services.AddAutoMapper(typeof(CreateCustomerMappingsProfile));
 
         // Validadores
         services.AddScoped<IValidator<CustomerCreateInModel>, CustomerCreateInModelValidator>();

@@ -3,7 +3,8 @@
 public class CustomerCreateInModel
 {
     public string Id { get; set; } = string.Empty;
-    public string Nombre { get; set; } = string.Empty;
+    public string Name { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
-    public object BasicInformation { get; set; }
+
+    public BasicInformationInModel BasicInformation { get; set; } = new(); // ✅ tipo específico
 }
