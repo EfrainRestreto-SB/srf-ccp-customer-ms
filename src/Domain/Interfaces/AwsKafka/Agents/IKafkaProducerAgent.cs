@@ -1,6 +1,9 @@
-﻿namespace Domain.Interfaces.AwsKafka.Agents;
+﻿using System.Threading;
+using System.Threading.Tasks;
 
-public interface IKafkaProducerAgent<in TKey, in TValue>
+namespace Domain.Interfaces.Agents;
+
+public interface IKafkaConsumerAgent
 {
-    public Task ProduceMessage(TKey key, TValue body);
+    Task HandleMessageAsync(string key, string payload, CancellationToken cancellationToken);
 }

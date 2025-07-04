@@ -1,4 +1,6 @@
-﻿namespace Domain.Entities.Customer;
+﻿using System;
+
+namespace Domain.Entities.Customer;
 
 public class Identification
 {

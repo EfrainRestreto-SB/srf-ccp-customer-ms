@@ -1,8 +1,9 @@
-﻿namespace Domain.Dtos.CreateCustomer.Out;
+﻿using System.Text.Json.Serialization;
 
-public class CustomerCreateOutDto
+namespace Application.DTOs.Customer;
+
+public class CustomerCreateOutDataDto
 {
-    public string? Id { get; set; }
-    public string? Name { get; set; }
-    public string? Email { get; set; }
+    [JsonPropertyName("customerNumber")]
+    public string CustomerNumber { get; set; } = default!;
 }

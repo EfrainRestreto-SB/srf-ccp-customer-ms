@@ -1,100 +1,64 @@
-﻿using Microsoft.Extensions.Logging;
-using StackExchange.Redis;
+﻿using StackExchange.Redis;
+using System.Text.Json;
+using Microsoft.Extensions.Logging;
+using Persistence.Repositories.Redis.Interfaces;
 
-namespace Persistence.Repositories;
+namespace Persistence.Repositories.Redis;
 
-public class RedisRepository : IRedisRepository, IDisposable
+public class RedisRepository : IRedisRepository
 {
-    private readonly IDatabase _redis;
+    private readonly IDatabase _database;
     private readonly ILogger<RedisRepository> _logger;
-    private readonly IConnectionMultiplexer _connection;
-    private bool _disposed;
 
-    public RedisRepository(IConnectionMultiplexer redisConnection, ILogger<RedisRepository> logger)
+    public RedisRepository(IConnectionMultiplexer redis, ILogger<RedisRepository> logger)
     {
-        _connection = redisConnection;
+        _database = redis.GetDatabase();
         _logger = logger;
-
-        if (!_connection.IsConnected)
-        {
-            _logger.LogError("No se pudo establecer una conexión con Redis");
-            throw new RedisConnectionException(ConnectionFailureType.UnableToConnect,
-                "No se pudo establecer una conexión con Redis");
-        }
-
-        _redis = _connection.GetDatabase();
     }
 
-    public async Task StoreSet(string key, string value)
+    public async Task SetAsync<T>(string key, T value, TimeSpan? expiry = null)
     {
         try
         {
-            await _redis.SetAddAsync(key, value);
-            await _redis.KeyExpireAsync(key, TimeSpan.FromHours(24));
-        }
-        catch (RedisException ex)
-        {
-            _logger.LogError(ex, "Error de Redis. Key: {Key}, Value: {Value}", key, value);
-            throw new RedisException($"Error al procesar el Set. Key: {key}", ex);
-        }
-    }
-
-    // Obtener todos los elementos del set
-    public async Task<RedisValue[]> GetallSetListItems(string key)
-    {
-        // Verificar si la clave existe antes de intentar obtener los miembros
-        if (!await _redis.KeyExistsAsync(key)) return [];
-
-        return await _redis.SetMembersAsync(key);
-    }
-
-    public async Task<string?> GetValueByPattern(string keySet, string pattern)
-    {
-        try
-        {
-            RedisValue[] allElements = await GetallSetListItems(keySet);
-
-            foreach (RedisValue element in allElements)
-            {
-                string elementString = element.ToString();
-                if (elementString.Contains(pattern))
-                    return elementString;
-            }
-
-            return null;
+            string json = JsonSerializer.Serialize(value);
+            await _database.StringSetAsync(key, json, expiry);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error al buscar valor por patrón");
-            return null;
+            _logger.LogError(ex, "Error setting Redis key: {Key}", key);
         }
     }
 
-    // Implementación de IDisposable
-    public void Dispose()
+    public async Task<T?> GetAsync<T>(string key)
     {
-        Dispose(true);
-        GC.SuppressFinalize(this);
-    }
-
-    protected virtual void Dispose(bool disposing)
-    {
-        if (!_disposed)
+        try
         {
-            if (disposing)
-            {
-                _connection?.Dispose();
-            }
-            _disposed = true;
+            RedisValue value = await _database.StringGetAsync(key);
+            return value.HasValue
+                ? JsonSerializer.Deserialize<T>(value!)
+                : default;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error getting Redis key: {Key}", key);
+            return default;
         }
     }
 
-    ~RedisRepository()
+    public async Task<bool> ExistsAsync(string key)
     {
-        Dispose(false);
+        return await _database.KeyExistsAsync(key);
     }
-}
 
-public interface IRedisRepository
-{
+    public async Task DeleteAsync(string key)
+    {
+        try
+        {
+            await _database.KeyDeleteAsync(key);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error deleting Redis key: {Key}", key);
+        }
+    }
 }

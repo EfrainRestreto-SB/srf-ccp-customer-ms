@@ -1,15 +1,11 @@
-﻿using Domain.Entities;
+﻿using System.Threading.Tasks;
 
 namespace Domain.Interfaces.Repositories;
 
-public interface IAwsDynamoRepository
+public interface IAwsDynamoRepository<T>
 {
- 
-    Task<Customer?> GetCustomerByIdAsync(string id);
-
-  
-    Task SaveCustomerAsync(Customer customer);
-
-  
-    Task<List<Customer>> GetAllCustomersAsync();
+    Task SaveAsync(string id, T entity);
+    Task<T?> GetByIdAsync(string id);
+    Task UpdateAsync(string id, T entity);
+    Task DeleteAsync(string id);
 }

@@ -1,4 +1,4 @@
-﻿using Application;
+using Application;
 using Application.Hubs;
 using Core;
 using Microsoft.AspNetCore.Http.Connections;
@@ -6,6 +6,8 @@ using Microsoft.Extensions.Options;
 using Persistence;
 
 WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
+
+builder.AddServiceDefaults();
 ConfigurationManager configuration = builder.Configuration;
 
 // Cargar configuración según el entorno
@@ -44,6 +46,8 @@ builder.Services.AddCors(options =>
 // Construcción de la Aplicación
 // ==================================
 WebApplication app = builder.Build();
+
+app.MapDefaultEndpoints();
 
 app.MapHub<SimulationHub>("/api/v1/simulation", o => { o.Transports = HttpTransportType.WebSockets; });
 app.MapHub<CdtHub>("/api/v1/createcdt", o => { o.Transports = HttpTransportType.WebSockets; });

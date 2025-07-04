@@ -15,9 +15,3 @@ C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Pers
 C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\obj\Debug\net9.0\refint\Persistence.dll
 C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\obj\Debug\net9.0\Persistence.pdb
 C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\obj\Debug\net9.0\ref\Persistence.dll
-C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.csproj.AssemblyReference.cache
-C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.AssemblyInfoInputs.cache
-C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.AssemblyInfo.cs
-C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.csproj.CoreCompileInputs.cache
-C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.sourcelink.json

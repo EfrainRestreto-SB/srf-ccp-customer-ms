@@ -1,4 +1,8 @@
-﻿namespace Domain.Interfaces.AwsKafka.Agents;
+﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace Domain.Interfaces.AwsKafka.Agents;
 
 public interface IKafkaConsumerAgent<TKey, TValue>
 {

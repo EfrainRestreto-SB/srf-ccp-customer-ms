@@ -1,54 +1,57 @@
-using Domain.Interfaces.Repositories;
-using Domain.Interfaces.Services;
-using Domain.Dtos.Customer.In;
+ï»¿using Application.DTOs.Customer;
+using Application.Interfaces.Customer;
+using AutoMapper;
+using Core.Exceptions;
+using Domain.Models.Customer.In;
+using FluentValidation;
+using FluentValidation.Results;
+using Persistence.Cache.Interfaces;
+using Persistence.Messaging.Kafka.Interfaces;
+using Utils.Generators;
 
-namespace Application.Services;
+namespace Application.Services.Customer;
 
-public class CreateCustomerService : ICreateCustomerService
+public class CustomerService : ICustomerService
 {
-    private readonly IAwsDynamoRepository _awsDynamoRepository;
-    private readonly ILogger<CreateCustomerService> _logger;
+    private readonly IValidator<CustomerCreateInDto> _validator;
+    private readonly IMapper _mapper;
+    private readonly IRedisService _redisService;
+    private readonly IKafkaProducer _kafkaProducer;
 
-    public CreateCustomerService(IAwsDynamoRepository awsDynamoRepository, ILogger<CreateCustomerService> logger)
+    public CustomerService(
+        IValidator<CustomerCreateInDto> validator,
+        IMapper mapper,
+        IRedisService redisService,
+        IKafkaProducer kafkaProducer)
     {
-        _awsDynamoRepository = awsDynamoRepository;
-        _logger = logger;
+        _validator = validator;
+        _mapper = mapper;
+        _redisService = redisService;
+        _kafkaProducer = kafkaProducer;
     }
 
-    // POST - Inserta cliente en DynamoDB (simulado)
-    public async Task NotifyToClient(string clientId, Domain.Dtos.Customer.Out.CustomerOutDto customerDto)
+    public async Task<CustomerCreateOutDto> CreateCustomerAsync(CustomerCreateInDto dto)
     {
-        if (string.IsNullOrWhiteSpace(clientId))
+        ValidationResult result = await _validator.ValidateAsync(dto);
+
+        if (!result.IsValid)
+            throw new ValidationException("Error de validaciÃ³n", result.Errors);
+
+        var model = _mapper.Map<CustomerCreateInModel>(dto);
+
+        var id = GuidGenerator.NewId();
+
+        await _redisService.SaveAsync(id, model);
+
+        await _kafkaProducer.SendAsync("srf-ccp-clientes-cmd", id, model);
+
+        return new CustomerCreateOutDto
         {
-            _logger.LogWarning("El clientId es nulo o vacío.");
-            return;
-        }
-
-        if (customerDto == null)
-        {
-            _logger.LogWarning("El DTO customerDto es nulo.");
-            return;
-        }
-
-        if (!string.IsNullOrWhiteSpace(customerDto.NumeroIdentificacion) &&
-            string.IsNullOrWhiteSpace(customerDto.CorreoElectronico))
-        {
-            _logger.LogWarning("Se recibió identificación pero sin correo electrónico.");
-            return;
-        }
-
-        // Simulación de inserción en DynamoDB
-        await _awsDynamoRepository.SaveCustomerAsync(clientId, customerDto);
-        _logger.LogInformation("Cliente {ClientId} notificado correctamente.", clientId);
-    }
-
-    Task<Domain.Dtos.Customer.Out.CustomerOutDto> ICreateCustomerService.CreateCustomerAsync(CreateCustomerInDto customerInDto)
-    {
-        throw new NotImplementedException();
-    }
-
-    Task<Domain.Dtos.Customer.Out.CustomerOutDto?> ICreateCustomerService.GetCustomerById(int id)
-    {
-        throw new NotImplementedException();
+            Id = id,
+            Data = new CustomerCreateOutDataDto
+            {
+                CustomerNumber = dto.Identification.IdNumber
+            }
+        };
     }
 }

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Q7jOKL4Wh+8=",
+  "dgSpecHash": "/boJaTv/KGg=",
   "success": true,
   "projectFilePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Admininfra\\.nuget\\packages\\sonaranalyzer.csharp\\10.12.0.118525\\sonaranalyzer.csharp.10.12.0.118525.nupkg.sha512"
+    "C:\\Users\\Admininfra\\.nuget\\packages\\confluent.kafka\\2.10.1\\confluent.kafka.2.10.1.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\librdkafka.redist\\2.10.1\\librdkafka.redist.2.10.1.nupkg.sha512"
   ],
   "logs": []
 }

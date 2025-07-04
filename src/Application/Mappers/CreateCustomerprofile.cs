@@ -1,18 +1,17 @@
 ﻿using AutoMapper;
 using Domain.Dtos;
+using Domain.Dtos.CreateCustomer.In;
 using Domain.Dtos.CreateCustomer.Out;
+using Domain.Dtos.CreateSavingsAccount.Out;
+using Domain.Models.CreateCustomer.In;
 using Domain.Models.CreateCustomer.Out;
+using CustomerCreateInModel = Domain.Models.CreateCustomer.In.CustomerCreateInModel;
 
 namespace Application.Mappers;
 
 public class CreateCustomerMappingsProfile : Profile
 {
     public CreateCustomerMappingsProfile()
-    {
-        CreateMapping();
-    }
-
-    private void CreateMapping()
     {
         // Create IN
         CreateMap<CustomerCreateInDto, CustomerCreateInModel>();
@@ -42,86 +41,9 @@ public class CreateCustomerMappingsProfile : Profile
         CreateMap<ReferenceOutDto, ReferenceOutModel>();
         CreateMap<DescriptionOutDto, DescriptionOutModel>();
     }
-
-    private void CreateMap<T1, T2>()
-    {
-        throw new NotImplementedException();
-    }
-}
-
-internal class DescriptionOutModel
-{
-}
-
-internal class DescriptionOutDto
-{
-}
-
-internal class ReferenceOutModel
-{
-}
-
-internal class ReferenceOutDto
-{
-}
-
-internal class FulfillmentOutModel
-{
-}
-
-internal class InterviewOutModel
-{
-}
-
-internal class InterviewOutDto
-{
-}
-
-internal class FulfillmentOutDto
-{
-}
-
-internal class EmploymentOutModel
-{
-}
-
-internal class EmploymentOutDto
-{
-}
-
-internal class FinancialOutModel
-{
-}
-
-internal class AddressOutModel
-{
-}
-
-internal class FinancialOutDto
-{
-}
-
-internal class AddressOutDto
-{
-}
-
-internal class ContactOutModel
-{
-}
-
-internal class ContactOutDto
-{
-}
-
-internal class BirthOutModel
-{
 }
 
 internal class IdentificationOutDto
-{
-}
-
-internal class BirthOutDto
 {
 }
 
@@ -129,7 +51,11 @@ internal class BasicInformationOutDto
 {
 }
 
-internal class BakingModel
+internal class DescriptionDto
+{
+}
+
+internal class DescriptionModel
 {
 }
 
@@ -141,15 +67,19 @@ internal class ReferenceModel
 {
 }
 
-internal class DescriptionModel
-{
-}
-
-internal class DescriptionDto
-{
-}
-
 internal class ReferenceDto
+{
+}
+
+internal class BakingModel
+{
+}
+
+internal class EmploymentModel
+{
+}
+
+internal class FinancialModel
 {
 }
 
@@ -161,15 +91,7 @@ internal class BakingInfoDto
 {
 }
 
-internal class EmploymentModel
-{
-}
-
 internal class EmploymentDto
-{
-}
-
-internal class FinancialModel
 {
 }
 
@@ -177,15 +99,11 @@ internal class FinancialDto
 {
 }
 
+internal class BirthModel
+{
+}
+
 internal class AddressModel
-{
-}
-
-internal class ContactModel
-{
-}
-
-internal class AddressDto
 {
 }
 
@@ -193,7 +111,7 @@ internal class ContactDto
 {
 }
 
-internal class BirthModel
+internal class ContactModel
 {
 }
 
@@ -208,3 +126,21 @@ internal class IdentificationModel
 internal class BasicInformationDto
 {
 }
+public class BirthOutDto { }
+public class ContactOutDto { }
+public class AddressOutDto { }
+public class FinancialOutDto { }
+public class EmploymentOutDto { }
+public class FulfillmentOutDto { }
+public class InterviewOutDto { }
+public class ReferenceOutDto { }
+public class DescriptionOutDto { }
+public class BirthOutModel { }
+public class ContactOutModel { }
+public class AddressOutModel { }
+public class FinancialOutModel { }
+public class EmploymentOutModel { }
+public class FulfillmentOutModel { }
+public class InterviewOutModel { }
+public class ReferenceOutModel { }
+public class DescriptionOutModel { }

@@ -1,4 +1,6 @@
-﻿namespace Domain.Interfaces.AwsKafka.Config;
+﻿using Confluent.Kafka;
+
+namespace Domain.Interfaces.AwsKafka.Config;
 
 public interface IKafkaConsumerConfig
 {

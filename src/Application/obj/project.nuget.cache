@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "z4ZBvoGEU5Q=",
+  "dgSpecHash": "R+9K7FXLq/8=",
   "success": true,
   "projectFilePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Application\\Application.csproj",
   "expectedPackageFiles": [
@@ -8,7 +8,9 @@
     "C:\\Users\\Admininfra\\.nuget\\packages\\awssdk\\2.3.55.2\\awssdk.2.3.55.2.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\awssdk.core\\4.0.0.12\\awssdk.core.4.0.0.12.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\awssdk.extensions.netcore.setup\\4.0.2\\awssdk.extensions.netcore.setup.4.0.2.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\confluent.kafka\\2.10.1\\confluent.kafka.2.10.1.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\fluentvalidation\\12.0.0\\fluentvalidation.12.0.0.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\librdkafka.redist\\2.10.1\\librdkafka.redist.2.10.1.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.3.0\\microsoft.aspnetcore.authorization.2.3.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\2.3.0\\microsoft.aspnetcore.connections.abstractions.2.3.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.3.0\\microsoft.aspnetcore.http.features.2.3.0.nupkg.sha512",

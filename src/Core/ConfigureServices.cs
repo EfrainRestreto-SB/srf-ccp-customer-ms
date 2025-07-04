@@ -1,39 +1,96 @@
-using Application.Services;
-using Core.Mappers;
+using Application.DTOs.Customer;
+using Application.Interfaces.Customer;
+using Application.Mappers;
+using Application.Services.Customer;
+using Application.Validators.Customer;
+using Core.Config;
+using Core.Config.Aws;
+using Core.Config.AwsKafka;
+using Core.Config.SettingFiles.Aws;
+using Core.Config.SettingFiles.AwsKafka;
+using Core.Validators;
 using Core.Validators.CreateCustomer;
+using Domain.Interfaces.Repositories;
 using Domain.Interfaces.Services;
-using Domain.Models.CreateCustomer.In;
-using Domain.Models.CreateCustomer.Out;
 using FluentValidation;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
+using Persistence.Cache.Interfaces;
+using Persistence.Cache.Services;
+using Persistence.Messaging.Agents;
+using Persistence.Messaging.Kafka.Consumers;
+using Persistence.Messaging.Kafka.Interfaces;
+using Persistence.Messaging.Kafka.Services;
+using Presentation.Hubs;
 
-namespace Core;
+var builder = WebApplication.CreateBuilder(args);
 
-public static class ConfigureServices
+// Swagger
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
 {
-    public static IServiceCollection AddCore(this IServiceCollection services, IConfiguration configuration)
-    {
-        // Servicios
-        services.AddScoped<ICreateCustomerService, CreateCustomerService>();
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Customer API", Version = "v1" });
+});
 
-        // AutoMapper Profile
-        IServiceCollection serviceCollection = services.AddAutoMapper(typeof(CreateCustomerMappingsProfile));
+// Controllers & SignalR
+builder.Services.AddControllers();
+builder.Services.AddSignalR();
 
-        // Validadores
-        services.AddScoped<IValidator<CustomerCreateInModel>, CustomerCreateInModelValidator>();
-        services.AddScoped<IValidator<BasicInformationInModel>, BasicInformationInDtoValidator>();
-        services.AddScoped<IValidator<BirthInfoInModel>, BirthInfoInDtoValidator>();
-        services.AddScoped<IValidator<ContactInfoInModel>, ContactInfoInDtoValidator>();
-        services.AddScoped<IValidator<DescriptionsInModel>, DescriptionsInDtoValidator>();
-        services.AddScoped<IValidator<EmploymentInfoInModel>, EmploymentInfoInDtoValidator>();
-        services.AddScoped<IValidator<FinancialInfoInModel>, FinancialInfoInDtoValidator>();
-        services.AddScoped<IValidator<ForeignCurrencyInfoInModel>, ForeignCurrencyInfoInDtoValidator>();
-        services.AddScoped<IValidator<IdentificationInModel>, IdentificationInDtoValidator>();
-        services.AddScoped<IValidator<InterviewInfoInModel>, InterviewInfoInDtoValidator>();
-        services.AddScoped<IValidator<BankingInfoInModel>, BankingInfoInDtoValidator>();
-        services.AddScoped<IValidator<ReferencesInModel>, ReferencesInDtoValidator>();
+// AutoMapper
+builder.Services.AddAutoMapper(typeof(CustomerMappingsProfile));
 
-        return services;
-    }
+// FluentValidation
+builder.Services.AddScoped<IValidator<CustomerCreateInDto>, CustomerCreateInDtoValidator>();
+builder.Services.AddScoped<IValidator<AddressInfoInDto>, AddressInfoInDtoValidator>();
+builder.Services.AddScoped<IValidator<DescriptionsInDto>, DescriptionsInDtoValidator>();
+builder.Services.AddScoped<IValidator<FinancialInfoInDto>, FinancialInfoInDtoValidator>();
+// (Agrega aquí todos los demás validadores)
+
+
+// Redis
+builder.Services.AddSingleton<IRedisService, RedisService>();
+
+// Kafka Producer config
+builder.Services.Configure<KafkaCreateCdtCustomerJson>(
+    builder.Configuration.GetSection("KafkaCreateCdtCustomerJson"));
+
+builder.Services.AddSingleton<IKafkaProducerCustomerCmdConfig, KafkaProducerCreateCustomerCmdConfig>();
+builder.Services.AddSingleton<IKafkaProducerCreateCustomer, KafkaProducerCreateCustomer>();
+
+// Kafka Consumer
+builder.Services.AddHostedService<KafkaCreateCustomerConsumer>();
+
+// AS400 MQ Agent
+builder.Services.AddSingleton<AS400MqAgent>();
+
+// Customer Services
+builder.Services.AddScoped<ICreateCustomerService, CreateCustomerService>();
+
+// DynamoDB
+builder.Services.Configure<DynamoConnectionSettings>(
+    builder.Configuration.GetSection("DynamoConnectionSettings"));
+
+builder.Services.AddSingleton<DynamoConnectionConfig>();
+builder.Services.AddSingleton(provider =>
+{
+    var config = provider.GetRequiredService<DynamoConnectionConfig>();
+    return config.CreateClient();
+});
+
+builder.Services.AddScoped(typeof(IAwsDynamoRepository<>), typeof(AwsDynamoRepository<>));
+
+// App
+var app = builder.Build();
+
+// Swagger UI
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+
+app.UseRouting();
+app.UseAuthorization();
+app.MapControllers();
+app.MapHub<CustomerHub>("/customerHub");
+
+app.Run();
