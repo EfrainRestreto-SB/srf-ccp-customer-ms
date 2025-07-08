@@ -7,6 +7,7 @@ namespace Domain.Dto.In
     {
         public required object Addresses;
         public required object ContactInformation;
+        public object Id;
 
         [JsonPropertyName("basicInformation")]
         public required BasicInformationInDto BasicInformation { get; set; }

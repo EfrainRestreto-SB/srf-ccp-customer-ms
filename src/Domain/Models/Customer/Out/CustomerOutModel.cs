@@ -17,5 +17,10 @@ namespace Domain.Models.Customer
         public required List<ReferenceOutModel> References { get; set; }
         public required DescriptionInfoOutModel DescriptionInfo { get; set; }
         public required string FirstName { get; set; }
+
+        public static implicit operator CustomerModel(void v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

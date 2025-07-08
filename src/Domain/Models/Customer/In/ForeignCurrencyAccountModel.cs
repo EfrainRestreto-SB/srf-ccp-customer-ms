@@ -1,6 +1,6 @@
 ﻿namespace Domain.Models.Customer
 {
-    public class ForeignCurrencyAccountOutModel
+    public class ForeignCurrencyAccountInModel
     {
         public string AccountType { get; set; }
         public string AccountCountry { get; set; }

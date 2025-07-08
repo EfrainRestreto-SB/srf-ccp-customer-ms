@@ -1,33 +1,68 @@
+using Application.Interfaces;
+using AutoMapper;
 using Domain.Dto.In;
+using Domain.Models.CreateCustomer.In;
+using Domain.Models.Customer;
 using Microsoft.AspNetCore.Mvc;
-using SrfCcpCustomerMs.Application.Services;
-using SrfCcpCustomerMs.Domain.Dtos.In;
-using System.Threading.Tasks;
 
-namespace SrfCcpCustomerMs.Presentation.Controllers
+namespace Core.Controllers
 {
+    [Route("api/v1/ms/[controller]")]
     [ApiController]
-    [Route("v1/ms/customer")]
     public class CustomerController : ControllerBase
     {
-        private readonly CustomerService _service;
+        private readonly ICustomerService _customerService;
+        private readonly IMapper _mapper;
 
-        public CustomerController(CustomerService service)
+        public CustomerController(ICustomerService customerService, IMapper mapper)
         {
-            _service = service;
+            _customerService = customerService;
+            _mapper = mapper;
         }
 
-        [HttpPost("natura")]
-        public async Task<IActionResult> CreateCustomer([FromBody] Domain.Dtos.In.CustomerCreateOutDto dto)
+        [HttpPost]
+        [Route("natura")]
+        public async Task<ActionResult> CreateCustomer([FromBody] CustomerCreateInModel customerIn)
         {
-            var result = await _service.CreateCustomerAsync(dto);
-            return Ok(result);
+            CustomerCreateInDto customerDto = _mapper.Map<CustomerCreateInDto>(customerIn);
+
+            await _customerService.CreateCustomerAsync(customerDto);
+
+            return StatusCode(StatusCodes.Status202Accepted, new
+            {
+                mensaje = "Creación de cliente en proceso",
+                estado = "Pendiente"
+            });
         }
 
-        [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        [HttpGet]
+        [Route("customerList")]
+        public async Task<ActionResult> GetCustomerList()
         {
-            return Ok(new { Id = id });
+            List<CustomerModel> customers = await _customerService.GetAllCustomers();
+            List<CustomerOutModel> response = _mapper.Map<List<CustomerOutModel>>(customers);
+
+            return Ok(response);
+        }
+
+        [HttpGet]
+        [Route("customerById/{id}")]
+        public async Task<ActionResult> GetCustomerById(string id)
+        {
+            CustomerModel? customer = await _customerService.GetCustomerById(id);
+
+            if (customer == null)
+            {
+                return NotFound(new
+                {
+                    id,
+                    mensaje = "Cliente no encontrado",
+                    estado = "No existe"
+                });
+            }
+
+            CustomerOutModel response = _mapper.Map<CustomerOutModel>(customer);
+            return Ok(response);
         }
     }
 }

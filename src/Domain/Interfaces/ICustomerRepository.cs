@@ -1,3 +1,5 @@
+using static SrfCcpCustomerMs.Domain.Models;
+
 namespace SrfCcpCustomerMs.Domain.Interfaces
 {
     public interface ICustomerRepository
@@ -6,4 +8,9 @@ namespace SrfCcpCustomerMs.Domain.Interfaces
         Task GetByDocumentNumberAsync(string documentNumber);
         Domain.Models.Customer? GetById(int id);
     }
+}
+
+public interface ICustomerRepository
+{
+    Task SaveCustomerAsync(Customer customer);
 }
