@@ -1,20 +1,24 @@
-using SrfCcpCustomerMs.Domain.Entities;
-using SrfCcpCustomerMs.Domain.Interfaces;
+﻿using AutoMapper;
+using Domain.Models.Customer;
 
 namespace SrfCcpCustomerMs.Application.Services
 {
     public class CustomerService
     {
-        private readonly ICustomerRepository _repository;
+        private readonly IMapper _mapper;
 
-        public CustomerService(ICustomerRepository repository)
+        public CustomerService(IMapper mapper)
         {
-            _repository = repository;
+            _mapper = mapper;
         }
 
-        public Customer? GetCustomerById(int id)
+        public async Task<CustomerModel> CreateCustomerAsync(Domain.Dtos.In.CustomerCreateOutDto dto)
         {
-            return _repository.GetById(id);
+            var customer = _mapper.Map<CustomerModel>(dto);
+            // Simulación de persistencia (puedes enviar a Dynamo, Kafka, etc.)
+            await Task.Delay(10);
+            return customer;
         }
+
     }
 }

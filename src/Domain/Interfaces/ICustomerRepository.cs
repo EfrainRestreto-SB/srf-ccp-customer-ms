@@ -1,9 +1,9 @@
-using SrfCcpCustomerMs.Domain.Entities;
-
 namespace SrfCcpCustomerMs.Domain.Interfaces
 {
     public interface ICustomerRepository
     {
-        Customer? GetById(int id);
+        Task CreateAsync(object customerEntity);
+        Task GetByDocumentNumberAsync(string documentNumber);
+        Domain.Models.Customer? GetById(int id);
     }
 }

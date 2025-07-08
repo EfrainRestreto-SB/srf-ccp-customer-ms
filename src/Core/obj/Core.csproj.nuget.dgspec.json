@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Core\\Core.csproj": {}
+    "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Application\\Application.csproj": {
+    "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Application\\obj\\",
+        "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\Admininfra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admininfra\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,80 +32,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Domain\\Domain.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
-      },
-      "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Core\\Core.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Core\\Core.csproj",
-        "projectName": "Core",
-        "projectPath": "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Core\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net9.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
-            "projectReferences": {
-              "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Application\\Application.csproj"
-              },
-              "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Persistence\\Persistence.csproj": {
-                "projectPath": "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Persistence\\Persistence.csproj"
+              "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Domain\\Domain.csproj"
               }
             }
           }
@@ -126,13 +54,175 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[15.0.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "MSBuild.SonarQube.Runner.Tool": {
+              "target": "Package",
+              "version": "[4.8.0, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Common": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Core": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "Sonar.Lib.FileManagement": {
+              "target": "Package",
+              "version": "[1.0.0.19, )"
+            },
+            "SonarAnalyzer": {
+              "target": "Package",
+              "version": "[6.6.0.3969, )"
+            },
+            "SonarAnalyzer.CSharp": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.12.0.118525, )"
+            },
+            "SonarAnalyzer.CSharpX": {
+              "target": "Package",
+              "version": "[6.6.0.3969, )"
+            },
+            "SonarAnalyzer.VisualBasic": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.12.0.118525, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[48.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Core\\Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
+        "projectName": "Core",
+        "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\Admininfra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Admininfra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Application\\Application.csproj"
+              },
+              "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj": {
+                "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[15.0.0, )"
+            },
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "MSBuild.SonarQube.Runner.Tool": {
+              "target": "Package",
+              "version": "[4.8.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.5, )"
             },
+            "Sonar.Lib.FileManagement": {
+              "target": "Package",
+              "version": "[1.0.0.19, )"
+            },
+            "SonarAnalyzer": {
+              "target": "Package",
+              "version": "[6.6.0.3969, )"
+            },
+            "SonarAnalyzer.CSharp": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.12.0.118525, )"
+            },
+            "SonarAnalyzer.CSharpX": {
+              "target": "Package",
+              "version": "[6.6.0.3969, )"
+            },
+            "SonarAnalyzer.VisualBasic": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.12.0.118525, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[9.0.1, )"
+            },
+            "Uno.UI": {
+              "target": "Package",
+              "version": "[5.6.99, )"
             }
           },
           "imports": [
@@ -154,24 +244,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Domain\\Domain.csproj": {
+    "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Admininfra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admininfra\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -203,6 +293,36 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "MSBuild.SonarQube.Runner.Tool": {
+              "target": "Package",
+              "version": "[4.8.0, )"
+            },
+            "Sonar.Lib.FileManagement": {
+              "target": "Package",
+              "version": "[1.0.0.19, )"
+            },
+            "SonarAnalyzer": {
+              "target": "Package",
+              "version": "[6.6.0.3969, )"
+            },
+            "SonarAnalyzer.CSharp": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.12.0.118525, )"
+            },
+            "SonarAnalyzer.CSharpX": {
+              "target": "Package",
+              "version": "[6.6.0.3969, )"
+            },
+            "SonarAnalyzer.VisualBasic": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.12.0.118525, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -219,24 +339,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Persistence\\Persistence.csproj": {
+    "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Persistence\\Persistence.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Persistence\\obj\\",
+        "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj",
+        "packagesPath": "C:\\Users\\Admininfra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admininfra\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -251,11 +371,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Application\\Application.csproj"
+              "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Application\\Application.csproj"
               },
-              "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\user\\Documents\\Proyectos\\Serfinanza\\tools\\creacion de proyecto\\src\\Domain\\Domain.csproj"
+              "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Domain\\Domain.csproj"
               }
             }
           }
@@ -275,6 +395,56 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "AWSSDK.DynamoDBv2": {
+              "target": "Package",
+              "version": "[4.0.2.1, )"
+            },
+            "AWSSDK.Extensions.NETCore.Setup": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
+            "Confluent.Kafka": {
+              "target": "Package",
+              "version": "[2.11.0, )"
+            },
+            "MSBuild.SonarQube.Runner.Tool": {
+              "target": "Package",
+              "version": "[4.8.0, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Sonar.Lib.FileManagement": {
+              "target": "Package",
+              "version": "[1.0.0.19, )"
+            },
+            "SonarAnalyzer": {
+              "target": "Package",
+              "version": "[6.6.0.3969, )"
+            },
+            "SonarAnalyzer.CSharp": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.12.0.118525, )"
+            },
+            "SonarAnalyzer.CSharpX": {
+              "target": "Package",
+              "version": "[6.6.0.3969, )"
+            },
+            "SonarAnalyzer.VisualBasic": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.12.0.118525, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.8.41, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -291,7 +461,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

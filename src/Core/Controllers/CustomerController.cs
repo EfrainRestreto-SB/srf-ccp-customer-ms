@@ -1,11 +1,13 @@
+using Domain.Dto.In;
 using Microsoft.AspNetCore.Mvc;
 using SrfCcpCustomerMs.Application.Services;
-using SrfCcpCustomerMs.Domain.Entities;
+using SrfCcpCustomerMs.Domain.Dtos.In;
+using System.Threading.Tasks;
 
-namespace SrfCcpCustomerMs.Core.Controllers
+namespace SrfCcpCustomerMs.Presentation.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("v1/ms/customer")]
     public class CustomerController : ControllerBase
     {
         private readonly CustomerService _service;
@@ -15,14 +17,17 @@ namespace SrfCcpCustomerMs.Core.Controllers
             _service = service;
         }
 
-        [HttpGet("{id}")]
-        public ActionResult<Customer> GetCustomerById(int id)
+        [HttpPost("natura")]
+        public async Task<IActionResult> CreateCustomer([FromBody] Domain.Dtos.In.CustomerCreateOutDto dto)
         {
-            var customer = _service.GetCustomerById(id);
-            if (customer == null)
-                return NotFound();
+            var result = await _service.CreateCustomerAsync(dto);
+            return Ok(result);
+        }
 
-            return Ok(customer);
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            return Ok(new { Id = id });
         }
     }
 }

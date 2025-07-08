@@ -15,3 +15,30 @@ C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Pers
 C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\obj\Debug\net9.0\refint\Persistence.dll
 C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\obj\Debug\net9.0\Persistence.pdb
 C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\obj\Debug\net9.0\ref\Persistence.dll
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\src\Persistence\bin\Debug\net9.0\Persistence.deps.json
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\src\Persistence\bin\Debug\net9.0\Persistence.dll
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\src\Persistence\bin\Debug\net9.0\Persistence.pdb
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\src\Persistence\bin\Debug\net9.0\Application.dll
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\src\Persistence\bin\Debug\net9.0\Domain.dll
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\src\Persistence\bin\Debug\net9.0\Application.pdb
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\src\Persistence\bin\Debug\net9.0\Domain.pdb
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.csproj.AssemblyReference.cache
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.AssemblyInfoInputs.cache
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.AssemblyInfo.cs
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.csproj.CoreCompileInputs.cache
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.sourcelink.json
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persiste.61C28332.Up2Date
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.dll
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\refint\Persistence.dll
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.pdb
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\ref\Persistence.dll
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.csproj.AssemblyReference.cache
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.AssemblyInfoInputs.cache
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.AssemblyInfo.cs
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.csproj.CoreCompileInputs.cache
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.sourcelink.json
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.dll
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\refint\Persistence.dll
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.pdb
