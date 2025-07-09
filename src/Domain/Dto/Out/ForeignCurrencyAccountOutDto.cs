@@ -1,34 +1,16 @@
-﻿using System.Text.Json.Serialization;
-
-namespace Domain.Dto.In
+﻿namespace Domain.Dto.Out
 {
     public class ForeignCurrencyAccountOutDto
     {
-        public object AccountInstitution;
-        public object AccountCurrency;
-        public object AccountState;
-        public object AccountCity;
-        public object AccountDepartment;
-        public object AccountAddress;
-        public object AccountPhone;
-        public object FirstAccountHolderName;
-
-        [JsonPropertyName("accountType")]
         public string AccountType { get; set; }
-
-        [JsonPropertyName("accountCountry")]
-        public string AccountCountry { get; set; }
-
-        [JsonPropertyName("accountBank")]
-        public string AccountBank { get; set; }
-
-        [JsonPropertyName("accountNumber")]
         public string AccountNumber { get; set; }
-
-        [JsonPropertyName("currency")]
-        public string Currency { get; set; }
-
-        [JsonPropertyName("accountPurpose")]
-        public string AccountPurpose { get; set; }
+        public string InstitutionName { get; set; }
+        public string InstitutionCountry { get; set; }
+        public string ForeignCurrencyCode { get; set; }
+        public string CurrencyValue { get; set; }
+        public string FormOfPayment { get; set; }
+        public string FormOfReceipt { get; set; }
+        public string FormPaymentCountry { get; set; }
+        public string FormReceiptCountry { get; set; }
     }
 }

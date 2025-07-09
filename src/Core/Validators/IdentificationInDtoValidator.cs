@@ -1,24 +1,15 @@
-﻿using Domain.Dto.In;
 using FluentValidation;
+using Domain.Dto.In;
 
-namespace Core.Validators
+namespace Validators.Customer
 {
-    public class IdentificationOutDtoValidator : AbstractValidator<IdentificationInDto>
+    public class IdentificationInDtoValidator : AbstractValidator<IdentificationInDto>
     {
-        public IdentificationOutDtoValidator()
+        public IdentificationInDtoValidator()
         {
-            RuleFor(x => x.IdType).NotEmpty().WithMessage("IdType is required.");
-            RuleFor(x => x.IdNumber).NotEmpty().WithMessage("IdNumber is required.");
-            RuleFor(x => x.IssueDate).NotEmpty().WithMessage("IssueDate is required.");
-            RuleFor(x => x.IssueCountry).NotEmpty().WithMessage("IssueCountry is required.");
-            RuleFor(x => x.IssueDepartment).NotEmpty().WithMessage("IssueDepartment is required.");
-            RuleFor(x => x.IssueCity).NotEmpty().WithMessage("IssueCity is required.");
-        }
-
-        private object RuleFor(Func<object, object> value)
-        {
-            throw new NotImplementedException();
+            RuleFor(x => x.DocumentType).NotEmpty();
+            RuleFor(x => x.ExpeditionDate).NotEmpty();
+            RuleFor(x => x.IdentificationCountry).NotEmpty();
         }
     }
 }
-

@@ -69,7 +69,9 @@ public static class ConfigureServices
         else
         {
             // Fallback to the default credential chain (environment variables, EC2 instance profile, etc.)
+#pragma warning disable CS0618 // El tipo o el miembro están obsoletos
             credentials = FallbackCredentialsFactory.GetCredentials();
+#pragma warning restore CS0618 // El tipo o el miembro están obsoletos
         }
 
         if (credentials is null)

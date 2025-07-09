@@ -1,17 +1,17 @@
-﻿using FluentValidation;
-using Utils.Validators;
+using FluentValidation;
+using Domain.Dto.In;
 
-namespace Core.Validators
+namespace Validators.Customer
 {
-    public class ContactInfoInDtoValidator : AbstractValidator<ContactInformationInDto>
+    public class ContactInfoInDtoValidator : AbstractValidator<ContactInfoInDto>
     {
-        public ContactInfoInDtoValidator(ContactInformationInDto x)
+        public ContactInfoInDtoValidator()
         {
-            RuleFor(x => x.Email)
-                .Required("Email")
-                .ValidEmail("Email");
-
-           
+            RuleFor(x => x.EmailType).NotEmpty();
+            RuleFor(x => x.Email).NotEmpty().EmailAddress();
+            RuleFor(x => x.PhoneType).NotEmpty();
+            RuleFor(x => x.PhoneNumber).NotEmpty();
+            RuleFor(x => x.PhoneDescription).NotEmpty();
         }
     }
 }

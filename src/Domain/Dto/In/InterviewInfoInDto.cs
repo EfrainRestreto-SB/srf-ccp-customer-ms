@@ -9,6 +9,8 @@ namespace Domain.Dto.In
         public object InterviewType;
         public object InterviewCity;
         public object InterviewResultCode;
+        public object FullNameInterviewer;
+        public object FullIdInterviewer;
 
         [JsonPropertyName("interviewCountry")]
         public string InterviewCountry { get; set; }

@@ -10,6 +10,8 @@ namespace Domain.Dto.In
         public object IssueCountry;
         public object IssueDepartment;
         public object IssueCity;
+        public object Identity;
+        public object IdentificationCountry;
 
         [JsonPropertyName("country")]
         public string Country { get; set; }

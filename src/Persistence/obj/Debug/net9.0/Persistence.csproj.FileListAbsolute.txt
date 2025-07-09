@@ -42,3 +42,10 @@ C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\
 C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.dll
 C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\refint\Persistence.dll
 C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.pdb
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\bin\Debug\net9.0\Persistence.deps.json
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\bin\Debug\net9.0\Persistence.dll
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\bin\Debug\net9.0\Persistence.pdb
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\bin\Debug\net9.0\Domain.dll
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\bin\Debug\net9.0\Domain.pdb
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persiste.61C28332.Up2Date
+C:\Users\llianis.duran\Documents\serfinansa\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\ref\Persistence.dll

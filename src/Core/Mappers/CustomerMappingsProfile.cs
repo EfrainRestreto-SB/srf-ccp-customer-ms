@@ -1,5 +1,7 @@
 ﻿using FluentValidation;
 using Domain.Dto.In;
+using Domain.Dtos.Customer.In;
+using CustomerCreateInDto = Domain.Dto.In.CustomerCreateInDto;
 
 namespace Application.Validators
 {

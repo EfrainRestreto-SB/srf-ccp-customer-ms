@@ -4,6 +4,10 @@ namespace Domain.Dto.In
 {
     public class BirthInfoInDto
     {
+        public object BirthCountry;
+        public object BirthDepartment;
+        public object BirthCity;
+
         [JsonPropertyName("country")]
         public string Country { get; set; }
 

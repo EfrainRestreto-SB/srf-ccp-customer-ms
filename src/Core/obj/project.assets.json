@@ -2991,6 +2991,7 @@
           "MSBuild.SonarQube.Runner.Tool": "4.8.0",
           "Microsoft.AspNetCore.SignalR.Common": "9.0.6",
           "Microsoft.AspNetCore.SignalR.Core": "1.2.0",
+          "Persistence": "1.0.0",
           "Sonar.Lib.FileManagement": "1.0.0.19",
           "SonarAnalyzer": "6.6.0.3969",
           "SonarAnalyzer.CSharpX": "6.6.0.3969",
@@ -3025,7 +3026,6 @@
         "dependencies": {
           "AWSSDK.DynamoDBv2": "4.0.2.1",
           "AWSSDK.Extensions.NETCore.Setup": "4.0.2",
-          "Application": "1.0.0",
           "Confluent.Kafka": "2.11.0",
           "Domain": "1.0.0",
           "MSBuild.SonarQube.Runner.Tool": "4.8.0",
@@ -9193,6 +9193,7 @@
       "Application >= 1.0.0",
       "AutoMapper >= 15.0.0",
       "DocumentFormat.OpenXml >= 3.3.0",
+      "Domain >= 1.0.0",
       "MSBuild.SonarQube.Runner.Tool >= 4.8.0",
       "Microsoft.AspNetCore.OpenApi >= 9.0.5",
       "Persistence >= 1.0.0",
@@ -9239,6 +9240,9 @@
           "projectReferences": {
             "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Application\\Application.csproj": {
               "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Application\\Application.csproj"
+            },
+            "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Domain\\Domain.csproj"
             },
             "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj": {
               "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj"

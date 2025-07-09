@@ -1,30 +1,31 @@
 ﻿using AutoMapper;
 using Core.Interfaces.Repositories;
 using Domain.Dto.In;
+using Domain.Dtos.Customer.In;
 using Domain.Models.Customer;
 
+public class CustomerService
+{
+    private readonly IMapper? _mapper; }
 namespace SrfCcpCustomerMs.Application.Services
 {
-    public class CustomerService
+    public class CustomerService : CustomerServiceBase
     {
-        private readonly IMapper _mapper;
-        private readonly IAwsDynamoRepository<CustomerModel> _repository;
 
+#pragma warning disable CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de agregar el modificador "required" o declararlo como un valor que acepta valores NULL.
+        public CustomerService(IMapper mapper)
+#pragma warning restore CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de agregar el modificador "required" o declararlo como un valor que acepta valores NULL.
+        {
+        mapper = mapper;
+    }
         public CustomerService(IMapper mapper, IAwsDynamoRepository<CustomerModel> repository)
         {
-            _mapper = mapper;
-            _repository = repository;
+            mapper = mapper;
+            repository = repository;
         }
+    }
 
-        public async Task<CustomerModel> CreateCustomerAsync(CustomerCreateInDto customerDto)
-        {
-            // Map DTO to domain model
-            var customerModel = _mapper.Map<CustomerModel>(customerDto);
-
-            // Save to DynamoDB
-            await _repository.SaveAsync(customerModel);
-
-            return customerModel;
-        }
+    public class CustomerServiceBase
+    {
     }
 }

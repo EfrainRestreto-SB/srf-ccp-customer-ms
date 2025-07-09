@@ -1,64 +1,28 @@
-﻿using System.Text.Json.Serialization;
-
-namespace Domain.Dto.In
+﻿namespace Domain.Dto.Out
 {
     public class BasicInformationOutDto
     {
-        [JsonPropertyName("firstName")]
         public string FirstName { get; set; }
-
-        [JsonPropertyName("secondName")]
         public string SecondName { get; set; }
-
-        [JsonPropertyName("firstLastName")]
-        public string FirstLastName { get; set; }
-
-        [JsonPropertyName("secondLastName")]
-        public string SecondLastName { get; set; }
-
-        [JsonPropertyName("gender")]
-        public string Gender { get; set; }
-
-        [JsonPropertyName("civilStatus")]
-        public string CivilStatus { get; set; }
-
-        [JsonPropertyName("language")]
+        public string FirstSurname { get; set; }
+        public string SecondSurname { get; set; }
+        public string Genders { get; set; }
+        public string IdentityStatus { get; set; }
+        public string InternalStatus { get; set; }
         public string Language { get; set; }
-
-        [JsonPropertyName("email")]
-        public string Email { get; set; }
-
-        [JsonPropertyName("educationLevel")]
-        public string EducationLevel { get; set; }
-
-        [JsonPropertyName("economicActivity")]
+        public string FamilyCivilStatus { get; set; }
+        public string EducationLevelCode { get; set; }
         public string EconomicActivity { get; set; }
-
-        [JsonPropertyName("economicActivityCode")]
-        public string EconomicActivityCode { get; set; }
-
-        [JsonPropertyName("riskCode")]
-        public string RiskCode { get; set; }
-
-        [JsonPropertyName("pepStatus")]
-        public string PEPStatus { get; set; }
-
-        [JsonPropertyName("unhcr")]
-        public string UNHCR { get; set; }
-
-        [JsonPropertyName("disability")]
-        public string Disability { get; set; }
-
-        [JsonPropertyName("ethnicGroup")]
-        public string EthnicGroup { get; set; }
-
-        [JsonPropertyName("channelCode")]
-        public string ChannelCode { get; set; }
-
-        [JsonPropertyName("residencyCondition")]
-        public string ResidencyCondition { get; set; }
-
-        [JsonPropertyName("geographicLocation")]
-        public string GeographicLocation { get; set; }
+        public string EducationLevel { get; set; }
+        public string EthnicCode { get; set; }
+        public string Ethnic { get; set; }
+        public string StatusPeps { get; set; }
+        public string HasPublicCharge { get; set; }
+        public string HasUNRecognition { get; set; }
+        public string HasFATFReport { get; set; }
+        public string HasLocalExposure { get; set; }
+        public string HasInternationalExposure { get; set; }
+        public string AgencyType { get; set; }
+        public string SpecialConditions { get; set; }
     }
 }

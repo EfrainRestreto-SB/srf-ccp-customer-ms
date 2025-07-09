@@ -11,7 +11,8 @@
 // Example fix: Correct the namespace or add the missing reference.  
 using AutoMapper;
 using Domain.Dto.In;
-using Domain.Models.Customer;
+using Domain.Models.CreateCustomer;
+using static Domain.Models.Customer.CustomerModel;
 using CustomerCreateInModel = Domain.Models.CreateCustomer.In.CustomerCreateInModel;
 
 // If the namespace 'Domain.Models.CreateCustomer.In' is incorrect, update it to the correct namespace.  
@@ -81,6 +82,14 @@ namespace Application.Mappers
         }
 
         private class CustomerCreateOutDto
+        {
+        }
+
+        private class BasicInformationOutModel
+        {
+        }
+
+        private class IdentificationOutModel
         {
         }
     }

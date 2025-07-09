@@ -10,6 +10,9 @@ namespace Domain.Dto.In
         public object SecondLastName;
         public object EmailPhoneNumber;
         public object Address;
+        public object PersonType;
+        public object CompanyName;
+        public object MobilePhone;
 
         [JsonPropertyName("referenceType")]
         public string ReferenceType { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace Domain.Dto.In
+﻿namespace Domain.Dto.Out
 {
     public class AddressInfoOutDto
     {
@@ -8,9 +8,8 @@
         public string Department { get; set; }
         public string Country { get; set; }
         public string PostalCode { get; set; }
-        public string AddressType { get; set; }
-        public string ResidenceMunicipality { get; set; }
-        public string ResidenceDepartment { get; set; }
         public string ResidenceCountry { get; set; }
+        public string CurrentResidenceMunicipality { get; set; }
+        public string PostalType { get; set; }
     }
 }

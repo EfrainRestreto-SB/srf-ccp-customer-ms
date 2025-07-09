@@ -4,6 +4,15 @@ namespace Domain.Dto.In
 {
     public class BasicInformationInDto
     {
+        public object FirstSurname;
+        public object Genders;
+        public object IdentityStatus;
+        public object InternalStatus;
+        public object EducationLevelCode;
+        public object EthnicCode;
+        public object Ethnic;
+        public object StatusPeps;
+
         [JsonPropertyName("firstName")]
         public string FirstName { get; set; }
 

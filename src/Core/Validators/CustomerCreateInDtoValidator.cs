@@ -1,70 +1,58 @@
-﻿using Domain.Dto.In;
 using FluentValidation;
+using Domain.Dtos.Customer.In;
+using Validators.Customer;
 
-namespace Core.Validators.In
+namespace Validators.Customer
 {
-    public class CustomerCreateOutDtoValidator : AbstractValidator<CustomerCreateOutDto>
+    public class CustomerCreateInDtoValidator : AbstractValidator<CustomerCreateInDto>
     {
-        public CustomerCreateOutDtoValidator()
+        public CustomerCreateInDtoValidator()
         {
             RuleFor(x => x.BasicInformation)
-                .NotNull()
-                .SetValidator(new BasicInformationOutDtoValidator());
+                .NotNull().WithMessage("BasicInformation es obligatorio.")
+                .SetValidator(new BasicInformationInDtoValidator());
+
+            RuleFor(x => x.Identification)
+                .NotNull().WithMessage("Identification es obligatorio.")
+                .SetValidator(new IdentificationInDtoValidator());
+
+            RuleFor(x => x.BirthInfo)
+                .NotNull().WithMessage("BirthInfo es obligatorio.")
+                .SetValidator(new BirthInfoInDtoValidator());
 
             RuleFor(x => x.ContactInfo)
-                .NotNull()
-                .SetValidator(new ContactInfoOutDtoValidator());
+                .NotNull().WithMessage("ContactInfo es obligatorio.")
+                .SetValidator(new ContactInfoInDtoValidator());
 
             RuleFor(x => x.AddressInfo)
-                .NotNull()
-                .SetValidator(new AddressInfoOutDtoValidator());
+                .NotNull().WithMessage("AddressInfo es obligatorio.")
+                .SetValidator(new AddressInfoInDtoValidator());
+
+           // RuleFor(x => x.FinancialInfo)
+              //  .NotNull().WithMessage("FinancialInfo es obligatorio.")
+              //  .SetValidator(new FinancialInfoInDtoValidator());
+
+            RuleFor(x => x.EmploymentInfo)
+                .NotNull().WithMessage("EmploymentInfo es obligatorio.")
+                .SetValidator(new EmploymentInfoInDtoValidator());
+
+            RuleFor(x => x.ForeignCurrencyAccounts)
+                .NotNull().WithMessage("ForeignCurrencyAccounts es obligatorio.")
+                .NotEmpty().WithMessage("Debe incluir al menos una cuenta en ForeignCurrencyAccounts.")
+                .ForEach(x => x.SetValidator(new ForeignCurrencyAccountInDtoValidator()));
+
+            RuleFor(x => x.InterviewInfo)
+                .NotNull().WithMessage("InterviewInfo es obligatorio.")
+                .SetValidator(new InterviewInfoInDtoValidator());
+
+            RuleFor(x => x.References)
+                .NotNull().WithMessage("References es obligatorio.")
+                .NotEmpty().WithMessage("Debe incluir al menos una referencia.")
+                .ForEach(x => x.SetValidator(new ReferenceInDtoValidator()));
 
             RuleFor(x => x.DescriptionInfo)
-                .NotNull()
-                .SetValidator(new DescriptionInfoOutDtoValidator());
-
-            RuleForEach(x => x.References)
-                .SetValidator(new ReferenceOutDtoValidator());
-        }
-    }
-
-    internal class ReferenceOutDtoValidator : AbstractValidator<ReferenceOutDto>
-    {
-        public ReferenceOutDtoValidator()
-        {
-            // Add validation rules here
-        }
-    }
-
-    internal class DescriptionInfoOutDtoValidator : AbstractValidator<DescriptionInfoOutDto>
-    {
-        public DescriptionInfoOutDtoValidator()
-        {
-            // Add validation rules here
-        }
-    }
-
-    internal class AddressInfoOutDtoValidator : AbstractValidator<AddressInfoOutDto>
-    {
-        public AddressInfoOutDtoValidator()
-        {
-            // Add validation rules here
-        }
-    }
-
-    internal class BasicInformationOutDtoValidator : AbstractValidator<BasicInformationOutDto>
-    {
-        public BasicInformationOutDtoValidator()
-        {
-            // Add validation rules here
-        }
-    }
-
-    internal class ContactInfoOutDtoValidator : AbstractValidator<ContactInfoOutDto>
-    {
-        public ContactInfoOutDtoValidator()
-        {
-            // Add validation rules here
+                .NotNull().WithMessage("DescriptionInfo es obligatorio.")
+                .SetValidator(new DescriptionInfoInDtoValidator());
         }
     }
 }

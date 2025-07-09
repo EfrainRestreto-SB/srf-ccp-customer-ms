@@ -1,28 +1,44 @@
 [
   {
-    "ContainingType": "SrfCcpCustomerMs.Core.Controllers.CustomerController",
+    "ContainingType": "SrfCcpCustomerMs.Presentation.Controllers.CustomerController",
     "Method": "GetCustomerById",
-    "RelativePath": "api/Customer/{id}",
+    "RelativePath": "v1/ms/customer/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.Int32",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SrfCcpCustomerMs.Presentation.Controllers.CustomerController",
+    "Method": "GetCustomerList",
+    "RelativePath": "v1/ms/customer/list",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SrfCcpCustomerMs.Presentation.Controllers.CustomerController",
+    "Method": "CreateCustomer",
+    "RelativePath": "v1/ms/customer/natura",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
       {
-        "Type": "SrfCcpCustomerMs.Domain.Entities.Customer",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
+        "Name": "createCustomerIn",
+        "Type": "Domain.Models.Customer.In.CreateCustomerInModel",
+        "IsRequired": true
       }
-    ]
+    ],
+    "ReturnTypes": []
   }
 ]

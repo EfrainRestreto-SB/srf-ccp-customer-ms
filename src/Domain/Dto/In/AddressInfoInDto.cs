@@ -4,11 +4,14 @@ namespace Domain.Dto.In
 {
     public class AddressInfoInDto
     {
-        public object CurrentResidenceYears;
-        public object PostalType;
+        [JsonPropertyName("currentResidenceYears")]
+        public string CurrentResidenceYears { get; set; } = default!;
+
+        [JsonPropertyName("postalType")]
+        public string PostalType { get; set; } = default!;
 
         [JsonPropertyName("addressLine1")]
-        public string AddressLine1 { get; set; }
+        public required string AddressLine1 { get; set; }
 
         [JsonPropertyName("addressLine2")]
         public string AddressLine2 { get; set; }

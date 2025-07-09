@@ -1,52 +1,22 @@
-﻿using Domain.Dto.In;
 using FluentValidation;
+using Domain.Dto.In;
 
-namespace Core.Validators
+namespace Validators.Customer
 {
-    public class ForeignCurrencyAccountOUtDtoValidator : AbstractValidator<ForeignCurrencyAccountOutDto>
+    public class ForeignCurrencyAccountInDtoValidator : AbstractValidator<ForeignCurrencyAccountInDto>
     {
-        public ForeignCurrencyAccountOUtDtoValidator()
+        public ForeignCurrencyAccountInDtoValidator()
         {
-            RuleFor(x => x.AccountType)
-                .NotEmpty().WithMessage("AccountType is required.");
-
-            RuleFor(x => x.AccountInstitution)
-                .NotEmpty().WithMessage("AccountInstitution is required.");
-
-            RuleFor(x => x.AccountNumber)
-                .NotEmpty().WithMessage("AccountNumber is required.");
-
-            RuleFor(x => x.AccountCurrency)
-                .NotEmpty().WithMessage("AccountCurrency is required.");
-
-            RuleFor(x => x.AccountPurpose)
-                .NotEmpty().WithMessage("AccountPurpose is required.");
-
-            RuleFor(x => x.AccountCountry)
-                .NotEmpty().WithMessage("AccountCountry is required.");
-
-            RuleFor(x => x.AccountState)
-                .NotEmpty().WithMessage("AccountState is required.");
-
-            RuleFor(x => x.AccountCity)
-                .NotEmpty().WithMessage("AccountCity is required.");
-
-            RuleFor(x => x.AccountDepartment)
-                .NotEmpty().WithMessage("AccountDepartment is required.");
-
-            RuleFor(x => x.AccountAddress)
-                .NotEmpty().WithMessage("AccountAddress is required.");
-
-            RuleFor(x => x.AccountPhone)
-                .NotEmpty().WithMessage("AccountPhone is required.");
-
-            RuleFor(x => x.FirstAccountHolderName)
-                .NotEmpty().WithMessage("FirstAccountHolderName is required.");
-        }
-
-        private object RuleFor(Func<object, object> value)
-        {
-            throw new NotImplementedException();
+            RuleFor(x => x.AccountType).NotEmpty();
+            RuleFor(x => x.AccountNumber).NotEmpty();
+            RuleFor(x => x.InstitutionName).NotEmpty();
+            RuleFor(static x => x.InstitutionCountry).NotEmpty();
+            RuleFor(x => x.ForeignCurrencyCode).NotEmpty();
+            RuleFor(x => x.CurrencyValue).NotEmpty();
+            RuleFor(x => x.FormOfPayment).NotEmpty();
+            RuleFor(x => x.FormOfReceipt).NotEmpty();
+            RuleFor(x => x.FormPaymentCountry).NotEmpty();
+            RuleFor(x => x.FormReceiptCountry).NotEmpty();
         }
     }
 }

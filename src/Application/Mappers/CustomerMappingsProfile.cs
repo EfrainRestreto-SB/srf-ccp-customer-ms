@@ -1,63 +1,74 @@
-﻿using Application.Interfaces;
-using AutoMapper;
-using Domain.Dto.In;
-using Domain.Entities.Customer;
-using Stripe;
+﻿using AutoMapper;
+using Domain.Dto.Out;
+using BasicInformationOutDto = Application.Mappers.BasicInformationOutDto;
+using IdentificationOutDto = Application.Mappers.IdentificationOutDto;
 
-namespace Application.Mappers
+namespace Application.Mappings
 {
     public class CustomerMappingsProfile : Profile
     {
         public CustomerMappingsProfile()
         {
-            // IN DTOs ➜ ENTITIES
-            CreateMap<Domain.Dto.In.CustomerCreateOutDto, Customer>();
-
-            CreateMap<Domain.Dto.In.BasicInformationOutDto, BasicInformation>();
-            CreateMap<ContactInformationInDto, ContactInformation>();
-            CreateMap<AddressInDto, Address>();
-            CreateMap<DescriptionInDto, Description>();
-            CreateMap<Domain.Dto.In.ReferenceOutDto, Reference>();
-
-            // ENTITIES ➜ OUT DTOs
-            CreateMap<Customer, Interfaces.CustomerCreateOutDto>();
-               
-
-            CreateMap<BasicInformation, BasicInformationOutDto>();
-            CreateMap<ContactInformation, ContactInformationOutDto>();
-            CreateMap<Address, AddressOutDto>();
-            CreateMap<Description, DescriptionOutDto>();
-            CreateMap<Reference, ReferenceOutDto>();
+            CreateMap<CustomerInModel, CustomerCreateOutDto>();
+            CreateMap<BasicInformationInModel, BasicInformationOutDto>();
+            CreateMap<IdentificationInModel, IdentificationOutDto>();
+        
+            CreateMap<ContactInfoInModel, ContactInfoOutDto>();
+            CreateMap<AddressInfoInModel, AddressInfoOutDto>();
+            CreateMap<FinancialInfoInModel, FinancialInfoOutDto>();
+            CreateMap<EmploymentInfoInModel, EmploymentInfoOutDto>();
+            CreateMap<ForeignCurrencyAccountInModel, ForeignCurrencyAccountOutDto>();
+            CreateMap<InterviewInfoInModel, InterviewInfoOutDto>();
+            CreateMap<ReferenceInModel, Domain.Dto.Out.ReferenceOutDto>();
+            CreateMap<DescriptionInfoInModel, DescriptionInfoOutDto>();
         }
 
-
-        private void CreateMap<T1, T2>()
-        {
-            throw new NotImplementedException();
-        }
-
-        private class ContactInformation
+        private class CustomerInModel
         {
         }
 
-        private class AddressInDto
+        private class BasicInformationInModel
         {
         }
 
-        private class DescriptionInDto
+        private class IdentificationInModel
         {
         }
 
-        private class Description
+        private class BirthInfoInModel
         {
         }
 
-        private class ContactInformationOutDto
+        private class FinancialInfoInModel
+        {
+        }
+
+        private class ContactInfoInModel
+        {
+        }
+
+        private class EmploymentInfoInModel
+        {
+        }
+
+        private class DescriptionInfoInModel
+        {
+        }
+
+        private class ReferenceInModel
+        {
+        }
+
+        private class InterviewInfoInModel
+        {
+        }
+
+        private class ForeignCurrencyAccountInModel
         {
         }
     }
 
-    internal class ContactInformationInDto
+    internal class AddressInfoInModel
     {
     }
 }

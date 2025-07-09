@@ -4,6 +4,13 @@ namespace Domain.Dto.In
 {
     public class DescriptionInfoInDto
     {
+        public readonly object EconomicActivityDescription;
+        public object GenderDescription;
+        public object CountryDescription;
+        public object DocumentTypeDescription;
+        public object BirthCityDescription;
+        public object InterviewResultDescription;
+
         [JsonPropertyName("officeDescription")]
         public string OfficeDescription { get; set; }
 
