@@ -3,8 +3,19 @@ using Domain.Dto.In;
 
 namespace Validators.Customer
 {
-    public class ForeignCurrencyAccountInDtoValidator : AbstractValidator<ForeignCurrencyAccountInDto>
+    public class ForeignCurrencyAccountInDtoValidator : AbstractValidator<ForeignCurrencyAccountInDtoValidator>
     {
+        private object AccountType;
+        private object AccountNumber;
+        private object InstitutionName;
+        private object InstitutionCountry;
+        private object ForeignCurrencyCode;
+        private object FormOfPayment;
+        private object CurrencyValue;
+        private object FormReceiptCountry;
+        private object FormPaymentCountry;
+        private object FormOfReceipt;
+
         public ForeignCurrencyAccountInDtoValidator()
         {
             RuleFor(x => x.AccountType).NotEmpty();

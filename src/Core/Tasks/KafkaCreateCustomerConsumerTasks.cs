@@ -1,11 +1,6 @@
 ﻿using Confluent.Kafka;
 using System.Text.Json;
-using System.Threading;
-using System.Threading.Tasks;
-using Application.Interfaces;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Domain.Dto.In;
+using Google.Api.Ads.AdWords.v201809;
 
 namespace Infrastructure.Kafka.Consumers
 {
@@ -47,10 +42,10 @@ namespace Infrastructure.Kafka.Consumers
                         _logger.LogInformation("Kafka message received: {Message}", messageValue);
 
                         // Deserialize the Kafka message  
-                        var customerDto = JsonSerializer.Deserialize<Domain.Dto.In.CustomerCreateOutDto>(messageValue);
+                        var customerDto = JsonSerializer.Deserialize<Domain.Dto.In.CustomerCreateInDto>(messageValue);
                         if (customerDto != null)
                         {
-                            await _customerService.CreateCustomerAsync(customerDto);
+                        //    object value = await _customerService.CreateCustomerAsync(customerDto);
                             _logger.LogInformation("Customer created successfully.");
                         }
                         else

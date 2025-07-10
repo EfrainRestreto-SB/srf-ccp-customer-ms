@@ -1,43 +1,34 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Domain.Dto.In
+namespace Domain.Dtos.Customer.In
 {
     public class IdentificationInDto
     {
-        public object IdType;
-        public object IdNumber;
-        public object IssueDate;
-        public object IssueCountry;
-        public object IssueDepartment;
-        public object IssueCity;
-        public object Identity;
-        public object IdentificationCountry;
+        [JsonPropertyName("idNumber")]
+        public string IdNumber { get; set; }           // E01IDN
 
-        [JsonPropertyName("country")]
-        public string Country { get; set; }
+        [JsonPropertyName("idType")]
+        public string IdType { get; set; }             // E01TID
 
-        [JsonPropertyName("department")]
-        public string Department { get; set; }
+        [JsonPropertyName("idCountry")]
+        public string IdCountry { get; set; }          // E01PID
 
-        [JsonPropertyName("municipality")]
-        public string Municipality { get; set; }
+        [JsonPropertyName("idIssuePlace")]
+        public string IdIssuePlace { get; set; }       // E01NM3
 
-        [JsonPropertyName("documentNumber")]
-        public string DocumentNumber { get; set; }
+        [JsonPropertyName("idIssueMonth")]
+        public string IdIssueMonth { get; set; }       // E01REM
 
-        [JsonPropertyName("documentType")]
-        public string DocumentType { get; set; }
+        [JsonPropertyName("idIssueDay")]
+        public string IdIssueDay { get; set; }         // E01RED
 
-        [JsonPropertyName("expeditionDate")]
-        public string ExpeditionDate { get; set; }
+        [JsonPropertyName("idIssueYear")]
+        public string IdIssueYear { get; set; }        // E01REY
 
-        [JsonPropertyName("expeditionCountry")]
-        public string ExpeditionCountry { get; set; }
+        [JsonPropertyName("nationalityCode")]
+        public string NationalityCode { get; set; }    // E01CCS
 
-        [JsonPropertyName("expeditionDepartment")]
-        public string ExpeditionDepartment { get; set; }
-
-        [JsonPropertyName("expeditionCity")]
-        public string ExpeditionCity { get; set; }
+        [JsonPropertyName("fiscalEmployeeId")]
+        public string FiscalEmployeeId { get; set; }   // E01RUC
     }
 }

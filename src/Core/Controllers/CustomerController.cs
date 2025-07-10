@@ -1,7 +1,10 @@
 using AutoMapper;
 using Core.Interfaces.Services;
 using Domain.Models.Customer.In;
+using Domain.Models.Customer;
 using Microsoft.AspNetCore.Mvc;
+using Domain.Models.Customer.Out;
+using Core;
 
 namespace SrfCcpCustomerMs.Presentation.Controllers
 {
@@ -19,25 +22,22 @@ namespace SrfCcpCustomerMs.Presentation.Controllers
             _mapper = mapper;
         }
 
-        /// <summary>
-        /// Crea un nuevo cliente y lo envía al flujo de procesamiento.
-        /// </summary>
-        [HttpPost("natural")]
-        public async Task<IActionResult> CreateCustomer([FromBody] CreateCustomerInModel createCustomerIn)
+
+        [HttpPost("Natural")]
+        public async Task<IActionResult> CreateCustomer([FromBody]CreateCustomerInModel createCustomerIn)
         {
-            var dto = _mapper.Map<global::Domain.Dto.In.CreateCustomerOutDto>(createCustomerIn);
+            var dto = _mapper.Map<CreateCustomerInDto>(createCustomerIn);
+            await _createCustomerService.CreateCustomer(dto); 
+
             return StatusCode(StatusCodes.Status202Accepted, new
             {
-                id,
+                id = Guid.NewGuid().ToString(),
                 mensaje = "Creación de la cuenta Customer está en proceso",
                 estado = "Pendiente"
             });
         }
 
-        /// <summary>
-        /// Obtiene la lista de clientes ya creados.
-        /// </summary>
-        [HttpGet("list")]
+        [HttpGet("lists")]
         public async Task<IActionResult> GetCustomerList()
         {
             var customers = await _createCustomerService.GetCustomerList();
@@ -46,9 +46,7 @@ namespace SrfCcpCustomerMs.Presentation.Controllers
             return Ok(response);
         }
 
-        /// <summary>
-        /// Consulta un cliente creado por ID.
-        /// </summary>
+        
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCustomerById(string id)
         {
@@ -68,8 +66,6 @@ namespace SrfCcpCustomerMs.Presentation.Controllers
             return Ok(response);
         }
 
-        private class CreateCustomerOutModel
-        {
-        }
+
     }
 }

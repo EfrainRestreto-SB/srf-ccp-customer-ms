@@ -1,34 +1,55 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Domain.Dto.In
+namespace Domain.Dtos.Customer.In
 {
-    public class ForeignCurrencyAccountInDto
+    public class ForeignCurrencyInfoInDto
     {
-        public readonly object FormReceiptCountry;
-        public object InstitutionName;
-        public object FormPaymentCountry;
-        public object FormOfReceipt;
-        public object FormOfPayment;
-        public object ForeignCurrencyCode;
-        public object CurrencyValue;
-        public object InstitutionCountry;
+        [JsonPropertyName("foreignTransactions")]
+        public string ForeignTransactions { get; set; }       // E01FX
 
-        [JsonPropertyName("accountType")]
-        public string AccountType { get; set; }
+        [JsonPropertyName("foreignProducts")]
+        public string ForeignProducts { get; set; }            // E01FXP
 
-        [JsonPropertyName("accountCountry")]
-        public string AccountCountry { get; set; }
+        [JsonPropertyName("transaction1Amount")]
+        public string Transaction1Amount { get; set; }         // E01FXA1
 
-        [JsonPropertyName("accountBank")]
-        public string AccountBank { get; set; }
+        [JsonPropertyName("transaction1Type")]
+        public string Transaction1Type { get; set; }           // E01FXT1
 
-        [JsonPropertyName("accountNumber")]
-        public string AccountNumber { get; set; }
+        [JsonPropertyName("transaction2Amount")]
+        public string Transaction2Amount { get; set; }         // E01FXA2
 
-        [JsonPropertyName("currency")]
-        public string Currency { get; set; }
+        [JsonPropertyName("transaction2Type")]
+        public string Transaction2Type { get; set; }           // E01FXT2
 
-        [JsonPropertyName("accountPurpose")]
-        public string AccountPurpose { get; set; }
+        [JsonPropertyName("transaction3Amount")]
+        public string Transaction3Amount { get; set; }         // E01FXA3
+
+        [JsonPropertyName("transaction3Type")]
+        public string Transaction3Type { get; set; }           // E01FXT3
+
+        [JsonPropertyName("foreignBank1Name")]
+        public string ForeignBank1Name { get; set; }           // E01FXE1
+
+        [JsonPropertyName("foreignBank1Product")]
+        public string ForeignBank1Product { get; set; }        // E01FXP1
+
+        [JsonPropertyName("foreignBank1Currency")]
+        public string ForeignBank1Currency { get; set; }       // E01FXC1
+
+        [JsonPropertyName("foreignBank1Account")]
+        public string ForeignBank1Account { get; set; }        // E01FXN1
+
+        [JsonPropertyName("foreignBank1Balance")]
+        public string ForeignBank1Balance { get; set; }        // E01FXPA1
+
+        [JsonPropertyName("foreignBank1Country")]
+        public string ForeignBank1Country { get; set; }        // E01FXO1
+
+        [JsonPropertyName("foreignBank1City")]
+        public string ForeignBank1City { get; set; }           // E01FXU1
+
+        [JsonPropertyName("isForexMarketIntermediary")]
+        public string IsForexMarketIntermediary { get; set; }  // E1FL06
     }
 }

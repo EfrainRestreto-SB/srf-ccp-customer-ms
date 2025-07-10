@@ -3,7 +3,7 @@ using Domain.Dto.In;
 
 namespace Validators.Customer
 {
-    public class IdentificationInDtoValidator : AbstractValidator<IdentificationInDto>
+    public class IdentificationInDtoValidator : AbstractValidator<IdentificationDto>
     {
         public IdentificationInDtoValidator()
         {

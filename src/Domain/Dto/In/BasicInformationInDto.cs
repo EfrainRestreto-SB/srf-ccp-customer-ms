@@ -1,73 +1,92 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Domain.Dto.In
+namespace Domain.Dtos.Customer.In
 {
     public class BasicInformationInDto
     {
-        public object FirstSurname;
-        public object Genders;
-        public object IdentityStatus;
-        public object InternalStatus;
-        public object EducationLevelCode;
-        public object EthnicCode;
-        public object Ethnic;
-        public object StatusPeps;
+        public required object FirstSurname { get; set; }   // E01LN1
+        public required object Genders { get; set; }        // E01SEX
+        public required object IdentityStatus { get; set; } // E01STS
+        public required object InternalStatus { get; set; } // E01INL
+        public required object EducationLevelCode { get; set; } // E01EDL
+        public required object EthnicCode { get; set; }     // E01ETH
+        public required object Ethnic { get; set; }         // E01ETH
+        public required object StatusPeps { get; set; }     // E01PEP
 
+        // Campos que se mapean directamente del JSON con JsonPropertyName
         [JsonPropertyName("firstName")]
-        public string FirstName { get; set; }
+        public string FirstName { get; set; }               // E01FNA
 
         [JsonPropertyName("secondName")]
-        public string SecondName { get; set; }
+        public string SecondName { get; set; }              // E01FN2
 
         [JsonPropertyName("firstLastName")]
-        public string FirstLastName { get; set; }
+        public string FirstLastName { get; set; }           // E01LN1
 
         [JsonPropertyName("secondLastName")]
-        public string SecondLastName { get; set; }
+        public string SecondLastName { get; set; }          // E01LN2
+
+        [JsonPropertyName("legalName")]
+        public string LegalName { get; set; }               // E01NM6
 
         [JsonPropertyName("gender")]
-        public string Gender { get; set; }
+        public string Gender { get; set; }                  // E01SEX
 
-        [JsonPropertyName("civilStatus")]
-        public string CivilStatus { get; set; }
+        [JsonPropertyName("clientType")]
+        public string ClientType { get; set; }              // E01TYP
+
+        [JsonPropertyName("maritalStatus")]
+        public string MaritalStatus { get; set; }           // E01MST
 
         [JsonPropertyName("language")]
-        public string Language { get; set; }
+        public string Language { get; set; }                // E01LIF
 
-        [JsonPropertyName("email")]
-        public string Email { get; set; }
+        [JsonPropertyName("consultationLevel")]
+        public string ConsultationLevel { get; set; }       // E01ILV
 
-        [JsonPropertyName("educationLevel")]
-        public string EducationLevel { get; set; }
+        [JsonPropertyName("riskLevelCode")]
+        public string RiskLevelCode { get; set; }           // E01RSL
+
+        [JsonPropertyName("economicSector")]
+        public string EconomicSector { get; set; }          // E01INC
 
         [JsonPropertyName("economicActivity")]
-        public string EconomicActivity { get; set; }
+        public string EconomicActivity { get; set; }        // E01BUC
 
-        [JsonPropertyName("economicActivityCode")]
-        public string EconomicActivityCode { get; set; }
+        [JsonPropertyName("stratum")]
+        public string Stratum { get; set; }                 // E01INL
 
-        [JsonPropertyName("riskCode")]
-        public string RiskCode { get; set; }
+        [JsonPropertyName("educationLevel")]
+        public string EducationLevel { get; set; }          // E01EDL
 
-        [JsonPropertyName("pepStatus")]
-        public string PEPStatus { get; set; }
+        [JsonPropertyName("nichoCode")]
+        public string NichoCode { get; set; }               // E01CCL
 
-        [JsonPropertyName("unhcr")]
-        public string UNHCR { get; set; }
+        [JsonPropertyName("isPEP")]
+        public string IsPEP { get; set; }                   // E01PEP
 
-        [JsonPropertyName("disability")]
-        public string Disability { get; set; }
+        [JsonPropertyName("managesPublicMoney")]
+        public string ManagesPublicMoney { get; set; }      // E01MRP
 
-        [JsonPropertyName("ethnicGroup")]
-        public string EthnicGroup { get; set; }
+        [JsonPropertyName("hasPublicRecognition")]
+        public string HasPublicRecognition { get; set; }    // E01RCP
 
-        [JsonPropertyName("channelCode")]
-        public string ChannelCode { get; set; }
+        [JsonPropertyName("status")]
+        public string Status { get; set; }                  // E01STS
 
-        [JsonPropertyName("residencyCondition")]
-        public string ResidencyCondition { get; set; }
+        [JsonPropertyName("hasTaxExemptions")]
+        public string HasTaxExemptions { get; set; }        // E01TAX
 
-        [JsonPropertyName("geographicLocation")]
-        public string GeographicLocation { get; set; }
+        [JsonPropertyName("isTaxWithHolder")]
+        public string IsTaxWithHolder { get; set; }         // E01TX1
+
+        [JsonPropertyName("isBigTaxpayer")]
+        public string IsBigTaxpayer { get; set; }           // E01TX2
+
+        [JsonPropertyName("taxpayerType")]
+        public string TaxpayerType { get; set; }            // E01TX3
+
+        [JsonPropertyName("specialTaxConditions")]
+        public string SpecialTaxConditions { get; set; }    // E01TX6
     }
 }

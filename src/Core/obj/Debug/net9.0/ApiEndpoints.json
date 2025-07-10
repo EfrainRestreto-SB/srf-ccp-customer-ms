@@ -18,7 +18,7 @@
   {
     "ContainingType": "SrfCcpCustomerMs.Presentation.Controllers.CustomerController",
     "Method": "GetCustomerList",
-    "RelativePath": "v1/ms/customer/list",
+    "RelativePath": "v1/ms/customer/lists",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -28,7 +28,7 @@
   {
     "ContainingType": "SrfCcpCustomerMs.Presentation.Controllers.CustomerController",
     "Method": "CreateCustomer",
-    "RelativePath": "v1/ms/customer/natura",
+    "RelativePath": "v1/ms/customer/Natural",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

@@ -1,5 +1,4 @@
 using FluentValidation;
-using Domain.Dto.In;
 
 namespace Validators.Customer
 {
@@ -43,5 +42,18 @@ namespace Validators.Customer
                 .NotNull().WithMessage("El campo FundDestinationDescription no debe ser nulo.")
                 .NotEmpty().WithMessage("El campo FundDestinationDescription es obligatorio.");
         }
+    }
+
+    public class FinancialInfoDto
+    {
+        internal object OtherIncome;
+        internal object FundDestinationDescription;
+        internal object FundOriginDescription;
+        internal object MonthlyExpenses;
+        internal object MonthlyIncome;
+        internal object LiabilitiesValue;
+        internal object AssetsValue;
+        internal object TotalIncome;
+        internal object FamilyIncome;
     }
 }

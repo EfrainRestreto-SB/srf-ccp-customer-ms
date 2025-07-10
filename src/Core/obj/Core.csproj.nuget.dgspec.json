@@ -190,6 +190,10 @@
               "target": "Package",
               "version": "[3.3.0, )"
             },
+            "Google.AdWords": {
+              "target": "Package",
+              "version": "[24.19.0, )"
+            },
             "MSBuild.SonarQube.Runner.Tool": {
               "target": "Package",
               "version": "[4.8.0, )"

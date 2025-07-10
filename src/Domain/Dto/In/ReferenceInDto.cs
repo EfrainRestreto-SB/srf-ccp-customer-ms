@@ -1,47 +1,47 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Domain.Dto.In
+namespace Domain.Dtos.Customer.In
 {
     public class ReferenceInDto
     {
-        public readonly object SecondName;
-        public readonly object FirstLastName;
-        public object FirstName;
-        public object SecondLastName;
-        public object EmailPhoneNumber;
-        public object Address;
         public object PersonType;
-        public object CompanyName;
-        public object MobilePhone;
+        public object FirstName;
+        public object PhoneDescription;
 
         [JsonPropertyName("referenceType")]
-        public string ReferenceType { get; set; }
+        public string ReferenceType { get; set; }              // E1RRTP
 
-        [JsonPropertyName("name")]
-        public string Name { get; set; }
+        [JsonPropertyName("companyName")]
+        public string CompanyName { get; set; }                 // E1RMA1
 
-        [JsonPropertyName("surname")]
-        public string Surname { get; set; }
+        [JsonPropertyName("contactName")]
+        public string ContactName { get; set; }                 // E1RNM3
 
-        [JsonPropertyName("secondSurname")]
-        public string SecondSurname { get; set; }
+        [JsonPropertyName("firstLastName")]
+        public string FirstLastName { get; set; }               // E1RNM4
+
+        [JsonPropertyName("secondLastName")]
+        public string SecondLastName { get; set; }              // E1RNM5
 
         [JsonPropertyName("countryCode")]
-        public string CountryCode { get; set; }
+        public string CountryCode { get; set; }                 // E1RCTR
 
-        [JsonPropertyName("department")]
-        public string Department { get; set; }
+        [JsonPropertyName("departmentCode")]
+        public string DepartmentCode { get; set; }              // E1RSTE
 
         [JsonPropertyName("cityCode")]
-        public string CityCode { get; set; }
+        public string CityCode { get; set; }                    // E1RMLC
 
-        [JsonPropertyName("email")]
-        public string Email { get; set; }
+        [JsonPropertyName("landlinePhone")]
+        public string LandlinePhone { get; set; }               // E1RHPN
 
-        [JsonPropertyName("phone")]
-        public string Phone { get; set; }
+        [JsonPropertyName("mobilePhone")]
+        public string MobilePhone { get; set; }                 // E1RPH2
 
-        [JsonPropertyName("phoneDescription")]
-        public string PhoneDescription { get; set; }
+        [JsonPropertyName("phoneExtension")]
+        public string PhoneExtension { get; set; }              // E1RPH3
+
+        [JsonPropertyName("relationship")]
+        public string Relationship { get; set; }                // E1RRTL
     }
 }

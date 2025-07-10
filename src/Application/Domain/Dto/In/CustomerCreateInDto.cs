@@ -2,10 +2,10 @@
 {
     public class CustomerCreateInDto
     {
-        public object BasicInformation;
-        public object ContactInformation;
-        public object Addresses;
-        public object Descriptions;
-        public object References;
+        public required object BasicInformation;
+        public required object ContactInformation;
+        public required object Addresses;
+        public required object Descriptions;
+        public required object References;
     }
 }

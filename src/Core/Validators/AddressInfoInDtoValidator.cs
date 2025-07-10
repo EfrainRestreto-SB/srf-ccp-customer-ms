@@ -1,5 +1,6 @@
 using FluentValidation;
 using Domain.Dto.In;
+using Domain.Dtos.Customer.In;
 
 namespace Validators.Customer
 {

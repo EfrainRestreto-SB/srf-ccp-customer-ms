@@ -1,12 +1,13 @@
 ﻿using Domain.Dto.In;
-using Domain.Dtos.Customer.In;
 using System.Text.Json.Serialization;
+using static Domain.Dto.CreateCustomerInDto;
+using static Domain.Dtos.Customer.In.CreateCustomerInDto;
 
 namespace Domain.Dtos.Customer.In
 {
     public class CustomerCreateInDto
     {
-        public object ForeignCurrencyAccount;
+        public required object ForeignCurrencyAccount;
 
         [JsonPropertyName("basicInformation")]
         public required BasicInformationInDto BasicInformation { get; set; }
@@ -24,7 +25,7 @@ namespace Domain.Dtos.Customer.In
         public required AddressInfoInDto AddressInfo { get; set; }
 
         [JsonPropertyName("financialInfo")]
-        public required FinancialInfoDto FinancialInfo { get; set; }
+        public required FinancialInfoInDto FinancialInfo { get; set; }
 
         [JsonPropertyName("employmentInfo")]
         public required EmploymentInfoInDto EmploymentInfo { get; set; }
@@ -32,7 +33,7 @@ namespace Domain.Dtos.Customer.In
      
 
         [JsonPropertyName("foreignCurrencyAccounts")]
-        public required List<ForeignCurrencyAccountInDto> ForeignCurrencyAccounts { get; set; }
+        public required List<ForeignCurrencyInfoInDto> ForeignCurrencyAccounts { get; set; }
 
        
 
@@ -45,19 +46,6 @@ namespace Domain.Dtos.Customer.In
         [JsonPropertyName("descriptionInfo")]
         public required DescriptionInfoInDto DescriptionInfo { get; set; }
 
-        public class EmploymentInfoInDto
-        {
-            public readonly object EmploymentType;
-            public object CompanyName;
-            public object CompanyNit;
-            public object Phone;
-            public object EmploymentStatus;
-            public object EmploymentStartDate;
-            public object JobTitle;
-            public object EconomicSector;
-            public object EconomicActivity;
-            public object EmploymentContractType;
-            public object JobAddress;
         }
     }
-}
+

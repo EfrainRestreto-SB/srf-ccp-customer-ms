@@ -6,7 +6,7 @@ namespace Validators.Customer
 {
     public class CustomerCreateInDtoValidator : AbstractValidator<CustomerCreateInDto>
     {
-        public CustomerCreateInDtoValidator()
+        public CustomerCreateInDtoValidator(ForeignCurrencyAccountInDtoValidator foreignCurrencyAccountInDtoValidator, IdentificationInDtoValidator identificationInDtoValidator, EmploymentInfoInDtoValidator employmentInfoInDtoValidator)
         {
             RuleFor(x => x.BasicInformation)
                 .NotNull().WithMessage("BasicInformation es obligatorio.")
@@ -14,7 +14,7 @@ namespace Validators.Customer
 
             RuleFor(x => x.Identification)
                 .NotNull().WithMessage("Identification es obligatorio.")
-                .SetValidator(new IdentificationInDtoValidator());
+                .SetValidator((FluentValidation.Validators.IPropertyValidator<CustomerCreateInDto, IdentificationInDto>)identificationInDtoValidator);
 
             RuleFor(x => x.BirthInfo)
                 .NotNull().WithMessage("BirthInfo es obligatorio.")
@@ -28,18 +28,18 @@ namespace Validators.Customer
                 .NotNull().WithMessage("AddressInfo es obligatorio.")
                 .SetValidator(new AddressInfoInDtoValidator());
 
-           // RuleFor(x => x.FinancialInfo)
-              //  .NotNull().WithMessage("FinancialInfo es obligatorio.")
-              //  .SetValidator(new FinancialInfoInDtoValidator());
+           //RuleFor(x => x.FinancialInfo)
+             // .NotNull().WithMessage("FinancialInfo es obligatorio.")
+             ///  .SetValidator(new FinancialInfoInDtoValidator());
 
-            RuleFor(x => x.EmploymentInfo)
-                .NotNull().WithMessage("EmploymentInfo es obligatorio.")
-                .SetValidator(new EmploymentInfoInDtoValidator());
+           //// RuleFor(x => x.EmploymentInfo)
+            ////    .NotNull().WithMessage("EmploymentInfo es obligatorio.")
+              //  .SetValidator(new EmploymentInfoInDtoValidator());
 
             RuleFor(x => x.ForeignCurrencyAccounts)
                 .NotNull().WithMessage("ForeignCurrencyAccounts es obligatorio.")
                 .NotEmpty().WithMessage("Debe incluir al menos una cuenta en ForeignCurrencyAccounts.")
-                .ForEach(x => x.SetValidator(new ForeignCurrencyAccountInDtoValidator()));
+                .ForEach(x => x.SetValidator((FluentValidation.Validators.IPropertyValidator<IEnumerable<ForeignCurrencyInfoInDto>, ForeignCurrencyInfoInDto>)foreignCurrencyAccountInDtoValidator));
 
             RuleFor(x => x.InterviewInfo)
                 .NotNull().WithMessage("InterviewInfo es obligatorio.")

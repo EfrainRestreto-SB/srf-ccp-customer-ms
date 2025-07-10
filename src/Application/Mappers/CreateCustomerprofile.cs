@@ -36,7 +36,6 @@ namespace Application.Mappers
         public CreateCustomerMappingsProfile()
         {
             // Create IN
-            CreateMap<Domain.Dto.In.CustomerCreateOutDto, CustomerCreateInModel>();
             CreateMap<BasicInformationDto, BasicInformationModel>();
             CreateMap<IdentificationDto, IdentificationModel>();
             CreateMap<BirthDto, BirthModel>();
@@ -64,7 +63,7 @@ namespace Application.Mappers
             CreateMap<DescriptionOutDto, DescriptionOutModel>();
         }
 
-        private void CreateMap<T1, T2>()
+        private new void CreateMap<T1, T2>()
         {
             throw new NotImplementedException();
         }

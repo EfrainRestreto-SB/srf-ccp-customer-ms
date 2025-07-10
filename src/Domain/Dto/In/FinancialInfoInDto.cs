@@ -1,48 +1,43 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Domain.Dto.In
+namespace Domain.Dtos.Customer.In
 {
-    public class FinancialInfoOutDto
+    public class FinancialInfoInDto
     {
-        public object FamilyExpenses;
-        public object OtherAssets;
-        public object OtherLiabilities;
-        public object TotalAssets;
-        public object TotalLiabilities;
-        public object FundsDestination;
-        public object FundsDestinationDescription;
-
-        [JsonPropertyName("income")]
-        public string Income { get; set; }
+        [JsonPropertyName("monthlyIncome")]
+        public string MonthlyIncome { get; set; }         // E01AM2
 
         [JsonPropertyName("otherIncome")]
-        public string OtherIncome { get; set; }
+        public string OtherIncome { get; set; }           // E01AM4
 
-        [JsonPropertyName("incomeSource")]
-        public string IncomeSource { get; set; }
+        [JsonPropertyName("familyExpenses")]
+        public string FamilyExpenses { get; set; }        // E01AM1
 
-        [JsonPropertyName("otherIncomeSource")]
-        public string OtherIncomeSource { get; set; }
+        [JsonPropertyName("totalLiabilities")]
+        public string TotalLiabilities { get; set; }      // E01AM3
 
-        [JsonPropertyName("incomeFrequency")]
-        public string IncomeFrequency { get; set; }
+        [JsonPropertyName("otherAssets")]
+        public string OtherAssets { get; set; }           // E01AM5
+
+        [JsonPropertyName("realStateAssets")]
+        public string RealStateAssets { get; set; }       // E01FM2
+
+        [JsonPropertyName("totalAssets")]
+        public string TotalAssets { get; set; }           // E01AMT
 
         [JsonPropertyName("totalIncome")]
-        public string TotalIncome { get; set; }
+        public string TotalIncome { get; set; }           // E01AM8
 
         [JsonPropertyName("totalExpenses")]
-        public string TotalExpenses { get; set; }
+        public string TotalExpenses { get; set; }         // E01FM3
 
-        [JsonPropertyName("fundsOrigin")]
-        public string FundsOrigin { get; set; }
+        [JsonPropertyName("fundsOriginDescription1")]
+        public string FundsOriginDescription1 { get; set; } // E01DS2
 
-        [JsonPropertyName("fundsUse")]
-        public string FundsUse { get; set; }
+        [JsonPropertyName("fundsOriginDescription2")]
+        public string FundsOriginDescription2 { get; set; } // E01DS3
 
-        [JsonPropertyName("fundsOriginDescription")]
-        public string FundsOriginDescription { get; set; }
-
-        [JsonPropertyName("fundsUseDescription")]
-        public string FundsUseDescription { get; set; }
+        [JsonPropertyName("fundsOriginDescription3")]
+        public string FundsOriginDescription3 { get; set; } // E01DS4
     }
 }

@@ -6,7 +6,7 @@ namespace Core.Interfaces.Configuration
         string BootstrapServers { get; }
         string GroupId { get; }
         string Topic { get; }
-        bool EnableAutoCommit { get; } // Fixed CS0525, CS1002, CS1513  
+        bool EnableAutoCommit { get; } 
         IEnumerable<string> CustomerTopic { get; set; }
     }
 }

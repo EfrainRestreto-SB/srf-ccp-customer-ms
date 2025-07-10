@@ -1,23 +1,25 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Domain.Dto.In
+namespace Domain.Dtos.Customer.In
 {
     public class BirthInfoInDto
     {
-        public object BirthCountry;
-        public object BirthDepartment;
-        public object BirthCity;
+        [JsonPropertyName("birthMonth")]
+        public required string BirthMonth { get; set; }         // E01BDM
 
-        [JsonPropertyName("country")]
-        public string Country { get; set; }
+        [JsonPropertyName("birthDay")]
+        public required string BirthDay { get; set; }           // E01BDD
 
-        [JsonPropertyName("department")]
-        public string Department { get; set; }
+        [JsonPropertyName("birthYear")]
+        public required string BirthYear { get; set; }          // E01BDY
 
-        [JsonPropertyName("municipality")]
-        public string Municipality { get; set; }
+        [JsonPropertyName("birthCountry")]
+        public required string BirthCountry { get; set; }       // E01N5P
 
-        [JsonPropertyName("birthDate")]
-        public string BirthDate { get; set; }
+        [JsonPropertyName("birthDepartment")]
+        public required string BirthDepartment { get; set; }    // E01N5D
+
+        [JsonPropertyName("birthCity")]
+        public required string BirthCity { get; set; }          // E01N5C
     }
 }

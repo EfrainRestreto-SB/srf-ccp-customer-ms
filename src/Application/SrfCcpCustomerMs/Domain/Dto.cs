@@ -9,6 +9,10 @@
                 public class CustomerCreateInDto
                 {
                 }
+
+                public class CreateCustomerInDto
+                {
+                }
             }
         }
     }

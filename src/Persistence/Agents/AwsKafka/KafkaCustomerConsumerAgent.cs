@@ -1,6 +1,6 @@
 ﻿using Confluent.Kafka;
 using Core.Interfaces.Configuration;
-using Domain.Dto.In;
+using Core.Interfaces.Services;
 using Domain.Dtos.Customer.In;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -35,7 +35,7 @@ namespace Persistence.Agents.AwsKafka
                 AutoOffsetReset = AutoOffsetReset.Earliest
             };
 
-            using var consumer = new ConsumerBuilder<Ignore, string>((IEnumerable<KeyValuePair<string, string>>)consumerConfig).Build();
+            using var consumer = new ConsumerBuilder<Ignore, string>(consumerConfig).Build();
             consumer.Subscribe(_config.CustomerTopic);
 
             _logger.LogInformation("Kafka Customer Consumer started.");
@@ -51,8 +51,8 @@ namespace Persistence.Agents.AwsKafka
 
                     using (var scope = _serviceProvider.CreateScope())
                     {
-                        var customerService = scope.ServiceProvider.GetRequiredService<ICustomerService>();
-                        object value = await customerService.CreateCustomerAsync(customerDto!);
+                        var customerService = scope.ServiceProvider.GetRequiredService<ICreateCustomerService>();
+                        await customerService.CreateCustomerAsync(customerDto!);
                     }
                 }
             }
@@ -69,10 +69,5 @@ namespace Persistence.Agents.AwsKafka
                 consumer.Close();
             }
         }
-    }
-
-    internal interface ICustomerService
-    {
-        Task<object> CreateCustomerAsync(CustomerCreateInDto customerCreateInDto);
     }
 }
