@@ -1,6 +1,6 @@
 ﻿namespace Domain.Dto.In
 {
-    public class EmploymentInfoDto
+    public class EmploymentInfoInModel
     {
         public object CompanyNit;
         public object JobAddress;

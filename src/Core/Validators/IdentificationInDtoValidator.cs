@@ -1,9 +1,10 @@
 using FluentValidation;
 using Domain.Dto.In;
+using Domain.Dtos.Customer.In;
 
 namespace Validators.Customer
 {
-    public class IdentificationInDtoValidator : AbstractValidator<IdentificationDto>
+    public class IdentificationInDtoValidator : AbstractValidator<IdentificationInDto>
     {
         public IdentificationInDtoValidator()
         {

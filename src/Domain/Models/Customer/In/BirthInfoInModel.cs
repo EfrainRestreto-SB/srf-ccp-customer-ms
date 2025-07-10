@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Dto.In
 {
-    public class BirthInfoDto
+    public class BirthInfoInModel
     {
         public required string fiscalEmployeeId { get; set; }
         public required string birthDay { get; set; }

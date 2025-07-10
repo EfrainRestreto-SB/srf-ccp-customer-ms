@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Dto.In
 {
-    public class BasicInformationDto
+    public class BasicInformationInModel
     {
         public required string FirstName { get; set; }
         public required string SecondName { get; set; }

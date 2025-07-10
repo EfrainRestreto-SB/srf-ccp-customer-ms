@@ -4,6 +4,10 @@ namespace Domain.Dtos.Customer.In
 {
     public class IdentificationInDto
     {
+        public object DocumentType;
+        public object ExpeditionDate;
+        public object IdentificationCountry;
+
         [JsonPropertyName("idNumber")]
         public string IdNumber { get; set; }           // E01IDN
 

@@ -1,6 +1,6 @@
 ﻿namespace Domain.Dto.In
 {
-    public class ContactInfoDto
+    public class ContactInfoInModel
     {
         public required string EmailType { get; set; }
         public required string Email { get; set; }

@@ -73,7 +73,7 @@
   },
   "components": {
     "schemas": {
-      "AddressInfoDto": {
+      "AddressInfoInModel": {
         "required": [
           "addressLine1",
           "addressLine2",
@@ -136,120 +136,7 @@
         },
         "additionalProperties": false
       },
-      "BankingInfoInDto": {
-        "required": [
-          "addressTypeCode",
-          "affiliationChannel",
-          "affiliationDay",
-          "affiliationMonth",
-          "affiliationOfficeCode",
-          "affiliationYear",
-          "bankRelation",
-          "businessType",
-          "commercialOfficerCode",
-          "electronicOperations",
-          "entityToAffiliateCode",
-          "interviewType",
-          "legalNature",
-          "riskPercentage",
-          "secondaryOfficerCode",
-          "segmentCode",
-          "serviceType",
-          "statementDelivery",
-          "superEntityCode",
-          "superEntityType",
-          "undergraduateDegree"
-        ],
-        "type": "object",
-        "properties": {
-          "affiliationMonth": {
-            "type": "string",
-            "nullable": true
-          },
-          "affiliationDay": {
-            "type": "string",
-            "nullable": true
-          },
-          "affiliationYear": {
-            "type": "string",
-            "nullable": true
-          },
-          "affiliationOfficeCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "affiliationChannel": {
-            "type": "string",
-            "nullable": true
-          },
-          "statementDelivery": {
-            "type": "string",
-            "nullable": true
-          },
-          "electronicOperations": {
-            "type": "string",
-            "nullable": true
-          },
-          "commercialOfficerCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "secondaryOfficerCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "entityToAffiliateCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "superEntityType": {
-            "type": "string",
-            "nullable": true
-          },
-          "legalNature": {
-            "type": "string",
-            "nullable": true
-          },
-          "businessType": {
-            "type": "string",
-            "nullable": true
-          },
-          "segmentCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "superEntityCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "addressTypeCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "undergraduateDegree": {
-            "type": "string",
-            "nullable": true
-          },
-          "interviewType": {
-            "type": "string",
-            "nullable": true
-          },
-          "bankRelation": {
-            "type": "string",
-            "nullable": true
-          },
-          "serviceType": {
-            "type": "string",
-            "nullable": true
-          },
-          "riskPercentage": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "BasicInformationDto": {
+      "BasicInformationInModel": {
         "required": [
           "clientType",
           "consultationLevel",
@@ -382,7 +269,7 @@
         },
         "additionalProperties": false
       },
-      "BirthInfoDto": {
+      "BirthInfoInModel": {
         "required": [
           "birthCity",
           "birthCountry",
@@ -420,7 +307,7 @@
         },
         "additionalProperties": false
       },
-      "ContactInfoDto": {
+      "ContactInfoInModel": {
         "required": [
           "email",
           "emailType",
@@ -463,57 +350,65 @@
           "descriptionInfo",
           "employmentInfo",
           "financialInfo",
+          "financialInfoModel",
           "foreignCurrencyAccount",
+          "foreignCurrencyInfoModel",
           "identification",
+          "identificationInfo",
           "interviewInfo",
-          "references"
+          "reference"
         ],
         "type": "object",
         "properties": {
           "basicInformation": {
-            "$ref": "#/components/schemas/BasicInformationDto"
+            "$ref": "#/components/schemas/BasicInformationInModel"
           },
           "identification": {
-            "$ref": "#/components/schemas/IdentificationDto"
+            "$ref": "#/components/schemas/IdentificationInModel"
           },
           "birthInfo": {
-            "$ref": "#/components/schemas/BirthInfoDto"
+            "$ref": "#/components/schemas/BirthInfoInModel"
           },
           "contactInfo": {
-            "$ref": "#/components/schemas/ContactInfoDto"
+            "$ref": "#/components/schemas/ContactInfoInModel"
           },
           "addressInfoInModel": {
-            "$ref": "#/components/schemas/AddressInfoDto"
+            "$ref": "#/components/schemas/AddressInfoInModel"
           },
           "financialInfo": {
             "$ref": "#/components/schemas/FinancialInfoModel"
           },
           "employmentInfo": {
-            "$ref": "#/components/schemas/EmploymentInfoDto"
+            "$ref": "#/components/schemas/EmploymentInfoInModel"
           },
           "foreignCurrencyAccount": {
-            "$ref": "#/components/schemas/ForeignCurrencyInfoInDto"
+            "$ref": "#/components/schemas/foreignCurrencyInfoModel"
+          },
+          "identificationInfo": {
+            "$ref": "#/components/schemas/IdentificationInModel"
           },
           "interviewInfo": {
-            "$ref": "#/components/schemas/InterviewInfoDto"
+            "$ref": "#/components/schemas/InterviewInfoInModel"
           },
-          "references": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ReferenceDto"
-            },
-            "nullable": true
+          "reference": {
+            "$ref": "#/components/schemas/ReferenceInModel"
           },
           "descriptionInfo": {
-            "$ref": "#/components/schemas/DescriptionInfoDto"
+            "$ref": "#/components/schemas/DescriptionInfoInModel"
           },
           "bankingInfo": {
-            "$ref": "#/components/schemas/BankingInfoInDto"
+            "$ref": "#/components/schemas/bankingInfoInModel"
+          },
+          "financialInfoModel": {
+            "$ref": "#/components/schemas/FinancialInfoModel"
+          },
+          "foreignCurrencyInfoModel": {
+            "$ref": "#/components/schemas/foreignCurrencyInfoModel"
           }
         },
         "additionalProperties": false
       },
-      "DescriptionInfoDto": {
+      "DescriptionInfoInModel": {
         "required": [
           "activityDescription",
           "businessTypeDescription",
@@ -626,7 +521,7 @@
         },
         "additionalProperties": false
       },
-      "EmploymentInfoDto": {
+      "EmploymentInfoInModel": {
         "required": [
           "companyAddress",
           "companyCityCode",
@@ -792,7 +687,322 @@
         },
         "additionalProperties": false
       },
-      "ForeignCurrencyInfoInDto": {
+      "IdentificationInModel": {
+        "required": [
+          "fiscalEmployeeId",
+          "idCountry",
+          "idIssueDay",
+          "idIssueMonth",
+          "idIssuePlace",
+          "idIssueYear",
+          "idNumber",
+          "idType",
+          "nationalityCode"
+        ],
+        "type": "object",
+        "properties": {
+          "idNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "idType": {
+            "type": "string",
+            "nullable": true
+          },
+          "idCountry": {
+            "type": "string",
+            "nullable": true
+          },
+          "idIssuePlace": {
+            "type": "string",
+            "nullable": true
+          },
+          "idIssueMonth": {
+            "type": "string",
+            "nullable": true
+          },
+          "idIssueDay": {
+            "type": "string",
+            "nullable": true
+          },
+          "idIssueYear": {
+            "type": "string",
+            "nullable": true
+          },
+          "nationalityCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "fiscalEmployeeId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InterviewInfoInModel": {
+        "required": [
+          "customerKnowledgeReport",
+          "interviewComments",
+          "interviewDay",
+          "interviewerId",
+          "interviewerIdCountry",
+          "interviewerIdType",
+          "interviewerName",
+          "interviewMonth",
+          "interviewResult",
+          "interviewYear",
+          "masterClientCode"
+        ],
+        "type": "object",
+        "properties": {
+          "interviewerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "interviewerId": {
+            "type": "string",
+            "nullable": true
+          },
+          "interviewerIdType": {
+            "type": "string",
+            "nullable": true
+          },
+          "interviewerIdCountry": {
+            "type": "string",
+            "nullable": true
+          },
+          "interviewMonth": {
+            "type": "string",
+            "nullable": true
+          },
+          "interviewDay": {
+            "type": "string",
+            "nullable": true
+          },
+          "interviewYear": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerKnowledgeReport": {
+            "type": "string",
+            "nullable": true
+          },
+          "interviewResult": {
+            "type": "string",
+            "nullable": true
+          },
+          "interviewComments": {
+            "type": "string",
+            "nullable": true
+          },
+          "masterClientCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReferenceInModel": {
+        "required": [
+          "cityCode",
+          "companyName",
+          "contactName",
+          "countryCode",
+          "departmentCode",
+          "firstLastName",
+          "landlinePhone",
+          "mobilePhone",
+          "personType",
+          "phoneExtension",
+          "phonerelationshipDescription",
+          "secondLastName"
+        ],
+        "type": "object",
+        "properties": {
+          "personType": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "contactName": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstLastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "secondLastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "countryCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "departmentCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "cityCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "landlinePhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "mobilePhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneExtension": {
+            "type": "string",
+            "nullable": true
+          },
+          "phonerelationshipDescription": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "bankingInfoInModel": {
+        "required": [
+          "addressTypeCode",
+          "affiliationChannel",
+          "affiliationDay",
+          "affiliationMonth",
+          "affiliationOfficeCode",
+          "affiliationYear",
+          "bankRelation",
+          "businessType",
+          "commercialOfficerCode",
+          "electronicOperations",
+          "entityToAffiliateCode",
+          "interviewType",
+          "legalNature",
+          "riskPercentage",
+          "secondaryOfficerCode",
+          "segmentCode",
+          "serviceType",
+          "statementDelivery",
+          "superEntityCode",
+          "superEntityType",
+          "undergraduateDegree"
+        ],
+        "type": "object",
+        "properties": {
+          "affiliationMonth": {
+            "type": "string",
+            "nullable": true
+          },
+          "affiliationDay": {
+            "type": "string",
+            "nullable": true
+          },
+          "affiliationYear": {
+            "type": "string",
+            "nullable": true
+          },
+          "affiliationOfficeCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "affiliationChannel": {
+            "type": "string",
+            "nullable": true
+          },
+          "statementDelivery": {
+            "type": "string",
+            "nullable": true
+          },
+          "electronicOperations": {
+            "type": "string",
+            "nullable": true
+          },
+          "commercialOfficerCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "secondaryOfficerCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "entityToAffiliateCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "superEntityType": {
+            "type": "string",
+            "nullable": true
+          },
+          "legalNature": {
+            "type": "string",
+            "nullable": true
+          },
+          "businessType": {
+            "type": "string",
+            "nullable": true
+          },
+          "segmentCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "superEntityCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressTypeCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "undergraduateDegree": {
+            "type": "string",
+            "nullable": true
+          },
+          "interviewType": {
+            "type": "string",
+            "nullable": true
+          },
+          "bankRelation": {
+            "type": "string",
+            "nullable": true
+          },
+          "serviceType": {
+            "type": "string",
+            "nullable": true
+          },
+          "riskPercentage": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "foreignCurrencyInfoModel": {
+        "required": [
+          "foreignBank1Account",
+          "foreignBank1Balance",
+          "foreignBank1City",
+          "foreignBank1Country",
+          "foreignBank1Currency",
+          "foreignBank1Name",
+          "foreignBank1Product",
+          "foreignProducts",
+          "foreignTransactions",
+          "isForexMarketIntermediary",
+          "transaction1Amount",
+          "transaction1Type",
+          "transaction2Amount",
+          "transaction2Type",
+          "transaction3Amount",
+          "transaction3Type"
+        ],
         "type": "object",
         "properties": {
           "foreignTransactions": {
@@ -856,190 +1066,6 @@
             "nullable": true
           },
           "isForexMarketIntermediary": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "IdentificationDto": {
-        "required": [
-          "fiscalEmployeeId",
-          "idCountry",
-          "idIssueDay",
-          "idIssueMonth",
-          "idIssuePlace",
-          "idIssueYear",
-          "idNumber",
-          "idType",
-          "nationalityCode"
-        ],
-        "type": "object",
-        "properties": {
-          "idNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "idType": {
-            "type": "string",
-            "nullable": true
-          },
-          "idCountry": {
-            "type": "string",
-            "nullable": true
-          },
-          "idIssuePlace": {
-            "type": "string",
-            "nullable": true
-          },
-          "idIssueMonth": {
-            "type": "string",
-            "nullable": true
-          },
-          "idIssueDay": {
-            "type": "string",
-            "nullable": true
-          },
-          "idIssueYear": {
-            "type": "string",
-            "nullable": true
-          },
-          "nationalityCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "fiscalEmployeeId": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "InterviewInfoDto": {
-        "required": [
-          "customerKnowledgeReport",
-          "interviewComments",
-          "interviewDay",
-          "interviewerId",
-          "interviewerIdCountry",
-          "interviewerIdType",
-          "interviewerName",
-          "interviewMonth",
-          "interviewResult",
-          "interviewYear",
-          "masterClientCode"
-        ],
-        "type": "object",
-        "properties": {
-          "interviewerName": {
-            "type": "string",
-            "nullable": true
-          },
-          "interviewerId": {
-            "type": "string",
-            "nullable": true
-          },
-          "interviewerIdType": {
-            "type": "string",
-            "nullable": true
-          },
-          "interviewerIdCountry": {
-            "type": "string",
-            "nullable": true
-          },
-          "interviewMonth": {
-            "type": "string",
-            "nullable": true
-          },
-          "interviewDay": {
-            "type": "string",
-            "nullable": true
-          },
-          "interviewYear": {
-            "type": "string",
-            "nullable": true
-          },
-          "customerKnowledgeReport": {
-            "type": "string",
-            "nullable": true
-          },
-          "interviewResult": {
-            "type": "string",
-            "nullable": true
-          },
-          "interviewComments": {
-            "type": "string",
-            "nullable": true
-          },
-          "masterClientCode": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ReferenceDto": {
-        "required": [
-          "cityCode",
-          "companyName",
-          "contactName",
-          "countryCode",
-          "departmentCode",
-          "firstLastName",
-          "landlinePhone",
-          "mobilePhone",
-          "personType",
-          "phoneExtension",
-          "phonerelationshipDescription",
-          "secondLastName"
-        ],
-        "type": "object",
-        "properties": {
-          "personType": {
-            "type": "string",
-            "nullable": true
-          },
-          "companyName": {
-            "type": "string",
-            "nullable": true
-          },
-          "contactName": {
-            "type": "string",
-            "nullable": true
-          },
-          "firstLastName": {
-            "type": "string",
-            "nullable": true
-          },
-          "secondLastName": {
-            "type": "string",
-            "nullable": true
-          },
-          "countryCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "departmentCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "cityCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "landlinePhone": {
-            "type": "string",
-            "nullable": true
-          },
-          "mobilePhone": {
-            "type": "string",
-            "nullable": true
-          },
-          "phoneExtension": {
-            "type": "string",
-            "nullable": true
-          },
-          "phonerelationshipDescription": {
             "type": "string",
             "nullable": true
           }

@@ -1,6 +1,6 @@
 ﻿namespace Domain.Dto.In
 {
-    public class InterviewInfoDto
+    public class InterviewInfoInModel
     {
         public required string interviewerName { get; set; }
         public required string interviewerId { get; set; }

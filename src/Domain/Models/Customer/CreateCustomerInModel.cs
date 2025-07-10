@@ -5,19 +5,24 @@ namespace Domain.Models.Customer.In
 {
     public class CreateCustomerInModel
     {
-        public required BasicInformationDto BasicInformation { get; set; }
+        public required BasicInformationInModel BasicInformation { get; set; }
 
-        public required IdentificationDto Identification { get; set; }
-        public required BirthInfoDto BirthInfo { get; set; }
-        public required ContactInfoDto ContactInfo { get; set; }
-        public required AddressInfoDto AddressInfoInModel { get; set; }
+        public required IdentificationInModel Identification { get; set; }
+        public required BirthInfoInModel BirthInfo { get; set; }
+        public required ContactInfoInModel ContactInfo { get; set; }
+        public required AddressInfoInModel AddressInfoInModel { get; set; }
         public required FinancialInfoModel FinancialInfo { get; set; }
-        public required EmploymentInfoDto EmploymentInfo { get; set; }
-        public required ForeignCurrencyInfoInDto ForeignCurrencyAccount { get; set; }
-        public required InterviewInfoDto InterviewInfo { get; set; }
-        public required List<ReferenceDto> References { get; set; }
-        public required DescriptionInfoDto DescriptionInfo { get; set; }
+        public required EmploymentInfoInModel EmploymentInfo { get; set; }
+        public required foreignCurrencyInfoModel ForeignCurrencyAccount { get; set; }
+        public required IdentificationInModel IdentificationInfo { get; set; }
+        public required InterviewInfoInModel InterviewInfo { get; set; }
+        public required ReferenceInModel     reference { get; set; }
+        public required DescriptionInfoInModel DescriptionInfo { get; set; }
 
-        public required BankingInfoInDto BankingInfo { get; set; }
-    }
+        public required bankingInfoInModel bankingInfo { get; set; }
+
+        public required FinancialInfoModel  financialInfoModel { get; set; }
+
+        public required  foreignCurrencyInfoModel  foreignCurrencyInfoModel { get; set; }
+}
 }

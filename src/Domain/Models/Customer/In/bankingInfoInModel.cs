@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Models.Customer.In
 {
-    internal class bankingInfoInModel
+    public class bankingInfoInModel
     {
         public required string affiliationMonth { get; set; }
         public required string affiliationDay { get; set; } 

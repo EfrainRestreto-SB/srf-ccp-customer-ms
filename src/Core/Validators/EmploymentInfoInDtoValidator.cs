@@ -1,10 +1,11 @@
 using FluentValidation;
 using Domain.Dto.In;
 using static Domain.Dtos.Customer.In.CustomerCreateInDto;
+using Domain.Dtos.Customer.In;
 
 namespace Validators.Customer
 {
-    public class EmploymentInfoInDtoValidator : AbstractValidator<EmploymentInfoDto>
+    public class EmploymentInfoInDtoValidator : AbstractValidator<EmploymentInfoInDto>
     {
         public EmploymentInfoInDtoValidator()
         {
@@ -13,7 +14,7 @@ namespace Validators.Customer
             RuleFor(static x => x.JobAddress).NotEmpty();
             RuleFor(x => x.Phone).NotEmpty();
             RuleFor(x => x.EmploymentStatus).NotEmpty();
-            RuleFor(x => x.employmentStartDay).NotEmpty();
+            RuleFor(x => x.EmploymentStartDay).NotEmpty();
             RuleFor(x => x.EmploymentContractType).NotEmpty();
             RuleFor(static x => x.EmploymentType).NotEmpty();
             RuleFor(x => x.JobTitle).NotEmpty();

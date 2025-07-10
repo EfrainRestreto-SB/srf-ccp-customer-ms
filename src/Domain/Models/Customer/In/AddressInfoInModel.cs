@@ -1,6 +1,6 @@
 ﻿namespace Domain.Dto.In
 {
-    public class AddressInfoDto
+    public class AddressInfoInModel
     {
         public required string AddressLine1 { get; set; }
         public required string AddressLine2 { get; set; }

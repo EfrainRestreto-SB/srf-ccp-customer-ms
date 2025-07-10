@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Dto.In
 {
-    public class IdentificationDto
+    public class IdentificationInModel
     {
         public required object DocumentType;
         public required object ExpeditionDate;

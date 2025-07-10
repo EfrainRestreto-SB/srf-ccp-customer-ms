@@ -4,6 +4,16 @@ namespace Domain.Dtos.Customer.In
 {
     public class EmploymentInfoInDto
     {
+        public object CompanyNit;
+        public object JobAddress;
+        public object Phone;
+        public object EmploymentStatus;
+        public object EmploymentContractType;
+        public object EmploymentType;
+        public object JobTitle;
+        public object EconomicSector;
+        public object EconomicActivity;
+
         [JsonPropertyName("companyName")]
         public string CompanyName { get; set; }            // E01CP1
 

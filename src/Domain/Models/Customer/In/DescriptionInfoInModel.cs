@@ -1,6 +1,6 @@
 ﻿namespace Domain.Dto.In
 {
-    public class DescriptionInfoDto
+    public class DescriptionInfoInModel
     {
         public required string OfficeDescription { get; set; }
         public required string idTypeDescription { get; set; }

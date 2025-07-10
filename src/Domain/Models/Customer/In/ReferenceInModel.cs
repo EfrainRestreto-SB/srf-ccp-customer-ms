@@ -1,6 +1,6 @@
 ﻿namespace Domain.Dto.In
 {
-    public class ReferenceDto
+    public class ReferenceInModel
     {
         public required string PersonType { get; set; }
         public required string companyName { get; set; }
