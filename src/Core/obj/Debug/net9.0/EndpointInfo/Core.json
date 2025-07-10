@@ -43,7 +43,17 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CreateCustomerOutModel"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -65,7 +75,17 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateCustomerOutModel"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
@@ -404,6 +424,139 @@
           },
           "foreignCurrencyInfoModel": {
             "$ref": "#/components/schemas/foreignCurrencyInfoModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateCustomerOutModel": {
+        "required": [
+          "clientType",
+          "consultationLevel",
+          "economicActivity",
+          "economicSector",
+          "educationLevel",
+          "firstLastName",
+          "firstName",
+          "gender",
+          "hasPublicRecognition",
+          "hasTaxExemptions",
+          "isBigTaxpayer",
+          "isPEP",
+          "isTaxWithHolder",
+          "language",
+          "legalName",
+          "managesPublicMoney",
+          "maritalStatus",
+          "nichoCode",
+          "riskLevelCode",
+          "secondLastName",
+          "secondName",
+          "specialTaxConditions",
+          "statusCustomer",
+          "stratum",
+          "taxpayerType"
+        ],
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "secondName": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstLastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "secondLastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "legalName": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "clientType": {
+            "type": "string",
+            "nullable": true
+          },
+          "maritalStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "language": {
+            "type": "string",
+            "nullable": true
+          },
+          "consultationLevel": {
+            "type": "string",
+            "nullable": true
+          },
+          "riskLevelCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "economicSector": {
+            "type": "string",
+            "nullable": true
+          },
+          "economicActivity": {
+            "type": "string",
+            "nullable": true
+          },
+          "stratum": {
+            "type": "string",
+            "nullable": true
+          },
+          "educationLevel": {
+            "type": "string",
+            "nullable": true
+          },
+          "nichoCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "isPEP": {
+            "type": "string",
+            "nullable": true
+          },
+          "managesPublicMoney": {
+            "type": "string",
+            "nullable": true
+          },
+          "hasPublicRecognition": {
+            "type": "string",
+            "nullable": true
+          },
+          "statusCustomer": {
+            "type": "string",
+            "nullable": true
+          },
+          "hasTaxExemptions": {
+            "type": "string",
+            "nullable": true
+          },
+          "isTaxWithHolder": {
+            "type": "string",
+            "nullable": true
+          },
+          "isBigTaxpayer": {
+            "type": "string",
+            "nullable": true
+          },
+          "taxpayerType": {
+            "type": "string",
+            "nullable": true
+          },
+          "specialTaxConditions": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

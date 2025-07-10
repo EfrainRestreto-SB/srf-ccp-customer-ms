@@ -5,6 +5,7 @@ using Domain.Models.Customer;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Models.Customer.Out;
 using Core;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace SrfCcpCustomerMs.Presentation.Controllers
 {
@@ -38,16 +39,21 @@ namespace SrfCcpCustomerMs.Presentation.Controllers
         }
 
         [HttpGet("lists")]
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(List<CreateCustomerOutModel>), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetCustomerList()
         {
             var customers = await _createCustomerService.GetCustomerList();
             var response = _mapper.Map<List<CreateCustomerOutModel>>(customers);
 
-            return Ok(response);
+            return Ok(response); 
         }
 
-        
+
         [HttpGet("{id}")]
+        [Produces("application/json")]
+        [SwaggerResponse(StatusCodes.Status200OK, "Cliente encontrado", typeof(CreateCustomerOutModel))]
+        [SwaggerResponse(StatusCodes.Status404NotFound, "Cliente no encontrado")]
         public async Task<IActionResult> GetCustomerById(string id)
         {
             var customer = await _createCustomerService.GetCustomerById(id);
@@ -66,6 +72,8 @@ namespace SrfCcpCustomerMs.Presentation.Controllers
             return Ok(response);
         }
 
-
     }
+
+
+
 }

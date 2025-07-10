@@ -1,32 +1,25 @@
-using SrfCcpCustomerMs.Core;
-using Microsoft.OpenApi.Models;
 using Application.Mappings;
+using Core.Interfaces.Services;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
+using SrfCcpCustomerMs.Application.Services;
+using SrfCcpCustomerMs.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Servicios
 builder.Services.AddControllers();
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Customer API", Version = "v1" });
 });
 
-// Aquí se registran servicios del proyecto
-builder.Services.AddProjectServices();
+builder.Services.AddScoped<ICreateCustomerService, CustomerService>();
 
-Type type = typeof(CustomerMappingsProfile);
-
-//Type type1 = type;
-
-// Aquí debe ir AutoMapper correctamente
-//builder.Services.AddAutoMapper(type1);
+builder.Services.AddAutoMapper(typeof(CustomerMappingsProfile));
 
 var app = builder.Build();
 
-// Middlewares
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
@@ -35,5 +28,4 @@ app.UseSwaggerUI(c =>
 
 app.UseAuthorization();
 app.MapControllers();
-
 app.Run();

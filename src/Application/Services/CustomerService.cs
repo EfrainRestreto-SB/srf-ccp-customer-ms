@@ -1,27 +1,120 @@
 ﻿using AutoMapper;
-using Core.Interfaces.Repositories;
-using Domain.Dto.In;
+using Controllers;
+using Core.Interfaces.Services;
 using Domain.Dtos.Customer.In;
-using Domain.Models.Customer;
+using Domain.Dtos.Customer.Out;
+using Domain.Entities;
+using static SrfCcpCustomerMs.Domain.Dto;
 
-public class CustomerService
-{
-    private readonly IMapper? _mapper; }
 namespace SrfCcpCustomerMs.Application.Services
 {
-    public class CustomerService : CustomerServiceBase
+    public class CustomerService : ICreateCustomerService
     {
+        private readonly IMapper _mapper;
 
-#pragma warning disable CS8618 // Un campo que no acepta valores NULL debe contener un valor distinto de NULL al salir del constructor. Considere la posibilidad de agregar el modificador "required" o declararlo como un valor que acepta valores NULL.
-        public CustomerService(IMapper mapper) => mapper = mapper;
-        // public CustomerService(IMapper mapper, IAwsDynamoRepository<CustomerModel> repository)
-        //{
-        // mapper = mapper;
-        //  repository = repository;
-    }
-    }
+        public CustomerService(IMapper mapper)
+        {
+            _mapper = mapper;
+        }
 
-    public class CustomerServiceBase
-    {
+        public async Task CreateCustomer(CreateCustomerInDto dto)
+        {
+            var entity = _mapper.Map<Customer>(dto);
+            entity.Id = Guid.NewGuid();
+
+            // Simulación de persistencia (ej. guardar en base de datos o enviar a Kafka)
+            await Task.CompletedTask;
+        }
+
+        public async Task<List<CreateCustomerOutDto>> GetCustomerList()
+        {
+            return await Task.FromResult(new List<CreateCustomerOutDto>
+            {
+                new CreateCustomerOutDto
+                {
+                    FirstName = "Thais",
+                    SecondName = "Ilianis",
+                    FirstLastName = "Durán",
+                    SecondLastName = "Pérez",
+                    LegalName = "Thais Pérez",
+                    Gender = "Femenino",
+                    ClientType = "Natural",
+                    MaritalStatus = "Soltera",
+                    Language = "Español",
+                    ConsultationLevel = "1",
+                    RiskLevelCode = "Bajo",
+                    EconomicSector = "Tecnología",
+                    EconomicActivity = "Desarrollo de software",
+                    Stratum = "3",
+                    EducationLevel = "Universitario",
+                    NichoCode = "001",
+                    IsPEP = "No",
+                    ManagesPublicMoney = "No",
+                    HasPublicRecognition = "No",
+                    StatusCustomer = "Activo",
+                    HasTaxExemptions = "No",
+                    IsTaxWithHolder = "No",
+                    IsBigTaxpayer = "No",
+                    TaxpayerType = "Ordinario",
+                    SpecialTaxConditions = "Ninguna"
+                }
+            });
+        }
+
+        public async Task<CreateCustomerOutDto?> GetCustomerById(string id)
+        {
+            if (id == "notfound")
+                return null;
+
+            var customer = new CreateCustomerOutDto
+            {
+                FirstName = "Nombre",
+                SecondName = "Ejemplo",
+                FirstLastName = "Apellido",
+                SecondLastName = "Ejemplo",
+                LegalName = "Nombre Completo",
+                Gender = "Femenino",
+                ClientType = "Natural",
+                MaritalStatus = "Soltera",
+                Language = "Español",
+                ConsultationLevel = "1",
+                RiskLevelCode = "Bajo",
+                EconomicSector = "Tecnología",
+                EconomicActivity = "Desarrollo de software",
+                Stratum = "3",
+                EducationLevel = "Universitario",
+                NichoCode = "001",
+                IsPEP = "No",
+                ManagesPublicMoney = "No",
+                HasPublicRecognition = "No",
+                StatusCustomer = "Activo",
+                HasTaxExemptions = "No",
+                IsTaxWithHolder = "No",
+                IsBigTaxpayer = "No",
+                TaxpayerType = "Ordinario",
+                SpecialTaxConditions = "Ninguna"
+            };
+
+            return await Task.FromResult(customer);
+        }
+
+        public Task<Guid> CreateCustomerAsync(CustomerCreateInDto customerDto)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<List<CustomerController.CreateCustomerOutDto>> ICreateCustomerService.CustomerList => throw new NotImplementedException();
+
+        //Task<CustomerController.CreateCustomerOutDto?> ICreateCustomerService.GetCustomerById(string id) => throw new NotImplementedException();
+
+        public Task CreateCustomer(Core.CreateCustomerInDto dto)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task ICreateCustomerService.CreateCustomerAsync(CustomerCreateInDto customerCreateInDto)
+        {
+            return CreateCustomerAsync(customerCreateInDto);
+        }
     }
-//}
+}

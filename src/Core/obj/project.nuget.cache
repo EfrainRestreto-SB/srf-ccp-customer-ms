@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ibM1Inequkw=",
+  "dgSpecHash": "wcw/1QfgP3Y=",
   "success": true,
   "projectFilePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
   "expectedPackageFiles": [
@@ -86,8 +86,9 @@
     "C:\\Users\\Admininfra\\.nuget\\packages\\stackexchange.redis\\2.8.41\\stackexchange.redis.2.8.41.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\stripe.net\\48.3.0\\stripe.net.48.3.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore\\9.0.1\\swashbuckle.aspnetcore.9.0.1.nupkg.sha512",
-    "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\9.0.1\\swashbuckle.aspnetcore.swagger.9.0.1.nupkg.sha512",
-    "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\9.0.1\\swashbuckle.aspnetcore.swaggergen.9.0.1.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\9.0.3\\swashbuckle.aspnetcore.annotations.9.0.3.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\9.0.3\\swashbuckle.aspnetcore.swagger.9.0.3.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\9.0.3\\swashbuckle.aspnetcore.swaggergen.9.0.3.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\9.0.1\\swashbuckle.aspnetcore.swaggerui.9.0.1.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",

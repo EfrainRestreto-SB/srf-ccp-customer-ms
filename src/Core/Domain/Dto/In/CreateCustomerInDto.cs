@@ -1,6 +1,6 @@
 ﻿namespace Domain.Dto.In
 {
-    internal class CreateCustomerOutDto
+    internal class CreateCustomerInDto
     {
     }
 }
