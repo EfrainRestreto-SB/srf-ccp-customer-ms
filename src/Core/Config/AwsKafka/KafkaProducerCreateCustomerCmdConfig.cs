@@ -1,11 +1,32 @@
-﻿namespace Core.Config.AwsKafka
-{
-    public class KafkaProducerCreateCustomerCmdConfig
-    {
-        public const string SectionName = "Kafka:CustomerCreateProducer";
+﻿using Confluent.Kafka;
+using Core.Config.SettingFiles.AwsKafka;
+using Core.Interfaces.Configuration;
+using Domain.Interfaces.AwsKafka.Config;
+using Microsoft.Extensions.Options;
 
-        public required string BootstrapServers { get; set; }
-        public required string Topic { get; set; }
-        public int Acks { get; set; } = 1; // 0, 1, -1 (all)
+namespace Core.Config.AwsKafka;
+
+public class KafkaProducerCreateCustomerCmdConfig(IOptions<KafkaCreateCustomerCmdJson> options) : IKafkaProducerConfig
+{
+    private readonly KafkaCreateCustomerCmdJson config = options.Value;
+
+    public ProducerConfig GetProducerConfig()
+    {
+        return new()
+        {
+            SaslMechanism = SaslMechanism.OAuthBearer,
+            SecurityProtocol = SecurityProtocol.SaslSsl,
+            BootstrapServers = config.BootstrapServers,
+            MessageTimeoutMs = 150000,   // Aumentar el tiempo de espera de mensaje
+            RequestTimeoutMs = 15000,   // Aumentar el tiempo de espera de solicitud
+            RetryBackoffMs = 1000,      // Aumentar el tiempo de espera entre reintentos
+            MaxInFlight = 5,            // Asegúrate de no tener demasiados mensajes en vuelo
+            Acks = Acks.All,            // Asegúrate de esperar todos los acuses de recibo
+            AllowAutoCreateTopics = true
+        };
     }
+
+    public string GetTopicName() => config.TopicName!;
+
+    public int MaxRetries() => config.ProducerMaxRetries;
 }

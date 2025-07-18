@@ -1,22 +1,10 @@
-﻿namespace Core.Config.SettingFile.AwsKafka
+﻿namespace Core.Config.SettingFiles.AwsKafka;
+
+public class KafkaCreateCustomerCmdJson
 {
-    public class KafkaCreateCustomerCmdJson
-    {
-        public const string SectionName = "Kafka:CustomerCreateProducer";
-
-        /// <summary>
-        /// Lista de brokers Kafka, e.g. "localhost:9092"
-        /// </summary>
-        public required string BootstrapServers { get; set; }
-
-        /// <summary>
-        /// Topic donde se producen los comandos de creación de cliente
-        /// </summary>
-        public required string Topic { get; set; }
-
-        /// <summary>
-        /// Acks: -1 (all), 0 (none) o 1 (leader)
-        /// </summary>
-        public int Acks { get; set; } = 1;
-    }
+    public int ParallelKafkaConsumers { get; set; }
+    public string? TopicName { get; set; }
+    public string? BootstrapServers { get; set; }
+    public string? GroupId { get; set; }
+    public int ProducerMaxRetries { get; set; }
 }

@@ -1,9 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿namespace Domain.Interfaces.AwsKafka.Agents;
 
-namespace Core.Interfaces.Agents
+public interface IKafkaProducerAgent<in TKey, in TValue>
 {
-    public interface IKafkaProducerAgent<T>
-    {
-        Task SendMessageAsync(T message, string topic);
-    }
+    public Task ProduceMessage(TKey key, TValue body);
 }

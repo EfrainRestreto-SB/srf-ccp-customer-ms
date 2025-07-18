@@ -1,71 +1,56 @@
-﻿using Confluent.Kafka;
-using System.Text.Json;
-using Google.Api.Ads.AdWords.v201809;
+﻿using Core.Config.SettingFiles.AwsKafka;
+using Domain.Dtos;
+using Domain.Interfaces.AwsKafka.Agents;
+using Domain.Interfaces.Services;
+using Microsoft.Extensions.Options;
 
-namespace Infrastructure.Kafka.Consumers
+namespace Core.Tasks;
+
+public class KafkaCreateCdtConsumerTasks(IKafkaConsumerAgent<string, CreateCustomerOutDto> kafkaConsumerAgent,
+                                         IOptions<KafkaCreateCdtEvtJson> kafkaCreateCdtEvt,
+                                         IServiceProvider serviceProvider,
+                                         ILogger<KafkaCreateCdtConsumerTasks> logger)
+: IHostedService
 {
-    public class KafkaCreateCustomerConsumer : BackgroundService
+    private readonly IKafkaConsumerAgent<string, CreateCustomerOutDto> kafkaConsumerAgent = kafkaConsumerAgent;
+    private readonly IServiceProvider serviceProvider = serviceProvider;
+    private readonly ILogger<KafkaCreateCdtConsumerTasks> logger = logger;
+    private readonly int parallelKafkaConsumers = kafkaCreateCdtEvt.Value.ParallelKafkaConsumers;
+
+    public Task StartAsync(CancellationToken cancellationToken)
     {
-        private readonly ILogger<KafkaCreateCustomerConsumer> _logger;
-        private readonly ICustomerService _customerService;
-        private readonly IConsumer<Ignore, string> _consumer;
-
-        private const string TopicName = "customer.create";
-
-        public KafkaCreateCustomerConsumer(
-            ILogger<KafkaCreateCustomerConsumer> logger,
-            ICustomerService customerService,
-            ConsumerConfig consumerConfig)
+        for (ushort i = 0; i < parallelKafkaConsumers; i++)
         {
-            _logger = logger;
-            _customerService = customerService;
-
-            _consumer = new ConsumerBuilder<Ignore, string>(consumerConfig)
-                .SetErrorHandler((_, e) => _logger.LogError("Kafka error: {Error}", e.Reason))
-                .Build();
-        }
-
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
-        {
-            _consumer.Subscribe(TopicName);
-            _logger.LogInformation("Kafka Consumer subscribed to topic: {Topic}", TopicName);
-
-            while (!stoppingToken.IsCancellationRequested)
+            int number = i + 1;
+            Task.Run(() =>
             {
                 try
                 {
-                    var consumeResult = _consumer.Consume(stoppingToken);
+                    using IServiceScope scope = serviceProvider.CreateScope();
 
-                    if (consumeResult != null && !string.IsNullOrEmpty(consumeResult.Message.Value))
-                    {
-                        var messageValue = consumeResult.Message.Value;
-                        _logger.LogInformation("Kafka message received: {Message}", messageValue);
+                    ICreateCdtService createCdtService = scope.ServiceProvider.GetRequiredService<ICreateCdtService>();
 
-                        // Deserialize the Kafka message  
-                        var customerDto = JsonSerializer.Deserialize<Domain.Dto.In.CustomerCreateInDto>(messageValue);
-                        if (customerDto != null)
-                        {
-                        //    object value = await _customerService.CreateCustomerAsync(customerDto);
-                            _logger.LogInformation("Customer created successfully.");
-                        }
-                        else
-                        {
-                            _logger.LogWarning("Failed to deserialize Kafka message.");
-                        }
-                    }
-                }
-                catch (OperationCanceledException)
-                {
-                    _logger.LogInformation("Kafka consumer operation canceled.");
+                    kafkaConsumerAgent.ConsumeMessages((ushort)number, createCdtService.NotifyToClient, cancellationToken);
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error occurred while consuming Kafka message.");
-                }
-            }
 
-            _consumer.Close();
+                    Console.WriteLine(ex.Message);
+                    throw;
+                }
+            }, cancellationToken);
         }
+
+        return Task.CompletedTask;
     }
 
+    public async Task StopAsync(CancellationToken cancellationToken)
+    {
+        logger.LogInformation("Stopping Kafka consumers...");
+
+        // Cancela todas las tareas activas
+        cancellationToken.ThrowIfCancellationRequested();
+
+        await Task.CompletedTask;
+    }
 }

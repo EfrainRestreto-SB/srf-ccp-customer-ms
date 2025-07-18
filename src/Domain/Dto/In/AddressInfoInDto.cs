@@ -1,42 +1,39 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Domain.Dtos.Customer.In
+namespace Domain.Dtos.Customer.In;
+
+public class AddressInfoInDto
 {
-    public class AddressInfoInDto
-    {
-        public object Department;
+    [JsonPropertyName("addressLine1")]
+    public string AddressLine1 { get; set; }
 
-        [JsonPropertyName("addressLine1")]
-        public string AddressLine1 { get; set; }        // E01NA2
+    [JsonPropertyName("addressLine2")]
+    public string AddressLine2 { get; set; }
 
-        [JsonPropertyName("addressLine2")]
-        public string AddressLine2 { get; set; }        // E01NA3
+    [JsonPropertyName("addressLine3")]
+    public string AddressLine3 { get; set; }
 
-        [JsonPropertyName("addressLine3")]
-        public string AddressLine3 { get; set; }        // E01NA4
+    [JsonPropertyName("city")]
+    public string City { get; set; }
 
-        [JsonPropertyName("city")]
-        public string City { get; set; }                // E01CTY
+    [JsonPropertyName("cityCode")]
+    public string CityCode { get; set; }
 
-        [JsonPropertyName("cityCode")]
-        public string CityCode { get; set; }            // E01STE
+    [JsonPropertyName("country")]
+    public string Country { get; set; }
 
-        [JsonPropertyName("country")]
-        public string Country { get; set; }             // E01CTR
+    [JsonPropertyName("postalCode")]
+    public string PostalCode { get; set; }
 
-        [JsonPropertyName("postalCode")]
-        public string PostalCode { get; set; }          // E01ZPC
+    [JsonPropertyName("residenceCountry")]
+    public string ResidenceCountry { get; set; }
 
-        [JsonPropertyName("residenceCountry")]
-        public string ResidenceCountry { get; set; }    // E01GEC
+    [JsonPropertyName("currentResidenceYears")]
+    public int CurrentResidenceYears { get; set; }
 
-        [JsonPropertyName("currentResidenceYears")]
-        public string CurrentResidenceYears { get; set; } // E01TVY
+    [JsonPropertyName("currentResidenceMonths")]
+    public int CurrentResidenceMonths { get; set; }
 
-        [JsonPropertyName("currentResidenceMonths")]
-        public string CurrentResidenceMonths { get; set; } // E01TVM
-
-        [JsonPropertyName("housingType")]
-        public string HousingType { get; set; }         // E01FG1
-    }
+    [JsonPropertyName("housingType")]
+    public string HousingType { get; set; }
 }

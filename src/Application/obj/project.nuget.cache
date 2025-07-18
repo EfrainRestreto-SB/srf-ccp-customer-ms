@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "rPsQ8d8Kmcw=",
+=======
+  "dgSpecHash": "0SjJkS9Ltmw=",
+>>>>>>> Stashed changes
   "success": true,
   "projectFilePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Application\\Application.csproj",
   "expectedPackageFiles": [

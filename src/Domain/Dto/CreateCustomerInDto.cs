@@ -1,5 +1,4 @@
 ﻿using Domain.Dto.In;
-using static Domain.Dtos.Customer.In.CustomerCreateInDto;
 
 namespace Domain.Dtos.Customer.In
 {
@@ -14,7 +13,7 @@ namespace Domain.Dtos.Customer.In
         public required EmploymentInfoInDto EmploymentInfo { get; set; }
         public required ForeignCurrencyInfoInDto ForeignCurrencyAccount { get; set; }
         public required InterviewInfoInDto InterviewInfo { get; set; }
-        public required List<ReferenceInDto> References { get; set; }
+        public required ReferenceInfoInDto References { get; set; }
         public required DescriptionInfoInDto DescriptionInfo { get; set; }
 
         public required BankingInfoInDto BankingInfo { get; set; }

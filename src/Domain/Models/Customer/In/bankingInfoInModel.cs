@@ -1,45 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain.Models.Customer.In
+﻿namespace Domain.Models.Customer
 {
-    public class bankingInfoInModel
+    public class BankingInfoInModel
     {
-        public required string affiliationMonth { get; set; }
-        public required string affiliationDay { get; set; } 
-        public required string affiliationYear { get; set; }
-        public required string affiliationOfficeCode { get; set; }
+        public int AffiliationMonth { get; set; }               // E01IDM - max 2 dígitos
+        public int AffiliationDay { get; set; }                 // E01IDD - max 2 dígitos
+        public int AffiliationYear { get; set; }                // E01IDY - max 4 dígitos
 
-        public required string affiliationChannel { get; set; }
-        public required string statementDelivery { get; set; }
+        public string AffiliationOfficeCode { get; set; }       // E01BRA - max-length 4, numérico
+        public string AffiliationChannel { get; set; }          // E01RBY - max-length 4, alfanumérico
+        public string StatementDelivery { get; set; }           // E01FL5 - max-length 1, valores: R, O, C
+        public string ElectronicOperations { get; set; }        // E01FL8 - max-length 8, alfanumérico
 
-        public required string electronicOperations { get; set; }
-        public required string commercialOfficerCode { get; set; }
-        public required string secondaryOfficerCode { get; set; }
-        public required string entityToAffiliateCode { get; set; }
+        public string CommercialOfficerCode { get; set; }       // E01OFC - max-length 4, alfanumérico
+        public string SecondaryOfficerCode { get; set; }        // E01OF2 - max-length 4, alfanumérico
+        public string EntityToAffiliateCode { get; set; }       // E01UC1 - max-length 4, alfanumérico
 
-        public required string superEntityType { get; set; }
-        public required string legalNature { get; set; }
-        public required string businessType { get; set; }
+        public string SuperEntityType { get; set; }             // E01UC2 - max-length 4, alfanumérico
+        public string LegalNature { get; set; }                 // E01UC3 - max-length 4, alfanumérico
+        public string BusinessType { get; set; }                // E01UC4 - max-length 4, alfanumérico
+        public string SegmentCode { get; set; }                 // E01UC5 - max-length 4, alfanumérico
+        public string SuperEntityCode { get; set; }             // E01UC6 - max-length 4, alfanumérico
 
-        public required string segmentCode { get; set; }
+        public string AddressTypeCode { get; set; }             // E01UC7 - max-length 4, alfanumérico
+        public string UndergraduateDegree { get; set; }         // E01UC9 - max-length 4, alfanumérico (Tabla 49)
 
-        public required string superEntityCode { get; set; }
-        public required string addressTypeCode { get; set; }
-        public required string undergraduateDegree { get; set; }
-        public required string interviewType { get; set; }
-        public required string bankRelation { get; set; }
-        public required string serviceType { get; set; }
-        public required string riskPercentage { get; set; }
+        public string InterviewType { get; set; }               // E01FL3 - max-length 1, alfanumérico
+        public string BankRelation { get; set; }                // E01STF - max-length 1, alfanumérico
+        public string ServiceType { get; set; }                 // E01TSE - max-length 4, alfanumérico (Tabla TC)
 
-
-
-
-
-
-
+        public double RiskPercentage { get; set; }              // E01PPA - max-length 6, numérico
     }
 }

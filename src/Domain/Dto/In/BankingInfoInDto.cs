@@ -1,70 +1,69 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Domain.Dtos.Customer.In
+namespace Domain.Dtos.Customer.In;
+
+public class BankingInfoInDto
 {
-    public class BankingInfoInDto
-    {
-        [JsonPropertyName("affiliationMonth")]
-        public required string AffiliationMonth { get; set; }        // E01IDM
+    [JsonPropertyName("affiliationMonth")]
+    public int AffiliationMonth { get; set; }
 
-        [JsonPropertyName("affiliationDay")]
-        public required string AffiliationDay { get; set; }          // E01IDD
+    [JsonPropertyName("affiliationDay")]
+    public int AffiliationDay { get; set; }
 
-        [JsonPropertyName("affiliationYear")]
-        public required string AffiliationYear { get; set; }         // E01IDY
+    [JsonPropertyName("affiliationYear")]
+    public int AffiliationYear { get; set; }
 
-        [JsonPropertyName("affiliationOfficeCode")]
-        public required string AffiliationOfficeCode { get; set; }   // E01BRA
+    [JsonPropertyName("affiliationOfficeCode")]
+    public string AffiliationOfficeCode { get; set; }
 
-        [JsonPropertyName("affiliationChannel")]
-        public required string AffiliationChannel { get; set; }      // E01RBY
+    [JsonPropertyName("affiliationChannel")]
+    public string AffiliationChannel { get; set; }
 
-        [JsonPropertyName("statementDelivery")]
-        public required string StatementDelivery { get; set; }       // E01FL5
+    [JsonPropertyName("statementDelivery")]
+    public string StatementDelivery { get; set; }
 
-        [JsonPropertyName("electronicOperations")]
-        public required string ElectronicOperations { get; set; }   // E01FL8
+    [JsonPropertyName("electronicOperations")]
+    public string ElectronicOperations { get; set; }
 
-        [JsonPropertyName("commercialOfficerCode")]
-        public required string CommercialOfficerCode { get; set; }   // E01OFC
+    [JsonPropertyName("commercialOfficerCode")]
+    public string CommercialOfficerCode { get; set; }
 
-        [JsonPropertyName("secondaryOfficerCode")]
-        public required string SecondaryOfficerCode { get; set; }    // E01OF2
+    [JsonPropertyName("secondaryOfficerCode")]
+    public string SecondaryOfficerCode { get; set; }
 
-        [JsonPropertyName("entityToAffiliateCode")]
-        public required string EntityToAffiliateCode { get; set; }   // E01UC1
+    [JsonPropertyName("entityToAffiliateCode")]
+    public string EntityToAffiliateCode { get; set; }
 
-        [JsonPropertyName("superEntityType")]
-        public required string SuperEntityType { get; set; }         // E01UC2
+    [JsonPropertyName("superEntityType")]
+    public string SuperEntityType { get; set; }
 
-        [JsonPropertyName("legalNature")]
-        public required string LegalNature { get; set; }             // E01UC3
+    [JsonPropertyName("legalNature")]
+    public string LegalNature { get; set; }
 
-        [JsonPropertyName("businessType")]
-        public required string BusinessType { get; set; }            // E01UC4
+    [JsonPropertyName("businessType")]
+    public string BusinessType { get; set; }
 
-        [JsonPropertyName("segmentCode")]
-        public required string SegmentCode { get; set; }             // E01UC5
+    [JsonPropertyName("segmentCode")]
+    public string SegmentCode { get; set; }
 
-        [JsonPropertyName("superEntityCode")]
-        public required string SuperEntityCode { get; set; }         // E01UC6
+    [JsonPropertyName("superEntityCode")]
+    public string SuperEntityCode { get; set; }
 
-        [JsonPropertyName("addressTypeCode")]
-        public required string AddressTypeCode { get; set; }         // E01UC7
+    [JsonPropertyName("addressTypeCode")]
+    public string AddressTypeCode { get; set; }
 
-        [JsonPropertyName("undergraduateDegree")]
-        public required string UndergraduateDegree { get; set; }     // E01UC9
+    [JsonPropertyName("undergraduateDegree")]
+    public string UndergraduateDegree { get; set; }
 
-        [JsonPropertyName("interviewType")]
-        public required string InterviewType { get; set; }           // E01FL3
+    [JsonPropertyName("interviewType")]
+    public string InterviewType { get; set; }
 
-        [JsonPropertyName("bankRelation")]
-        public required string BankRelation { get; set; }            // E01STF
+    [JsonPropertyName("bankRelation")]
+    public string BankRelation { get; set; }
 
-        [JsonPropertyName("serviceType")]
-        public required string ServiceType { get; set; }             // E01TSE
+    [JsonPropertyName("serviceType")]
+    public string ServiceType { get; set; }
 
-        [JsonPropertyName("riskPercentage")]
-        public required string RiskPercentage { get; set; }          // E01PPA
-    }
+    [JsonPropertyName("riskPercentage")]
+    public decimal RiskPercentage { get; set; }
 }

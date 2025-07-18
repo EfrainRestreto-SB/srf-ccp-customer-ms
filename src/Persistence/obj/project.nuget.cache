@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "KhMHOzqaEn0=",
+=======
+  "dgSpecHash": "KORyGU7hSUk=",
+>>>>>>> Stashed changes
   "success": true,
   "projectFilePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj",
   "expectedPackageFiles": [
@@ -62,10 +66,13 @@
     "C:\\Users\\Admininfra\\.nuget\\packages\\sonaranalyzer.csharpx\\6.6.0.3969\\sonaranalyzer.csharpx.6.6.0.3969.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\sonaranalyzer.visualbasic\\10.12.0.118525\\sonaranalyzer.visualbasic.10.12.0.118525.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\stackexchange.redis\\2.8.41\\stackexchange.redis.2.8.41.nupkg.sha512",
+<<<<<<< Updated upstream
     "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore\\9.0.1\\swashbuckle.aspnetcore.9.0.1.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\9.0.1\\swashbuckle.aspnetcore.swagger.9.0.1.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\9.0.1\\swashbuckle.aspnetcore.swaggergen.9.0.1.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\9.0.1\\swashbuckle.aspnetcore.swaggerui.9.0.1.nupkg.sha512",
+=======
+>>>>>>> Stashed changes
     "C:\\Users\\Admininfra\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

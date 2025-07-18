@@ -2856,6 +2856,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "AutoMapper": "15.0.0",
           "MSBuild.SonarQube.Runner.Tool": "4.8.0",
           "Sonar.Lib.FileManagement": "1.0.0.19",
           "SonarAnalyzer": "6.6.0.3969",

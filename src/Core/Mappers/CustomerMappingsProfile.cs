@@ -1,33 +1,53 @@
-﻿using FluentValidation;
+﻿using AutoMapper;
 using Domain.Dto.In;
+using Domain.Dto.Out;
 using Domain.Dtos.Customer.In;
-using CustomerCreateInDto = Domain.Dto.In.CustomerCreateInDto;
+using Domain.Dtos.Customer.Out;
+using Domain.Models.Customer;
+using Domain.Models.Customer.In;
+using Domain.Models.Customer.Out;
 
-namespace Application.Validators
+namespace Application.Mappers;
+
+public class CustomerMappingsProfile : Profile
 {
-    public class CustomerCreateInDtoValidator : AbstractValidator<CustomerCreateInDto>
+    public CustomerMappingsProfile() => CreateMapping();
+
+    private void CreateMapping()
     {
-        public CustomerCreateInDtoValidator()
-        {
-            RuleFor(x => x.BasicInformation)
-                .NotNull()
-                .WithMessage("La información básica no puede ser nula.");
+        // IN
+        CreateMap<CreateCustomerInDto, CreateCustomerInModel>();
+        CreateMap<BasicInformationInDto, BasicInformationInModel>();
+        CreateMap<IdentificationInDto, IdentificationInModel>();
+        CreateMap<BirthInfoInDto, BirthInfoInModel>();
+        CreateMap<ContactInfoInDto, ContactInfoInModel>();
+        CreateMap<AddressInfoInDto, AddressInfoInModel>();
+        CreateMap<FinancialInfoInDto, FinancialInfoModel>();
+        CreateMap<EmploymentInfoInDto, EmploymentInfoInModel>();
+        CreateMap<ForeignCurrencyInfoInDto, ForeignCurrencyAccountInModel>();
+        CreateMap<BankingInfoInDto, bankingInfoInModel>();
+        CreateMap<InterviewInfoInDto, InterviewInfoInModel>();
+        CreateMap<ReferenceInDto, ReferenceInModel>();
+        CreateMap<DescriptionsInDto, DescriptionInfoInModel>();
 
-            RuleFor(x => x.ContactInformation)
-                .NotNull()
-                .WithMessage("La información de contacto no puede ser nula.");
+        // OUT
+        CreateMap<CreateCustomerOutDto, CreateCustomerOutModel>();
+        CreateMap<BasicInformationOutDto, BasicInformationOutModel>();
+        CreateMap<IdentificationOutDto, IdentificationOutModel>();
+        CreateMap<BirthInfoOutDto, BirthInfoOutModel>();
+        CreateMap<ContactInfoOutDto, ContactInfoOutModel>();
+        CreateMap<AddressInfoOutDto, AddressInfoOutModel>();
+        CreateMap<FinancialInfoOutDto, FinancialfoOutModel>();
+        CreateMap<EmploymentInfoOutDto, EmploymenInfoOutModel>();
+        CreateMap<ForeignCurrencyInfoOutDto, ForeignCurrencyAccountOutModel>();
+        CreateMap<BankingInfoOutDto, BankingInfoOutModel>();
+        CreateMap<InterviewInfoOutDto, InterviewInfoOutModel>();
+        CreateMap<ReferenceOutDto, ReferenceOutModel>();
+        CreateMap<DescriptionInfoOutDto, DescriptionOutfoModel>();
+    }
 
-            RuleFor(x => x.Addresses)
-                .NotEmpty()
-                .WithMessage("Debe haber al menos una dirección.");
-
-            RuleFor(x => x.Descriptions)
-                .NotEmpty()
-                .WithMessage("Debe haber al menos una descripción.");
-
-            RuleFor(x => x.References)
-                .NotEmpty()
-                .WithMessage("Debe haber al menos una referencia.");
-        }
+    private void CreateMap<T1, T2>()
+    {
+        throw new NotImplementedException();
     }
 }

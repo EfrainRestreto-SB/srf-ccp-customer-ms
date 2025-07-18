@@ -1,23 +1,19 @@
-﻿namespace Domain.Dto.In
+﻿namespace Domain.Models.Customer
 {
-    public class FinancialInfoModel
-
+    public class FinancialInfoInModel
     {
-        public required string monthyIncome { get; set; }
-        public required string OtherIncome {  get; set; }
-        public required string FamilyExpenses{ get; set; }
-        public required string totalLiabilities { get; set; }
-        public required string otherAssets { get; set; }
-        public required string realStateAssets { get; set; }
-        public required string totalAssets { get; set; }
-        public required string totalIncome { get; set; }
-        public required string totalExpenses { get; set; }
-        public required string fundsOriginDescription1 { get; set; }
-        public required string fundsOriginDescription2 { get; set; }
-        public required string fundsOriginDescription3 { get; set; }
-      
+        public long MonthlyIncome { get; set; }               // E01AM2  - max 20 numérico
+        public long OtherIncome { get; set; }                 // E01AM4  - max 20 numérico
+        public long FamilyExpenses { get; set; }              // E01AM1  - max 20 numérico
+        public long TotalLiabilities { get; set; }            // E01AM3  - max 20 numérico
+        public long OtherAssets { get; set; }                 // E01AM5  - max 20 numérico
+        public long RealStateAssets { get; set; }             // E01FM2  - max 20 numérico
+        public long TotalAssets { get; set; }                 // E01AMT  - max 20 numérico
+        public long TotalIncome { get; set; }                 // E01AM8  - max 20 numérico (Solo salida)
+        public long TotalExpenses { get; set; }               // E01FM3  - max 20 numérico
 
-
-
+        public string FundsOriginDescription1 { get; set; }   // E01DS2  - max 60 alfanumérico
+        public string FundsOriginDescription2 { get; set; }   // E01DS3  - max 60 alfanumérico
+        public string FundsOriginDescription3 { get; set; }   // E01DS4  - max 60 alfanumérico
     }
 }

@@ -940,6 +940,7 @@
           }
         }
       },
+<<<<<<< Updated upstream
       "Swashbuckle.AspNetCore/9.0.1": {
         "type": "package",
         "dependencies": {
@@ -1006,6 +1007,8 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+=======
+>>>>>>> Stashed changes
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2531,6 +2534,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "AutoMapper": "15.0.0",
           "MSBuild.SonarQube.Runner.Tool": "4.8.0",
           "Sonar.Lib.FileManagement": "1.0.0.19",
           "SonarAnalyzer": "6.6.0.3969",
@@ -3887,6 +3891,7 @@
         "stackexchange.redis.nuspec"
       ]
     },
+<<<<<<< Updated upstream
     "Swashbuckle.AspNetCore/9.0.1": {
       "sha512": "lmaz0juKGq8VgeCOki98OUVdEH7rvgBST0QrlWXNOxBl7ujNWyqdqj2SMAdgpQfTtBlSQUTHRslRM+0j7El5tA==",
       "type": "package",
@@ -3955,6 +3960,8 @@
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
+=======
+>>>>>>> Stashed changes
     "System.AppContext/4.3.0": {
       "sha512": "fKC+rmaLfeIzUhagxY17Q9siv/sPrjjKcfNg1Ic8IlQkZLipo8ljcaZQu4VtI4Jqbzjc2VTjzGLF6WmsRXAEgA==",
       "type": "package",
@@ -7742,6 +7749,10 @@
     "net9.0": [
       "AWSSDK.DynamoDBv2 >= 4.0.2.1",
       "AWSSDK.Extensions.NETCore.Setup >= 4.0.2",
+<<<<<<< Updated upstream
+=======
+      "AutoMapper >= 15.0.0",
+>>>>>>> Stashed changes
       "Confluent.Kafka >= 2.11.0",
       "Domain >= 1.0.0",
       "MSBuild.SonarQube.Runner.Tool >= 4.8.0",
@@ -7816,6 +7827,10 @@
           "AWSSDK.Extensions.NETCore.Setup": {
             "target": "Package",
             "version": "[4.0.2, )"
+          },
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[15.0.0, )"
           },
           "Confluent.Kafka": {
             "target": "Package",

@@ -1,79 +1,62 @@
+using Application.Services;
 using AutoMapper;
-using Core.Interfaces.Services;
-using Domain.Models.Customer.In;
-using Domain.Models.Customer;
+using Domain.Dtos;
+using Domain.Interfaces.Services;
+using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
-using Domain.Models.Customer.Out;
-using Core;
-using Swashbuckle.AspNetCore.Annotations;
 
-namespace SrfCcpCustomerMs.Presentation.Controllers
+namespace Core.Controllers;
+
+[Route("api/v1/ms/[controller]")]
+[ApiController]
+public class CustomerController(ICreateCustomerService createCustomerService, IMapper mapper) : ControllerBase
 {
-    [ApiController]
-    [Route("v1/ms/customer")]
-    public class CustomerController : ControllerBase
+    private readonly ICreateCustomerService createCustomerService = createCustomerService;
+    private readonly IMapper mapper = mapper;
+
+    [HttpPost]
+    [Route("CreateCustomer")]
+    public async Task<ActionResult> CreateCustomer(CreateCustomerInModel createCustomerIn)
     {
-        private readonly ICreateCustomerService _createCustomerService;
-        private readonly IMapper _mapper;
-        private object id;
+        CreateCustomerInDto createCustomerInDto = mapper.Map<CreateCustomerInDto>(createCustomerIn);
 
-        public CustomerController(ICreateCustomerService createCustomerService, IMapper mapper)
+        string? id = await createCustomerService.SendCreateCustomerToIbm(createCustomerInDto);
+
+        return StatusCode(StatusCodes.Status202Accepted, new
         {
-            _createCustomerService = createCustomerService;
-            _mapper = mapper;
-        }
+            id,
+            mensaje = "Creación de la cuenta Customer esta en proceso",
+            estado = "Pendiente"
+        });
+    }
 
+    [HttpGet]
+    [Route("CreatedCustomerList")]
+    public async Task<ActionResult> GetCustomerList()
+    {
+        List<CreateCustomerOutDto> Customers = await createCustomerService.GetCustomerList();
+        List<CreateCustomerOutModel> response = mapper.Map<List<CreateCustomerOutModel>>(Customers);
 
-        [HttpPost("Natural")]
-        public async Task<IActionResult> CreateCustomer([FromBody]CreateCustomerInModel createCustomerIn)
+        return StatusCode(StatusCodes.Status200OK, response);
+    }
+
+    [HttpGet]
+    [Route("CreatedCustomerById/{id}")]
+    public async Task<ActionResult> GetCustomerById(string id)
+    {
+        CreateCustomerOutDto? Customers = await createCustomerService.GetCustomerById(id);
+
+        if (Customers is null)
         {
-            var dto = _mapper.Map<CreateCustomerInDto>(createCustomerIn);
-            await _createCustomerService.CreateCustomer(dto); 
-
-            return StatusCode(StatusCodes.Status202Accepted, new
+            return StatusCode(StatusCodes.Status404NotFound, new
             {
-                id = Guid.NewGuid().ToString(),
-                mensaje = "Creación de la cuenta Customer está en proceso",
+                id,
+                mensaje = "Creación de la cuenta Customer esta en proceso",
                 estado = "Pendiente"
             });
         }
 
-        [HttpGet("lists")]
-        [Produces("application/json")]
-        [ProducesResponseType(typeof(List<CreateCustomerOutModel>), StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetCustomerList()
-        {
-            var customers = await _createCustomerService.GetCustomerList();
-            var response = _mapper.Map<List<CreateCustomerOutModel>>(customers);
-
-            return Ok(response); 
-        }
-
-
-        [HttpGet("{id}")]
-        [Produces("application/json")]
-        [SwaggerResponse(StatusCodes.Status200OK, "Cliente encontrado", typeof(CreateCustomerOutModel))]
-        [SwaggerResponse(StatusCodes.Status404NotFound, "Cliente no encontrado")]
-        public async Task<IActionResult> GetCustomerById(string id)
-        {
-            var customer = await _createCustomerService.GetCustomerById(id);
-
-            if (customer is null)
-            {
-                return NotFound(new
-                {
-                    id,
-                    mensaje = "El cliente aún no ha sido creado o no existe.",
-                    estado = "Pendiente"
-                });
-            }
-
-            var response = _mapper.Map<CreateCustomerOutModel>(customer);
-            return Ok(response);
-        }
-
+        CreateCustomerOutModel response = mapper.Map<CreateCustomerOutModel>(Customers);
+        return StatusCode(StatusCodes.Status200OK, response);
     }
-
-
-
 }

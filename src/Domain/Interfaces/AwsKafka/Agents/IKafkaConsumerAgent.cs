@@ -1,9 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿namespace Domain.Interfaces.AwsKafka.Agents;
 
-namespace Core.Interfaces.Agents
+public interface IKafkaConsumerAgent<TKey, TValue>
 {
-    public interface IKafkaConsumerAgent<T>
-    {
-        Task ConsumeAsync(T message);
-    }
+    public Task ConsumeMessages(ushort consumerNumber, Func<TKey, TValue, Task> method, CancellationToken cancellationToken);
 }

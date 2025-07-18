@@ -1,79 +1,97 @@
-﻿using Core.Interfaces.Configuration;
-using Core.Interfaces.Repositories;
+﻿using Domain.Interfaces.Repositories;
 using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
-using System;
-using System.Text.Json;
-using System.Threading.Tasks;
 
-namespace Infrastructure.Repositories
+namespace Persistence.Repositories;
+
+public class RedisRepository : IRedisRepository, IDisposable
 {
-    public class RedisRepository<T> : IRedisRepository<T>
+    private readonly IDatabase _redis;
+    private readonly ILogger<RedisRepository> _logger;
+    private readonly IConnectionMultiplexer _connection;
+    private bool _disposed;
+
+    public RedisRepository(IConnectionMultiplexer redisConnection, ILogger<RedisRepository> logger)
     {
-        private readonly IDatabase _database;
-        private readonly ILogger<RedisRepository<T>> _logger;
+        _connection = redisConnection;
+        _logger = logger;
 
-        public RedisRepository(IRedisConnectionConfig config, ILogger<RedisRepository<T>> logger)
+        if (!_connection.IsConnected)
         {
-            var redis = ConnectionMultiplexer.Connect(config.ConnectionString);
-            _database = redis.GetDatabase();
-            _logger = logger;
+            _logger.LogError("No se pudo establecer una conexión con Redis");
+            throw new RedisConnectionException(ConnectionFailureType.UnableToConnect,
+                "No se pudo establecer una conexión con Redis");
         }
 
-        public async Task SetAsync(string key, T value, int? expirationInMinutes = null)
+        _redis = _connection.GetDatabase();
+    }
+
+    public async Task StoreSet(string key, string value)
+    {
+        try
         {
-            try
-            {
-                var json = JsonSerializer.Serialize(value);
-                var expiry = expirationInMinutes.HasValue ? TimeSpan.FromMinutes(expirationInMinutes.Value) : (TimeSpan?)null;
-
-                await _database.StringSetAsync(key, json, expiry);
-                _logger.LogInformation($"[Redis] Guardado: {key}");
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"[Redis] Error al guardar clave '{key}': {ex.Message}");
-                throw;
-            }
+            await _redis.SetAddAsync(key, value);
+            await _redis.KeyExpireAsync(key, TimeSpan.FromHours(24));
         }
-
-        public async Task<T?> GetAsync(string key)
+        catch (RedisException ex)
         {
-            try
-            {
-                var value = await _database.StringGetAsync(key);
-                if (value.IsNullOrEmpty)
-                {
-                    _logger.LogWarning($"[Redis] No se encontró clave: {key}");
-                    return default;
-                }
-
-                return JsonSerializer.Deserialize<T>(value!);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"[Redis] Error al obtener clave '{key}': {ex.Message}");
-                throw;
-            }
+            _logger.LogError(ex, "Error de Redis. Key: {Key}, Value: {Value}", key, value);
+            throw new RedisException($"Error al procesar el Set. Key: {key}", ex);
         }
+    }
 
-        public async Task DeleteAsync(string key)
+    // Obtener todos los elementos del set
+    public async Task<RedisValue[]> GetallSetListItems(string key)
+    {
+        // Verificar si la clave existe antes de intentar obtener los miembros
+        if (!await _redis.KeyExistsAsync(key)) return [];
+
+        return await _redis.SetMembersAsync(key);
+    }
+
+    public async Task<string?> GetValueByPattern(string keySet, string pattern)
+    {
+        try
         {
-            try
-            {
-                await _database.KeyDeleteAsync(key);
-                _logger.LogInformation($"[Redis] Eliminada clave: {key}");
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"[Redis] Error al eliminar clave '{key}': {ex.Message}");
-                throw;
-            }
-        }
+            RedisValue[] allElements = await GetallSetListItems(keySet);
 
-        public interface IRedisConnectionConfig
-        {
-            string ConnectionString { get; }
+            foreach (RedisValue element in allElements)
+            {
+                string elementString = element.ToString();
+                if (elementString.Contains(pattern))
+                    return elementString;
+            }
+
+            return null;
         }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error al buscar valor por patrón");
+            return null;
+        }
+    }
+
+    // Implementación de IDisposable
+    public void Dispose()
+    {
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (!_disposed)
+        {
+            if (disposing)
+            {
+                _connection?.Dispose();
+            }
+            _disposed = true;
+        }
+    }
+
+    ~RedisRepository()
+    {
+        Dispose(false);
     }
 }

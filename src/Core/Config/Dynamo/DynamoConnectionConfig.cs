@@ -1,28 +1,13 @@
 ﻿using Core.Config.SettingFiles.Dynamo;
 using Core.Interfaces.Configuration;
+using Domain.Interfaces.Dynamo.Config;
 using Microsoft.Extensions.Options;
 
-namespace Core.Config.Dynamo
+namespace Core.Config.Dynamo;
+
+public class DynamoConnectionConfig(IOptions<DynamoJson> options) : IDynamoConnectionConfig
 {
-    public class DynamoConnectionConfig : IDynamoConnectionConfig
-    {
-        private readonly DynamoJson _config;
+    private readonly DynamoJson config = options.Value;
 
-        public DynamoConnectionConfig(IOptions<DynamoJson> options)
-        {
-            _config = options.Value;
-        }
-
-        public string Region => throw new NotImplementedException();
-
-        public string AccessKey => throw new NotImplementedException();
-
-        public string SecretKey => throw new NotImplementedException();
-
-        public string ServiceURL => throw new NotImplementedException();
-
-        string IDynamoConnectionConfig.TableName => throw new NotImplementedException();
-
-        public string? TableName() => _config.TableName;
-    }
+    public string? TableName() => config.TableName;
 }

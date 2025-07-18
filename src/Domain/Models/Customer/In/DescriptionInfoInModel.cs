@@ -1,28 +1,27 @@
-﻿namespace Domain.Dto.In
+﻿namespace Domain.Models.Customer
 {
     public class DescriptionInfoInModel
     {
-        public required string OfficeDescription { get; set; }
-        public required string idTypeDescription { get; set; }
-        public required string idCountryDescription { get; set; }
-        public required string nationalityDescription { get; set; }
-        public required string channelDescription { get; set; }
-        public required string educationDescription { get; set; }
-        public required string activityDescription { get; set; }
-        public required string riskDescription { get; set; }
-        public required string sectorDescription { get; set; }
-        public required string residenceCountryDescription { get; set; }
-        public required string commercialOfficerDescription { get; set; }
-        public required string secondaryOfficerDescription { get; set; }
-        public required string entityDescription { get; set; }
-        public required string businessTypeDescription { get; set; }
-        public required string segmentDescription { get; set; }
-        public required string degreeDescription { get; set; }
-        public required string departmentDescription { get; set; }
-        public required string positionDescription { get; set; }
-
-        public required string contractDescription { get; set; }
-        public required string transaction1Description { get; set; }
-        public required string nichoDescription { get; set; }
+        public string OfficeDescription { get; set; }
+        public string IdTypeDescription { get; set; }
+        public string IdCountryDescription { get; set; }
+        public string NationalityDescription { get; set; }
+        public string ChannelDescription { get; set; }
+        public string EducationDescription { get; set; }
+        public string ActivityDescription { get; set; }
+        public string RiskDescription { get; set; }
+        public string SectorDescription { get; set; }
+        public string ResidenceCountryDescription { get; set; }
+        public string CommercialOfficerDescription { get; set; }
+        public string SecondaryOfficerDescription { get; set; }
+        public string EntityDescription { get; set; }
+        public string BusinessTypeDescription { get; set; }
+        public string SegmentDescription { get; set; }
+        public string DegreeDescription { get; set; }
+        public string DepartmentDescription { get; set; }
+        public string PositionDescription { get; set; }
+        public string ContractDescription { get; set; }
+        public string Transaction1Description { get; set; }
+        public string NichoDescription { get; set; }
     }
 }

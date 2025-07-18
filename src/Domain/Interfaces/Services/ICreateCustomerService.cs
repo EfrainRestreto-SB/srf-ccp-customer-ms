@@ -1,16 +1,13 @@
-﻿using Controllers;
-using Domain.Dtos.Customer.In;
-using Domain.Dtos.Customer.Out;
+﻿using Core;
+using Domain.Dtos;
 
-namespace Core.Interfaces.Services
+namespace Domain.Interfaces.Services;
+
+public interface ICreateCdtService
 {
-    public interface ICreateCustomerService
-    {
-        Task<List<CustomerController.CreateCustomerOutDto>> CustomerList { get; }
-
-        Task CreateCustomer(CreateCustomerInDto dto);
-        Task<List<CreateCustomerOutDto>> GetCustomerList();
-        Task<CreateCustomerOutDto?> GetCustomerById(string id);
-        Task CreateCustomerAsync(CustomerCreateInDto customerCreateInDto);
-    }
+    public Task<string?> SendCreateCdtToIbm(CreateCustomerInDto createCustomerDto);
+    public Task SendCreateCdtToIbm(string? key, CreateCustomerInDto CustomerClienteInDto);
+    public Task NotifyToClient(string clientId, CreateCustomerInDto createCustomerDto);
+    public Task<List<CreateCustomerOutDto>> GetCdtList();
+    public Task<CreateCustomerOutDto?> GetCdtById(string? id);
 }

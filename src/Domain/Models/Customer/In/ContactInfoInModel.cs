@@ -1,11 +1,11 @@
-﻿namespace Domain.Dto.In
+﻿namespace Domain.Models.Customer
 {
     public class ContactInfoInModel
     {
-        public required string EmailType { get; set; }
-        public required string Email { get; set; }
-        public required string PhoneType { get; set; }
-        public required string mainPhone { get; set; }
-        public required string PhoneExtension { get; set; }
+        public string EmailType { get; set; }        // E01IAT
+        public string Email { get; set; }            // E01IAD
+        public string PhoneType { get; set; }        // E01PHT
+        public string MainPhone { get; set; }        // E01PHO
+        public string PhoneExtension { get; set; }   // E01PHX
     }
 }
