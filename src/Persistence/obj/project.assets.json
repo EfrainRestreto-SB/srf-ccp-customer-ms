@@ -2,7 +2,48 @@
   "version": 3,
   "targets": {
     "net9.0": {
-      "AWSSDK.Core/4.0.0.14": {
+      "AutoMapper/14.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Options": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AutoMapper.Collection/11.0.0": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "[14.0.0, 15.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/AutoMapper.Collection.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/AutoMapper.Collection.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "[12.0.1]",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
+      "AWSSDK.Core/4.0.0.16": {
         "type": "package",
         "compile": {
           "lib/net8.0/AWSSDK.Core.dll": {
@@ -15,10 +56,10 @@
           }
         }
       },
-      "AWSSDK.DynamoDBv2/4.0.2.1": {
+      "AWSSDK.DynamoDBv2/4.0.3": {
         "type": "package",
         "dependencies": {
-          "AWSSDK.Core": "[4.0.0.14, 5.0.0)"
+          "AWSSDK.Core": "[4.0.0.16, 5.0.0)"
         },
         "compile": {
           "lib/net8.0/AWSSDK.DynamoDBv2.dll": {
@@ -131,6 +172,56 @@
           }
         }
       },
+      "FluentValidation/12.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "FluentValidation.AspNetCore/11.3.1": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "11.11.0",
+          "FluentValidation.DependencyInjectionExtensions": "11.11.0"
+        },
+        "compile": {
+          "lib/net6.0/FluentValidation.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/FluentValidation.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "FluentValidation.DependencyInjectionExtensions/12.0.0": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "12.0.0",
+          "Microsoft.Extensions.Dependencyinjection.Abstractions": "2.1.0"
+        },
+        "compile": {
+          "lib/net8.0/FluentValidation.DependencyInjectionExtensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/FluentValidation.DependencyInjectionExtensions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Google.Protobuf/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -162,6 +253,15 @@
       },
       "Google.Protobuf.Tools/3.0.0": {
         "type": "package"
+      },
+      "IBMMQDotnetClient/9.4.3": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/amqmdnetstd.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/amqmdnetstd.dll": {}
+        }
       },
       "librdkafka.redist/2.11.0": {
         "type": "package",
@@ -264,6 +364,76 @@
           "runtimes/win-x86/native/zstd.dll": {
             "assetType": "native",
             "rid": "win-x86"
+          }
+        }
+      },
+      "MicroElements.OpenApi.FluentValidation/6.1.0": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "[10.0.0, 12.0.0)",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/MicroElements.OpenApi.FluentValidation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/MicroElements.OpenApi.FluentValidation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MicroElements.Swashbuckle.FluentValidation/6.1.0": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "[10.0.0, 12.0.0)",
+          "MicroElements.OpenApi.FluentValidation": "6.1.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "[6.3.0, 8.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/MicroElements.Swashbuckle.FluentValidation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/MicroElements.Swashbuckle.FluentValidation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.2.0",
+          "System.Text.Encodings.Web": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Features/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -940,7 +1110,6 @@
           }
         }
       },
-<<<<<<< Updated upstream
       "Swashbuckle.AspNetCore/9.0.1": {
         "type": "package",
         "dependencies": {
@@ -1007,8 +1176,6 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-=======
->>>>>>> Stashed changes
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2290,6 +2457,19 @@
           }
         }
       },
+      "System.Text.Encodings.Web/4.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Text.RegularExpressions/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2534,8 +2714,17 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "AutoMapper": "15.0.0",
+          "AWSSDK.Core": "4.0.0.16",
+          "AutoMapper.Collection": "11.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+          "FluentValidation": "12.0.0",
+          "FluentValidation.AspNetCore": "11.3.1",
+          "FluentValidation.DependencyInjectionExtensions": "12.0.0",
+          "Google.Protobuf.Tools": "3.0.0",
+          "IBMMQDotnetClient": "9.4.3",
           "MSBuild.SonarQube.Runner.Tool": "4.8.0",
+          "MicroElements.OpenApi.FluentValidation": "6.1.0",
+          "MicroElements.Swashbuckle.FluentValidation": "6.1.0",
           "Sonar.Lib.FileManagement": "1.0.0.19",
           "SonarAnalyzer": "6.6.0.3969",
           "SonarAnalyzer.CSharpX": "6.6.0.3969",
@@ -2551,15 +2740,57 @@
     }
   },
   "libraries": {
-    "AWSSDK.Core/4.0.0.14": {
-      "sha512": "GUCP2LozKSapBKvV/rZtnh2e9SFF/DO3e4Z+0UV7oo9LuVVa+0XDDUKMiC3Oz54FBq29K7s9OxegBQPIZbe4Yw==",
+    "AutoMapper/14.0.0": {
+      "sha512": "OC+1neAPM4oCCqQj3g2GJ2shziNNhOkxmNB9cVS8jtx4JbgmRzLcUOxB9Tsz6cVPHugdkHgCaCrTjjSI0Z5sCQ==",
       "type": "package",
-      "path": "awssdk.core/4.0.0.14",
+      "path": "automapper/14.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.14.0.0.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/net8.0/AutoMapper.dll",
+        "lib/net8.0/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Collection/11.0.0": {
+      "sha512": "26CXTuPsIbfk121na1sWt/QcJ4EkXtlWy6R+LJFvsxiF80d2srbUgL0WgZn9mDyrJo4Hvvyqr/WFwNrVOKMiHQ==",
+      "type": "package",
+      "path": "automapper.collection/11.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.collection.11.0.0.nupkg.sha512",
+        "automapper.collection.nuspec",
+        "icon.png",
+        "lib/net8.0/AutoMapper.Collection.dll"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+      "sha512": "+g/K+Vpe3gGMKGzjslMOdqNlkikScDjWfVvmWTayrDHaG/n2pPmFBMa+jKX1r/h6BDGFdkyRjAuhFE3ykW+r1g==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
+      ]
+    },
+    "AWSSDK.Core/4.0.0.16": {
+      "sha512": "GJlhEqljTAIB2nedgSggHgwKazx15A7cQylv1tpkG1DKwiT/YJ/1zxiG/UMSRIJI7EdKgbCz917UpDjw9qUwPw==",
+      "type": "package",
+      "path": "awssdk.core/4.0.0.16",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "awssdk.core.4.0.0.14.nupkg.sha512",
+        "awssdk.core.4.0.0.16.nupkg.sha512",
         "awssdk.core.nuspec",
         "images/AWSLogo.png",
         "lib/net472/AWSSDK.Core.dll",
@@ -2577,17 +2808,17 @@
         "tools/account-management.ps1"
       ]
     },
-    "AWSSDK.DynamoDBv2/4.0.2.1": {
-      "sha512": "H8XlR0KebEM0OqQI3I65JnZShoMj8t5RPz7BBOgnFKp9LspU08aqmTnZo2LLX5AGTrbjCiMrdKrNHjqWnAGMxA==",
+    "AWSSDK.DynamoDBv2/4.0.3": {
+      "sha512": "l4oxqVjZr7nAoUXHpuQ9OOGX4RrDLWNUm0P0Wp9e0JC6vtHSpmriW8ivy0IyIQubwPJABMeY/WF8H9fsKGw3ow==",
       "type": "package",
-      "path": "awssdk.dynamodbv2/4.0.2.1",
+      "path": "awssdk.dynamodbv2/4.0.3",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "analyzers/dotnet/cs/AWSSDK.DynamoDBv2.CodeAnalysis.dll",
         "analyzers/dotnet/cs/SharedAnalysisCode.dll",
-        "awssdk.dynamodbv2.4.0.2.1.nupkg.sha512",
+        "awssdk.dynamodbv2.4.0.3.nupkg.sha512",
         "awssdk.dynamodbv2.nuspec",
         "images/AWSLogo.png",
         "lib/net472/AWSSDK.DynamoDBv2.dll",
@@ -2731,6 +2962,55 @@
         "lib/netstandard2.0/ExcelNumberFormat.xml"
       ]
     },
+    "FluentValidation/12.0.0": {
+      "sha512": "8NVLxtMUXynRHJIX3Hn1ACovaqZIJASufXIIFkD0EUbcd5PmMsL1xUD5h548gCezJ5BzlITaR9CAMrGe29aWpA==",
+      "type": "package",
+      "path": "fluentvalidation/12.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.12.0.0.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net8.0/FluentValidation.dll",
+        "lib/net8.0/FluentValidation.xml"
+      ]
+    },
+    "FluentValidation.AspNetCore/11.3.1": {
+      "sha512": "FjkfrGGwC+25oH8QpX1ti3gxkFjDDtotkAQWyQz2CkwQwEfRKTANjhh77I79kY8dov2ydK1SY+e4jiOWsbbDdQ==",
+      "type": "package",
+      "path": "fluentvalidation.aspnetcore/11.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.aspnetcore.11.3.1.nupkg.sha512",
+        "fluentvalidation.aspnetcore.nuspec",
+        "lib/net5.0/FluentValidation.AspNetCore.dll",
+        "lib/net5.0/FluentValidation.AspNetCore.xml",
+        "lib/net6.0/FluentValidation.AspNetCore.dll",
+        "lib/net6.0/FluentValidation.AspNetCore.xml",
+        "lib/netcoreapp3.1/FluentValidation.AspNetCore.dll",
+        "lib/netcoreapp3.1/FluentValidation.AspNetCore.xml"
+      ]
+    },
+    "FluentValidation.DependencyInjectionExtensions/12.0.0": {
+      "sha512": "B28fBRL1UjhGsBC8fwV6YBZosh+SiU1FxdD7l7p5dGPgRlVI7UnM+Lgzmg+unZtV1Zxzpaw96UY2MYfMaAd8cg==",
+      "type": "package",
+      "path": "fluentvalidation.dependencyinjectionextensions/12.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.dependencyinjectionextensions.12.0.0.nupkg.sha512",
+        "fluentvalidation.dependencyinjectionextensions.nuspec",
+        "lib/net8.0/FluentValidation.DependencyInjectionExtensions.dll",
+        "lib/net8.0/FluentValidation.DependencyInjectionExtensions.xml"
+      ]
+    },
     "Google.Protobuf/3.1.0": {
       "sha512": "ce4+CWfPl1bLpPG83mnN4tpWgZY+6YXzv8p7OHFRYZ5Ly2RQE3YrdCwSj0ZSSJgaPXY9aTjoGOkm1rQOnMjyRQ==",
       "type": "package",
@@ -2773,6 +3053,38 @@
         "tools/macosx_x86/protoc",
         "tools/windows_x64/protoc.exe",
         "tools/windows_x86/protoc.exe"
+      ]
+    },
+    "IBMMQDotnetClient/9.4.3": {
+      "sha512": "dR5k1O/01sS/+YdgsQK8pF+LoF91zI3chCju2s78QYZWSmXPVtKT129qI8O62rOIepKYMiLcK51sH28F3mVnHQ==",
+      "type": "package",
+      "path": "ibmmqdotnetclient/9.4.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ibmmqdotnetclient.9.4.3.nupkg.sha512",
+        "ibmmqdotnetclient.nuspec",
+        "lib/net8.0/amqmdnetstd.dll",
+        "licenses/LA_cs.rtf",
+        "licenses/LA_de.rtf",
+        "licenses/LA_el.rtf",
+        "licenses/LA_en.rtf",
+        "licenses/LA_es.rtf",
+        "licenses/LA_fr.rtf",
+        "licenses/LA_in.rtf",
+        "licenses/LA_it.rtf",
+        "licenses/LA_ja.rtf",
+        "licenses/LA_ko.rtf",
+        "licenses/LA_lt.rtf",
+        "licenses/LA_pl.rtf",
+        "licenses/LA_pt.rtf",
+        "licenses/LA_ru.rtf",
+        "licenses/LA_sl.rtf",
+        "licenses/LA_tr.rtf",
+        "licenses/LA_zh.rtf",
+        "licenses/LA_zh_TW.rtf",
+        "licenses/non_ibm_license.rtf",
+        "licenses/notices.rtf"
       ]
     },
     "librdkafka.redist/2.11.0": {
@@ -2820,6 +3132,58 @@
         "runtimes/win-x86/native/vcruntime140.dll",
         "runtimes/win-x86/native/zlib1.dll",
         "runtimes/win-x86/native/zstd.dll"
+      ]
+    },
+    "MicroElements.OpenApi.FluentValidation/6.1.0": {
+      "sha512": "qJPAI3bL70ND6fIi4bGqQf/lpV9wUod23R7JVhVVYRonoT/ZGmPBjMbO//IPPy3yP2F21iMX05brYjyU4/WqwQ==",
+      "type": "package",
+      "path": "microelements.openapi.fluentvalidation/6.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/MicroElements.OpenApi.FluentValidation.dll",
+        "lib/netstandard2.0/MicroElements.OpenApi.FluentValidation.xml",
+        "microelements.openapi.fluentvalidation.6.1.0.nupkg.sha512",
+        "microelements.openapi.fluentvalidation.nuspec"
+      ]
+    },
+    "MicroElements.Swashbuckle.FluentValidation/6.1.0": {
+      "sha512": "VzqApLPY8xIqXDvWqRuvoDYEoCHII42c4LgvLO3BikKoIVcECD+ZSG727I7yPZ/J07VEoa8aJddoqUtSm4E4gw==",
+      "type": "package",
+      "path": "microelements.swashbuckle.fluentvalidation/6.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/MicroElements.Swashbuckle.FluentValidation.dll",
+        "lib/netstandard2.0/MicroElements.Swashbuckle.FluentValidation.xml",
+        "microelements.swashbuckle.fluentvalidation.6.1.0.nupkg.sha512",
+        "microelements.swashbuckle.fluentvalidation.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
+      "sha512": "Nxs7Z1q3f1STfLYKJSVXCs1iBl+Ya6E8o4Oy1bCxJ/rNI44E/0f6tbsrVqAWfB7jlnJfyaAtIalBVxPKUPQb4Q==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.abstractions/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.xml",
+        "microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.http.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Features/2.2.0": {
+      "sha512": "ziFz5zH8f33En4dX81LW84I6XrYXKf9jg6aM39cM+LffN9KJahViKZ61dGMSO2gd3e+qe5yBRwsesvyqlZaSMg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.features/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.xml",
+        "microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
@@ -3891,7 +4255,6 @@
         "stackexchange.redis.nuspec"
       ]
     },
-<<<<<<< Updated upstream
     "Swashbuckle.AspNetCore/9.0.1": {
       "sha512": "lmaz0juKGq8VgeCOki98OUVdEH7rvgBST0QrlWXNOxBl7ujNWyqdqj2SMAdgpQfTtBlSQUTHRslRM+0j7El5tA==",
       "type": "package",
@@ -3960,8 +4323,6 @@
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
-=======
->>>>>>> Stashed changes
     "System.AppContext/4.3.0": {
       "sha512": "fKC+rmaLfeIzUhagxY17Q9siv/sPrjjKcfNg1Ic8IlQkZLipo8ljcaZQu4VtI4Jqbzjc2VTjzGLF6WmsRXAEgA==",
       "type": "package",
@@ -7071,6 +7432,25 @@
         "system.text.encoding.extensions.nuspec"
       ]
     },
+    "System.Text.Encodings.Web/4.5.0": {
+      "sha512": "Xg4G4Indi4dqP1iuAiMSwpiWS54ZghzR644OtsRCm/m/lBMG8dUBhLVN7hLm8NNrNTR+iGbshCPTwrvxZPlm4g==",
+      "type": "package",
+      "path": "system.text.encodings.web/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard1.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard1.0/System.Text.Encodings.Web.xml",
+        "lib/netstandard2.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard2.0/System.Text.Encodings.Web.xml",
+        "system.text.encodings.web.4.5.0.nupkg.sha512",
+        "system.text.encodings.web.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Text.RegularExpressions/4.3.0": {
       "sha512": "RpT2DA+L660cBt1FssIE9CAGpLFdFPuheB7pLpKpn6ZXNby7jDERe8Ua/Ne2xGiwLVG2JOqziiaVCGDon5sKFA==",
       "type": "package",
@@ -7747,12 +8127,8 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "AWSSDK.DynamoDBv2 >= 4.0.2.1",
+      "AWSSDK.DynamoDBv2 >= 4.0.3",
       "AWSSDK.Extensions.NETCore.Setup >= 4.0.2",
-<<<<<<< Updated upstream
-=======
-      "AutoMapper >= 15.0.0",
->>>>>>> Stashed changes
       "Confluent.Kafka >= 2.11.0",
       "Domain >= 1.0.0",
       "MSBuild.SonarQube.Runner.Tool >= 4.8.0",
@@ -7822,15 +8198,11 @@
         "dependencies": {
           "AWSSDK.DynamoDBv2": {
             "target": "Package",
-            "version": "[4.0.2.1, )"
+            "version": "[4.0.3, )"
           },
           "AWSSDK.Extensions.NETCore.Setup": {
             "target": "Package",
             "version": "[4.0.2, )"
-          },
-          "AutoMapper": {
-            "target": "Package",
-            "version": "[15.0.0, )"
           },
           "Confluent.Kafka": {
             "target": "Package",
@@ -7896,5 +8268,47 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Se detectó una versión del paquete fuera de la restricción de dependencia: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 requiere AutoMapper (= 12.0.1), pero la versión AutoMapper 14.0.0 ya se resolvió.",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Se detectó una versión del paquete fuera de la restricción de dependencia: MicroElements.OpenApi.FluentValidation 6.1.0 requiere FluentValidation (>= 10.0.0 && < 12.0.0), pero la versión FluentValidation 12.0.0 ya se resolvió.",
+      "libraryId": "FluentValidation",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Se detectó una versión del paquete fuera de la restricción de dependencia: MicroElements.Swashbuckle.FluentValidation 6.1.0 requiere FluentValidation (>= 10.0.0 && < 12.0.0), pero la versión FluentValidation 12.0.0 ya se resolvió.",
+      "libraryId": "FluentValidation",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Se detectó una versión del paquete fuera de la restricción de dependencia: MicroElements.Swashbuckle.FluentValidation 6.1.0 requiere Swashbuckle.AspNetCore.SwaggerGen (>= 6.3.0 && < 8.0.0), pero la versión Swashbuckle.AspNetCore.SwaggerGen 9.0.1 ya se resolvió.",
+      "libraryId": "Swashbuckle.AspNetCore.SwaggerGen",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
 }

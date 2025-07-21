@@ -3,6 +3,7 @@ using Domain.Dto.In;
 using Domain.Dto.Out;
 using Domain.Dtos.Customer.In;
 using Domain.Dtos.Customer.Out;
+using Domain.Models.CreateCustomer.In;
 using Domain.Models.Customer;
 using Domain.Models.Customer.In;
 using Domain.Models.Customer.Out;
@@ -23,12 +24,12 @@ public class CustomerMappingsProfile : Profile
         CreateMap<BirthInfoInDto, BirthInfoInModel>();
         CreateMap<ContactInfoInDto, ContactInfoInModel>();
         CreateMap<AddressInfoInDto, AddressInfoInModel>();
-        CreateMap<FinancialInfoInDto, FinancialInfoModel>();
+        CreateMap<FinancialInfoInDto, FinancialInfoInModel>();
         CreateMap<EmploymentInfoInDto, EmploymentInfoInModel>();
-        CreateMap<ForeignCurrencyInfoInDto, ForeignCurrencyAccountInModel>();
-        CreateMap<BankingInfoInDto, bankingInfoInModel>();
+        CreateMap<ForeignCurrencyInfoInDto, ForeignCurrencyInfoInModel>();
+        CreateMap<BankingInfoInDto, BasicInformationInModel>();
         CreateMap<InterviewInfoInDto, InterviewInfoInModel>();
-        CreateMap<ReferenceInDto, ReferenceInModel>();
+        CreateMap<ReferenceInModel, ReferenceInModel>();
         CreateMap<DescriptionInfoInDto, DescriptionInfoInModel>();
 
         // OUT

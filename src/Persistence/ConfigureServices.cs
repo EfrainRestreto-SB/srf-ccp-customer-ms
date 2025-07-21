@@ -18,11 +18,11 @@ public static class ConfigureServices
         // Producers
         services.AddSingleton<IKafkaProducerAgent<string, CreateCustomerInDto>>(sp =>
         {
-            ILogger<KafkaCdtProducerAgent<string, CreateCdtInDto>> logger = sp.GetRequiredService<ILogger<KafkaCdtProducerAgent<string, CreateCustomerInDto>>>();
-            IKafkaProducerConfig kafkaProducerConfig = sp.GetRequiredKeyedService<IKafkaProducerConfig>("KafkaProducerCreateCdtCmdConfig");
+            ILogger<KafkaCustomerProducerAgent<string, CreateCustomerInDto>> logger = sp.GetRequiredService<ILogger<KafkaCustomerProducerAgent<string, CreateCustomerInDto>>>();
+            IKafkaProducerConfig kafkaProducerConfig = sp.GetRequiredKeyedService<IKafkaProducerConfig>("KafkaProducerCreateCustomerCmdConfig");
             AWSOptions awsOptions = sp.GetRequiredService<AWSOptions>();
 
-            return new KafkaCdtProducerAgent<string, CreateCdtInDto>(kafkaProducerConfig, awsOptions, logger);
+            return new KafkaCustomerProducerAgent<string, CreateCustomerInDto>(kafkaProducerConfig, awsOptions, logger);
         });
 
      
@@ -30,11 +30,11 @@ public static class ConfigureServices
         // Consumers
         services.AddSingleton<IKafkaConsumerAgent<string, CreateCustomerOutDto>>(sp =>
         {
-            ILogger<KafkaCdtConsumerAgent<string, CreateCdtOutDto>> logger = sp.GetRequiredService<ILogger<KafkaCdtConsumerAgent<string, CreateCustomerOutDto>>>();
-            IKafkaConsumerConfig kafkaConsumerConfig = sp.GetRequiredKeyedService<IKafkaConsumerConfig>("KafkaConsumerCreateCdtEvtConfig");
+            ILogger<KafkaCustomerConsumerAgent<string, CreateCustomerOutDto>> logger = sp.GetRequiredService<ILogger<KafkaCustomerConsumerAgent<string, CreateCustomerOutDto>>>();
+            IKafkaConsumerConfig kafkaConsumerConfig = sp.GetRequiredKeyedService<IKafkaConsumerConfig>("KafkaConsumerCreateCustomerEvtConfig");
             AWSOptions awsOptions = sp.GetRequiredService<AWSOptions>();
 
-            return new KafkaCdtConsumerAgent<string, CreateCdtOutDto>(kafkaConsumerConfig, awsOptions, logger);
+            return new KafkaCustomerConsumerAgent<string, CreateCustomerOutDto>(kafkaConsumerConfig, awsOptions, logger);
         });
 
      

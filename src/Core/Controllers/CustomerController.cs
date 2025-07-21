@@ -3,6 +3,7 @@ using AutoMapper;
 using Domain.Dtos;
 using Domain.Interfaces.Services;
 using Domain.Models;
+using Domain.Models.Customer.In;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core.Controllers;
@@ -35,7 +36,7 @@ public class CustomerController(ICreateCustomerService createCustomerService, IM
     public async Task<ActionResult> GetCustomerList()
     {
         List<CreateCustomerOutDto> Customers = await createCustomerService.GetCustomerList();
-        List<CreateCustomerOutModel> response = mapper.Map<List<CreateCustomerOutModel>>(Customers);
+        List<CreateCustomerInModel> response = mapper.Map<List<CreateCustomerInModel>>(Customers);
 
         return StatusCode(StatusCodes.Status200OK, response);
     }
@@ -56,7 +57,7 @@ public class CustomerController(ICreateCustomerService createCustomerService, IM
             });
         }
 
-        CreateCustomerOutModel response = mapper.Map<CreateCustomerOutModel>(Customers);
+        CreateCustomerInModel response = mapper.Map<CreateCustomerInModel>(Customers);
         return StatusCode(StatusCodes.Status200OK, response);
     }
 }

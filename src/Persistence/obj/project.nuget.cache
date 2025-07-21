@@ -1,24 +1,31 @@
 {
   "version": 2,
-<<<<<<< Updated upstream
-  "dgSpecHash": "KhMHOzqaEn0=",
-=======
-  "dgSpecHash": "KORyGU7hSUk=",
->>>>>>> Stashed changes
+  "dgSpecHash": "G4V68r4PWIo=",
   "success": true,
   "projectFilePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Admininfra\\.nuget\\packages\\awssdk.core\\4.0.0.14\\awssdk.core.4.0.0.14.nupkg.sha512",
-    "C:\\Users\\Admininfra\\.nuget\\packages\\awssdk.dynamodbv2\\4.0.2.1\\awssdk.dynamodbv2.4.0.2.1.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\automapper.collection\\11.0.0\\automapper.collection.11.0.0.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\awssdk.core\\4.0.0.16\\awssdk.core.4.0.0.16.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\awssdk.dynamodbv2\\4.0.3\\awssdk.dynamodbv2.4.0.3.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\awssdk.extensions.netcore.setup\\4.0.2\\awssdk.extensions.netcore.setup.4.0.2.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\closedxml\\0.95.4\\closedxml.0.95.4.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\confluent.kafka\\2.11.0\\confluent.kafka.2.11.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\csvhelper\\27.1.1\\csvhelper.27.1.1.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\documentformat.openxml\\2.7.2\\documentformat.openxml.2.7.2.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\excelnumberformat\\1.0.10\\excelnumberformat.1.0.10.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\fluentvalidation\\12.0.0\\fluentvalidation.12.0.0.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.1\\fluentvalidation.aspnetcore.11.3.1.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.0.0\\fluentvalidation.dependencyinjectionextensions.12.0.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\google.protobuf\\3.1.0\\google.protobuf.3.1.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\google.protobuf.tools\\3.0.0\\google.protobuf.tools.3.0.0.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\ibmmqdotnetclient\\9.4.3\\ibmmqdotnetclient.9.4.3.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\librdkafka.redist\\2.11.0\\librdkafka.redist.2.11.0.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\microelements.openapi.fluentvalidation\\6.1.0\\microelements.openapi.fluentvalidation.6.1.0.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\microelements.swashbuckle.fluentvalidation\\6.1.0\\microelements.swashbuckle.fluentvalidation.6.1.0.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\microsoft.codeanalysis.common\\2.0.0\\microsoft.codeanalysis.common.2.0.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\microsoft.codeanalysis.csharp\\2.0.0\\microsoft.codeanalysis.csharp.2.0.0.nupkg.sha512",
@@ -66,13 +73,10 @@
     "C:\\Users\\Admininfra\\.nuget\\packages\\sonaranalyzer.csharpx\\6.6.0.3969\\sonaranalyzer.csharpx.6.6.0.3969.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\sonaranalyzer.visualbasic\\10.12.0.118525\\sonaranalyzer.visualbasic.10.12.0.118525.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\stackexchange.redis\\2.8.41\\stackexchange.redis.2.8.41.nupkg.sha512",
-<<<<<<< Updated upstream
     "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore\\9.0.1\\swashbuckle.aspnetcore.9.0.1.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\9.0.1\\swashbuckle.aspnetcore.swagger.9.0.1.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\9.0.1\\swashbuckle.aspnetcore.swaggergen.9.0.1.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\9.0.1\\swashbuckle.aspnetcore.swaggerui.9.0.1.nupkg.sha512",
-=======
->>>>>>> Stashed changes
     "C:\\Users\\Admininfra\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
@@ -137,6 +141,7 @@
     "C:\\Users\\Admininfra\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\system.text.encoding.extensions\\4.3.0\\system.text.encoding.extensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\system.text.regularexpressions\\4.3.0\\system.text.regularexpressions.4.3.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
@@ -151,5 +156,54 @@
     "C:\\Users\\Admininfra\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\system.xml.xpath.xdocument\\4.3.0\\system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "message": "Se detectó una versión del paquete fuera de la restricción de dependencia: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 requiere AutoMapper (= 12.0.1), pero la versión AutoMapper 14.0.0 ya se resolvió.",
+      "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "message": "Se detectó una versión del paquete fuera de la restricción de dependencia: MicroElements.OpenApi.FluentValidation 6.1.0 requiere FluentValidation (>= 10.0.0 && < 12.0.0), pero la versión FluentValidation 12.0.0 ya se resolvió.",
+      "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj",
+      "libraryId": "FluentValidation",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "message": "Se detectó una versión del paquete fuera de la restricción de dependencia: MicroElements.Swashbuckle.FluentValidation 6.1.0 requiere FluentValidation (>= 10.0.0 && < 12.0.0), pero la versión FluentValidation 12.0.0 ya se resolvió.",
+      "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj",
+      "libraryId": "FluentValidation",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "message": "Se detectó una versión del paquete fuera de la restricción de dependencia: MicroElements.Swashbuckle.FluentValidation 6.1.0 requiere Swashbuckle.AspNetCore.SwaggerGen (>= 6.3.0 && < 8.0.0), pero la versión Swashbuckle.AspNetCore.SwaggerGen 9.0.1 ya se resolvió.",
+      "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj",
+      "libraryId": "Swashbuckle.AspNetCore.SwaggerGen",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
 }

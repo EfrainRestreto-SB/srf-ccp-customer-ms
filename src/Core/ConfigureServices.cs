@@ -1,8 +1,13 @@
+using Core.Config.AwsKafka;
+using Core.Config.Dynamo;
+using Core.Config.SettingFiles.AwsKafka;
+using Core.Config.SettingFiles.Dynamo;
+using Core.Tasks;
 using Core.Validators.Customer;
-using Microsoft.Extensions.DependencyInjection;
-using SrfCcpCustomerMs.Application.Services;
-using SrfCcpCustomerMs.Domain.Interfaces;
-using SrfCcpCustomerMs.Persistence.Repositories;
+using Domain.Interfaces.AwsKafka.Config;
+using Domain.Interfaces.Dynamo.Config;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 
 namespace Core;
 
@@ -16,11 +21,11 @@ public static class ConfigureServices
 
         // Create Customer
         services.AddKeyedSingleton<IKafkaProducerConfig, KafkaProducerCreateCustomerCmdConfig>("KafkaProducerCreateCustomerCmdConfig");
-        services.AddKeyedSingleton<IKafkaConsumerConfig, KafkaConsumerCustomerEvtConfig>("KafkaConsumerCreateCustomerEvtConfig");
+        services.AddKeyedSingleton<IKafkaProducerConfig, KafkaConsumerCreateCustomerEvtConfig>("KafkaConsumerCreateCustomerEvtConfig");
 
         // Create Customer socket
         services.AddKeyedSingleton<IKafkaProducerConfig, KafkaProducerCreateCustomerCmdConfig>("KafkaProducerCreateCustomerSocketCmdConfig");
-        services.AddKeyedSingleton<IKafkaConsumerConfig, KafkaConsumerCustomerEvtConfig>("KafkaConsumerCreateCustomerSocketEvtConfig");
+        services.AddKeyedSingleton<IKafkaConsumerConfig, KafkaConsumerCreateCustomerEvtConfig>("KafkaConsumerCreateCustomerSocketEvtConfig");
 
         services.Configure<DynamoJson>(configuration.GetSection("Dynamo"));
         services.AddSingleton<IDynamoConnectionConfig, DynamoConnectionConfig>();
@@ -51,7 +56,6 @@ public static class ConfigureServices
         services.AddValidatorsFromAssemblyContaining<DescriptionsInValidator>();
         // Tasks
         services.AddHostedService<KafkaCreateCustomerConsumerTasks>();
-        services.AddHostedService<KafkaCustomerSimulatorConsumerTasks>();
 
         // Endpoints
         services.AddControllers();
