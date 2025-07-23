@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "P4WPDWmPvsU=",
+  "dgSpecHash": "dqwtCYrd24s=",
   "success": true,
-  "projectFilePath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
+  "projectFilePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admininfra\\.nuget\\packages\\automapper\\15.0.1\\automapper.15.0.1.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\aws.msk.auth\\1.0.2\\aws.msk.auth.1.0.2.nupkg.sha512",
@@ -161,9 +161,9 @@
       "code": "NU1608",
       "level": "Warning",
       "message": "Se detectó una versión del paquete fuera de la restricción de dependencia: AWSSDK.SecurityToken 3.7.103.16 requiere AWSSDK.Core (>= 3.7.107.8 && < 4.0.0), pero la versión AWSSDK.Core 4.0.0.16 ya se resolvió.",
-      "projectPath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
+      "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
+      "filePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
       "libraryId": "AWSSDK.Core",
       "targetGraphs": [
         "net9.0"
@@ -173,9 +173,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "El paquete \"AWSSDK.DynamoDBv2.Converters 2.0.1\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net9.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
-      "projectPath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
+      "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
+      "filePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
       "libraryId": "AWSSDK.DynamoDBv2.Converters",
       "targetGraphs": [
         "net9.0"
@@ -185,9 +185,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "El paquete \"Microsoft.AspNet.SignalR.Core 2.4.3\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net9.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
-      "projectPath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
+      "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
+      "filePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
       "libraryId": "Microsoft.AspNet.SignalR.Core",
       "targetGraphs": [
         "net9.0"
@@ -197,9 +197,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "El paquete \"Microsoft.Owin 2.1.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net9.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
-      "projectPath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
+      "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
+      "filePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
       "libraryId": "Microsoft.Owin",
       "targetGraphs": [
         "net9.0"
@@ -209,9 +209,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "El paquete \"Microsoft.Owin.Security 2.1.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net9.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
-      "projectPath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
+      "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
+      "filePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
       "libraryId": "Microsoft.Owin.Security",
       "targetGraphs": [
         "net9.0"
@@ -221,9 +221,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "El paquete \"Owin 1.0.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net9.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
-      "projectPath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
+      "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
+      "filePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Core.csproj",
       "libraryId": "Owin",
       "targetGraphs": [
         "net9.0"

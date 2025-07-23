@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\",
+  "WorkspaceRootPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{26237D79-B708-4721-AC3E-9363B6160078}|src\\Application\\Application.csproj|c:\\users\\llianis.duran\\downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\application\\configureservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26237D79-B708-4721-AC3E-9363B6160078}|src\\Application\\Application.csproj|c:\\users\\llianis.duran\\documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\application\\configureservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26237D79-B708-4721-AC3E-9363B6160078}|src\\Application\\Application.csproj|solutionrelative:src\\application\\configureservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E7C86F1-B2E5-449B-8F7C-DD1ED4BC6D56}|src\\Core\\Core.csproj|c:\\users\\llianis.duran\\downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7E7C86F1-B2E5-449B-8F7C-DD1ED4BC6D56}|src\\Core\\Core.csproj|c:\\users\\llianis.duran\\documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E7C86F1-B2E5-449B-8F7C-DD1ED4BC6D56}|src\\Core\\Core.csproj|solutionrelative:src\\core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E7C86F1-B2E5-449B-8F7C-DD1ED4BC6D56}|src\\Core\\Core.csproj|c:\\users\\llianis.duran\\downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\core\\mappers\\customermappingsprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7E7C86F1-B2E5-449B-8F7C-DD1ED4BC6D56}|src\\Core\\Core.csproj|c:\\users\\llianis.duran\\documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\core\\mappers\\customermappingsprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E7C86F1-B2E5-449B-8F7C-DD1ED4BC6D56}|src\\Core\\Core.csproj|solutionrelative:src\\core\\mappers\\customermappingsprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E7C86F1-B2E5-449B-8F7C-DD1ED4BC6D56}|src\\Core\\Core.csproj|c:\\users\\llianis.duran\\downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\core\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{7E7C86F1-B2E5-449B-8F7C-DD1ED4BC6D56}|src\\Core\\Core.csproj|c:\\users\\llianis.duran\\documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\core\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{7E7C86F1-B2E5-449B-8F7C-DD1ED4BC6D56}|src\\Core\\Core.csproj|solutionrelative:src\\core\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -48,11 +48,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ConfigureServices.cs",
-              "DocumentMoniker": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Application\\ConfigureServices.cs",
+              "DocumentMoniker": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Application\\ConfigureServices.cs",
               "RelativeDocumentMoniker": "src\\Application\\ConfigureServices.cs",
-              "ToolTip": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Application\\ConfigureServices.cs",
+              "ToolTip": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Application\\ConfigureServices.cs",
               "RelativeToolTip": "src\\Application\\ConfigureServices.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAtwCAAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-23T17:20:57.478Z",
               "EditorCaption": ""
@@ -61,40 +61,37 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Properties\\launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "src\\Core\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Properties\\launchSettings.json",
               "RelativeToolTip": "src\\Core\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-23T17:23:54.129Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T17:23:54.129Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Program.cs",
               "RelativeDocumentMoniker": "src\\Core\\Program.cs",
-              "ToolTip": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Program.cs",
+              "ToolTip": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Program.cs",
               "RelativeToolTip": "src\\Core\\Program.cs",
               "ViewState": "AgIAACQAAAAAAAAAAADwvy8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T17:18:07.707Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T17:18:07.707Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "CustomerMappingsProfile.cs",
-              "DocumentMoniker": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Mappers\\CustomerMappingsProfile.cs",
+              "DocumentMoniker": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Mappers\\CustomerMappingsProfile.cs",
               "RelativeDocumentMoniker": "src\\Core\\Mappers\\CustomerMappingsProfile.cs",
-              "ToolTip": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Mappers\\CustomerMappingsProfile.cs",
+              "ToolTip": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Core\\Mappers\\CustomerMappingsProfile.cs",
               "RelativeToolTip": "src\\Core\\Mappers\\CustomerMappingsProfile.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T17:19:42.884Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T17:19:42.884Z"
             }
           ]
         }

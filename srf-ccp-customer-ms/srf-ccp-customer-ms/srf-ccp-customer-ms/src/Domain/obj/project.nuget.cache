@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2f6MTAZeyzQ=",
+  "dgSpecHash": "Ml73/QhGG2U=",
   "success": true,
-  "projectFilePath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admininfra\\.nuget\\packages\\aws.msk.auth\\1.0.2\\aws.msk.auth.1.0.2.nupkg.sha512",
     "C:\\Users\\Admininfra\\.nuget\\packages\\awssdk.core\\4.0.0.12\\awssdk.core.4.0.0.12.nupkg.sha512",
@@ -30,9 +30,9 @@
       "code": "NU1608",
       "level": "Warning",
       "message": "Se detectó una versión del paquete fuera de la restricción de dependencia: AWSSDK.SecurityToken 3.7.103.16 requiere AWSSDK.Core (>= 3.7.107.8 && < 4.0.0), pero la versión AWSSDK.Core 4.0.0.12 ya se resolvió.",
-      "projectPath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Domain\\Domain.csproj",
+      "projectPath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Domain\\Domain.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Domain\\Domain.csproj",
+      "filePath": "C:\\Users\\llianis.duran\\Documents\\serfinansa\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Domain\\Domain.csproj",
       "libraryId": "AWSSDK.Core",
       "targetGraphs": [
         "net9.0"
