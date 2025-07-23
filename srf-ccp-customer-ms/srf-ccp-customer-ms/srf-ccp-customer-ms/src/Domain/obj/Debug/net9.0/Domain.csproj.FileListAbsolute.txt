@@ -1,0 +1,34 @@
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Domain\bin\Debug\net9.0\Domain.deps.json
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Domain\bin\Debug\net9.0\Domain.dll
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Domain\bin\Debug\net9.0\Domain.pdb
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Domain\obj\Debug\net9.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Domain\obj\Debug\net9.0\Domain.AssemblyInfoInputs.cache
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Domain\obj\Debug\net9.0\Domain.AssemblyInfo.cs
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Domain\obj\Debug\net9.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Domain\obj\Debug\net9.0\Domain.dll
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Domain\obj\Debug\net9.0\refint\Domain.dll
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Domain\obj\Debug\net9.0\Domain.pdb
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Domain\obj\Debug\net9.0\ref\Domain.dll
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Domain\bin\Debug\net9.0\Domain.deps.json
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Domain\bin\Debug\net9.0\Domain.dll
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Domain\bin\Debug\net9.0\Domain.pdb
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Domain\obj\Debug\net9.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Domain\obj\Debug\net9.0\Domain.AssemblyInfoInputs.cache
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Domain\obj\Debug\net9.0\Domain.AssemblyInfo.cs
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Domain\obj\Debug\net9.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Domain\obj\Debug\net9.0\Domain.dll
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Domain\obj\Debug\net9.0\refint\Domain.dll
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Domain\obj\Debug\net9.0\Domain.pdb
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Domain\obj\Debug\net9.0\ref\Domain.dll
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Domain\obj\Debug\net9.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Domain\obj\Debug\net9.0\Domain.AssemblyInfoInputs.cache
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Domain\obj\Debug\net9.0\Domain.AssemblyInfo.cs
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Domain\obj\Debug\net9.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Domain\obj\Debug\net9.0\Domain.dll
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Domain\obj\Debug\net9.0\refint\Domain.dll
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Domain\obj\Debug\net9.0\Domain.pdb
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Domain\bin\Debug\net9.0\Domain.deps.json
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Domain\bin\Debug\net9.0\Domain.dll
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Domain\bin\Debug\net9.0\Domain.pdb
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Domain\obj\Debug\net9.0\Domain.csproj.AssemblyReference.cache
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Domain\obj\Debug\net9.0\ref\Domain.dll

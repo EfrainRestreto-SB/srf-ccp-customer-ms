@@ -1,0 +1,43 @@
+{
+  "version": 2,
+  "dgSpecHash": "QAmfocz1/yI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admininfra\\.nuget\\packages\\aws.msk.auth\\1.0.2\\aws.msk.auth.1.0.2.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\awssdk.core\\4.0.0.16\\awssdk.core.4.0.0.16.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\awssdk.dynamodbv2\\4.0.3\\awssdk.dynamodbv2.4.0.3.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\awssdk.extensions.netcore.setup\\4.0.2\\awssdk.extensions.netcore.setup.4.0.2.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\awssdk.securitytoken\\3.7.103.16\\awssdk.securitytoken.3.7.103.16.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\confluent.kafka\\2.11.0\\confluent.kafka.2.11.0.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\librdkafka.redist\\2.11.0\\librdkafka.redist.2.11.0.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\microsoft.extensions.apidescription.server\\9.0.0\\microsoft.extensions.apidescription.server.9.0.0.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.0.0\\microsoft.extensions.configuration.abstractions.2.0.0.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\microsoft.extensions.primitives\\2.0.0\\microsoft.extensions.primitives.2.0.0.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\microsoft.openapi\\1.6.23\\microsoft.openapi.1.6.23.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\stackexchange.redis\\2.8.58\\stackexchange.redis.2.8.58.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore\\9.0.3\\swashbuckle.aspnetcore.9.0.3.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\9.0.3\\swashbuckle.aspnetcore.swagger.9.0.3.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\9.0.3\\swashbuckle.aspnetcore.swaggergen.9.0.3.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\9.0.3\\swashbuckle.aspnetcore.swaggerui.9.0.3.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
+    "C:\\Users\\Admininfra\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.4.0\\system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "message": "Se detectó una versión del paquete fuera de la restricción de dependencia: AWSSDK.SecurityToken 3.7.103.16 requiere AWSSDK.Core (>= 3.7.107.8 && < 4.0.0), pero la versión AWSSDK.Core 4.0.0.16 ya se resolvió.",
+      "projectPath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\llianis.duran\\Downloads\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\srf-ccp-customer-ms\\src\\Persistence\\Persistence.csproj",
+      "libraryId": "AWSSDK.Core",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
+}

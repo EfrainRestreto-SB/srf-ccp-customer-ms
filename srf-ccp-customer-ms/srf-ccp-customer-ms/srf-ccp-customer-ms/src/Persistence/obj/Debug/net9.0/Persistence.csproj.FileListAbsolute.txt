@@ -1,0 +1,49 @@
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\bin\Debug\net9.0\Persistence.deps.json
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\bin\Debug\net9.0\Persistence.dll
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\bin\Debug\net9.0\Persistence.pdb
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\bin\Debug\net9.0\Application.dll
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\bin\Debug\net9.0\Domain.dll
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\bin\Debug\net9.0\Application.pdb
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\bin\Debug\net9.0\Domain.pdb
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\obj\Debug\net9.0\Persistence.csproj.AssemblyReference.cache
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\obj\Debug\net9.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\obj\Debug\net9.0\Persistence.AssemblyInfoInputs.cache
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\obj\Debug\net9.0\Persistence.AssemblyInfo.cs
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\obj\Debug\net9.0\Persistence.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\obj\Debug\net9.0\Persiste.61C28332.Up2Date
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\obj\Debug\net9.0\Persistence.dll
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\obj\Debug\net9.0\refint\Persistence.dll
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\obj\Debug\net9.0\Persistence.pdb
+C:\Users\user\Documents\Proyectos\Serfinanza\tools\creacion de proyecto\src\Persistence\obj\Debug\net9.0\ref\Persistence.dll
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Persistence\bin\Debug\net9.0\Persistence.deps.json
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Persistence\bin\Debug\net9.0\Persistence.dll
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Persistence\bin\Debug\net9.0\Persistence.pdb
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Persistence\bin\Debug\net9.0\Application.dll
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Persistence\bin\Debug\net9.0\Domain.dll
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Persistence\bin\Debug\net9.0\Application.pdb
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Persistence\bin\Debug\net9.0\Domain.pdb
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Persistence\obj\Debug\net9.0\Persistence.csproj.AssemblyReference.cache
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Persistence\obj\Debug\net9.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Persistence\obj\Debug\net9.0\Persistence.AssemblyInfoInputs.cache
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Persistence\obj\Debug\net9.0\Persistence.AssemblyInfo.cs
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Persistence\obj\Debug\net9.0\Persistence.csproj.CoreCompileInputs.cache
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Persistence\obj\Debug\net9.0\Persiste.61C28332.Up2Date
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Persistence\obj\Debug\net9.0\Persistence.dll
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Persistence\obj\Debug\net9.0\refint\Persistence.dll
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Persistence\obj\Debug\net9.0\Persistence.pdb
+C:\Users\ilian\Downloads\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\srf-ccp-customer-ms-a652b9da5a6e095f5425e3fc89d9b58d7b93a3a6\src\Persistence\obj\Debug\net9.0\ref\Persistence.dll
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.csproj.AssemblyReference.cache
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.AssemblyInfoInputs.cache
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.AssemblyInfo.cs
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.csproj.CoreCompileInputs.cache
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.dll
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\refint\Persistence.dll
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persistence.pdb
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Persistence\bin\Debug\net9.0\Persistence.deps.json
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Persistence\bin\Debug\net9.0\Persistence.dll
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Persistence\bin\Debug\net9.0\Persistence.pdb
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Persistence\bin\Debug\net9.0\Domain.dll
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Persistence\bin\Debug\net9.0\Domain.pdb
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\Persiste.61C28332.Up2Date
+C:\Users\llianis.duran\Downloads\srf-ccp-customer-ms\srf-ccp-customer-ms\srf-ccp-customer-ms\src\Persistence\obj\Debug\net9.0\ref\Persistence.dll
